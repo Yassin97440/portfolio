@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   },
 
   build: {
-    transpile: ['vuetify', 'vue-toastification', 'nuxt-primevue'],
+    transpile: ['nuxt-primevue'],
   },
 
   primevue: {
@@ -33,6 +33,7 @@ export default defineNuxtConfig({
     // Ajoutez ici le module Pinia
     '@pinia/nuxt',
     '@primevue/nuxt-module',
+    '@nuxtjs/tailwindcss',
   ],
 
 
