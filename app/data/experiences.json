@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Développeur Web",
+    "company": "Ma Super Entreprise",
+    "dates": "Jan 2020 - Présent",
+    "description": "Développement d'applications web en Vue.js et Node.js..."
+  },
+  {
+    "title": "Stagiaire",
+    "company": "Startup Innovante",
+    "dates": "Mai 2019 - Juil 2019",
+    "description": "Participation à la refonte du site de l'entreprise..."
+  }
+]

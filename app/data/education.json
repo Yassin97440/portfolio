@@ -1,0 +1,14 @@
+[
+  {
+    "school": "Université XYZ",
+    "degree": "Licence Informatique",
+    "dates": "2017 - 2020",
+    "description": "Programme complet axé sur la programmation, les algorithmes..."
+  },
+  {
+    "school": "Lycée ABC",
+    "degree": "Baccalauréat Scientifique",
+    "dates": "2014 - 2017",
+    "description": "Spécialisation Maths, Physique et Sciences de l'ingénieur..."
+  }
+]
