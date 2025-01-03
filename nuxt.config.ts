@@ -7,7 +7,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   ssr: false,
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/tailwind.css',
+    'primevue/resources/themes/lara-light-blue/theme.css',
+    'primevue/resources/primevue.css',
+    'primeicons/primeicons.css',
+  ],
 
   postcss: {
     plugins: {

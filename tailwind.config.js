@@ -10,10 +10,22 @@ module.exports = {
 
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                primary: 'var(--primary)',
+                secondary: 'var(--secondary)',
+                accent: 'var(--accent)',
+                background: 'var(--background)',
+                text: 'var(--text)',
+            },
+            fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+            },
+        },
     },
     plugins: [
         require('tailwindcss-primeui')
     ],
     important: true,
+    darkMode: 'class',
 }
