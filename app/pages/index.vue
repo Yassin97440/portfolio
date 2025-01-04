@@ -1,28 +1,31 @@
 <template>
-  <div class="px-14 grid grid-flow-row ">
+  <div class="px-5 md:px-14 grid grid-flow-row ">
     <h1 class="text-3xl font-bold mb-4">Mon Parcours</h1>
 
 
-    <Card class="w-full bg-background rounded-lg mb-10">
+    <Card class="w-full bg-background rounded-lg mb-20">
       <template #title class="">
         <h2 class="text-2xl ">Mes Expériences Professionnelles</h2>
       </template>
       <template #content>
-        <Timeline :value="experiences" align="alternate" class="customized-timeline">
+        <Timeline :value="experiences" :align="width >= 768 ? 'alternate' : 'bottom'" class="">
           <template #marker="slotProps">
             <span class="bg-secondary flex w-8 h-8 items-center justify-center rounded-full z-10 shadow-sm">
               <i class="pi pi-check"></i>
             </span>
           </template>
+          <template #opposite="slotProps">
+            <p class="text-secondary sm hidden md:block">{{ slotProps.item.dates }}</p>
+          </template>
           <template #content="slotProps">
-            <Card class="mt-4 bg-primary">
+            <Card class="my-4 bg-primary">
               <template #title>
                 {{ slotProps.item.title }}
               </template>
               <template #subtitle>
                 <p class="text-secondary">{{ slotProps.item.company }}</p>
               </template>
-              <template #content>
+              <template #content class="w-full">
                 <p>
                   {{ slotProps.item.description }}
                 </p>
@@ -63,6 +66,9 @@
 
 <script setup lang="ts">
 import { usePortfolioStore } from "~/stores/portfolio";
+import { useWindowSize } from '@vueuse/core'
+
+const { width } = useWindowSize();
 const store = usePortfolioStore();
 const { experiences, education } = store;
 </script>
