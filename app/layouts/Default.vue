@@ -6,7 +6,7 @@
       </template>
       <template #item="{ item, props, hasSubmenu, root }">
         <a v-ripple class="flex items-center" v-bind="props.action">
-          <span>{{ item.label }}</span>
+          <span class="text-action">{{ item.label }}</span>
         </a>
       </template>
     </MenuBar>
