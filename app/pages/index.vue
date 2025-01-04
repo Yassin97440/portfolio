@@ -9,14 +9,36 @@
       <p class="text-sm">{{ edu.description }}</p>
     </div>
 
-    <h2 class="text-xl font-semibold mt-6 mb-2">
-      Mes Expériences Professionnelles & Personnelles
-    </h2>
-    <div v-for="(exp, index) in experiences" :key="index" class="mb-4">
-      <p class="font-bold">{{ exp.title }} - {{ exp.company }}</p>
-      <p>{{ exp.dates }}</p>
-      <p class="text-sm">{{ exp.description }}</p>
-    </div>
+    <Card class="w-full bg-background rounded-lg ">
+      <template #title class="">
+        <h2 class="text-2xl ">Mes Expériences Professionnelles</h2>
+      </template>
+      <template #content>
+        <Timeline :value="experiences" align="alternate" class="customized-timeline">
+          <template #marker="slotProps">
+            <span class="bg-secondary flex w-8 h-8 items-center justify-center rounded-full z-10 shadow-sm">
+              <i class="pi pi-check"></i>
+            </span>
+          </template>
+          <template #content="slotProps">
+            <Card class="mt-4 bg-primary">
+              <template #title>
+                {{ slotProps.item.title }}
+              </template>
+              <template #subtitle>
+                <p class="text-secondary">{{ slotProps.item.company }}</p>
+              </template>
+              <template #content>
+                <p>
+                  {{ slotProps.item.description }}
+                </p>
+                <Button class="text-action text-sm" label="Read more" text></Button>
+              </template>
+            </Card>
+          </template>
+        </Timeline>
+      </template>
+    </Card>
   </div>
 </template>
 

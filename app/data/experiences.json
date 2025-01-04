@@ -1,14 +1,26 @@
 [
   {
-    "title": "Développeur Web",
-    "company": "Ma Super Entreprise",
-    "dates": "Jan 2020 - Présent",
-    "description": "Développement d'applications web en Vue.js et Node.js..."
+    "title": "Chef d'équipe",
+    "company": "Compufirst",
+    "dates": "2023 - Maintenant",
+    "description": "Gestion d'équipe de développeurs, gestion de projet, gestion de la communication avec les clients..."
   },
   {
-    "title": "Stagiaire",
-    "company": "Startup Innovante",
-    "dates": "Mai 2019 - Juil 2019",
+    "title": "Chef de projet",
+    "company": "Compufirst",
+    "dates": "2022 - 2023",
     "description": "Participation à la refonte du site de l'entreprise..."
+  },
+  {
+    "title": "Développeur logiciel",
+    "company": "Compufirst",
+    "dates": "2021 - 2022",
+    "description": "Développement d'un ERP maison en java "
+  },
+  {
+    "title": "Développeur logiciel en alternance",
+    "company": "Compufirst",
+    "dates": "2021 - 2022",
+    "description": "Développement d'un ERP maison en java "
   }
 ]
