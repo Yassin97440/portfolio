@@ -2,7 +2,7 @@
   <div class="min-h-screen text-text relative">
     <MenuBar class="bg-primary  relative z-20 ">
       <template #start>
-        <h1 class="text-2xl font-bold">Yassin Abdulla</h1>
+        <h1 class="ml-4 text-2xl font-bold">Yassin Abdulla</h1>
       </template>
       <!-- <template #item="{ item, props, hasSubmenu, root }">
         <div class="w-full">
@@ -14,7 +14,7 @@
       </template> -->
       <template #end>
         <div class="flex flex-row ">
-          <Button v-for="item in items" :key="item.label" class=" p-2 mx-2 hover:bg-#f3f4f6">
+          <Button v-for="item in items" :key="item.label" class=" p-2 mx-2 hover:bg-slate-300">
             <NuxtLink :to="item.to" class="text-action">{{ item.label }}</NuxtLink>
           </Button>
         </div>

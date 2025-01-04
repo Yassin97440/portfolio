@@ -1,6 +1,6 @@
 <template>
-  <div class="px-5 md:px-14 grid grid-flow-row ">
-    <h1 class="text-3xl font-bold mb-4">Mon Parcours</h1>
+  <div class="p-5 md:p-14 lg:p-20 grid grid-flow-row ">
+
 
 
     <Card class="w-full bg-background rounded-lg mb-20">
