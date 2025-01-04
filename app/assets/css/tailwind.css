@@ -9,6 +9,8 @@
     --accent: #8b5cf6;
     --background: #ffffff;
     --text: #1e293b;
+    --action: #64d8cb;
+
   }
 
   .dark {
@@ -18,4 +20,4 @@
     --background: #1e293b;
     --text: #f8fafc;
   }
-} 
+}

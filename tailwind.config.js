@@ -17,6 +17,7 @@ module.exports = {
                 accent: 'var(--accent)',
                 background: 'var(--background)',
                 text: 'var(--text)',
+                action: 'var(--action)',
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
