@@ -2,17 +2,41 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: ["master"]
+  workflow_dispatch:
 
 jobs:
-
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v4
+
+      - name: Build the Docker image
+        run: |
+          docker build . --file Dockerfile --tag portfolio:${{ github.run_number }}
+        env:
+          TAG: ${{ github.run_number }}
+
+      - name: Save Docker image to a file
+        run: docker save portfolio:${{ github.run_number }} | gzip > portfolio.tar.gz
+
+      - name: Transfer Docker image to VM
+        uses: appleboy/scp-action@master
+        with:
+          source: "portfolio.tar.gz"
+          target: "~/app/front/"
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+
+      - name: Deploy Docker image on VM
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd ~/app/front
+            docker load < portfolio.tar.gz
+            docker run -d -p 3010:3000 -p portfolio:${{ github.run_number }}
