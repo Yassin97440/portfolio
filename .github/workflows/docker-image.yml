@@ -39,4 +39,4 @@ jobs:
           script: |
             cd ~/app/front
             docker load < portfolio.tar.gz
-            docker run -d -p 3010:3000 -p portfolio:${{ github.run_number }}
+            docker run -d -p 3010:3000 portfolio:${{ github.run_number }}
