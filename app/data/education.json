@@ -1,14 +1,20 @@
 [
   {
-    "school": "Université XYZ",
-    "degree": "Licence Informatique",
-    "dates": "2017 - 2020",
-    "description": "Programme complet axé sur la programmation, les algorithmes..."
+    "school": "EPSI Montpellier",
+    "degree": "bachelor - Titre RNCP n°6 - CDA",
+    "dates": "2021-2022",
+    "description": "Développement d'applications web et et logiciels. De la conception de la base de données au déplo"
   },
   {
-    "school": "Lycée ABC",
-    "degree": "Baccalauréat Scientifique",
-    "dates": "2014 - 2017",
-    "description": "Spécialisation Maths, Physique et Sciences de l'ingénieur..."
+    "school": "Lycée Roland Garros",
+    "degree": "BTS SN option Electronique et communication",
+    "dates": "2018 - 2020",
+    "description": "De l'éléctronique accompagné d'énormément de mathématiques et de physique"
+  },
+  {
+    "school": "Lycée Amrial Pierre Bouvet",
+    "degree": "Bac STI2D ",
+    "dates": "2017 - 2018",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
   }
 ]
