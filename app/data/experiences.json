@@ -1,26 +1,71 @@
 [
   {
+    "id": 5,
     "title": "Chef d'équipe",
     "company": "Compufirst",
     "dates": "2023 - Maintenant",
-    "description": "Gestion d'équipe de développeurs, gestion de projet, gestion de la communication avec les clients..."
+    "description": "Sur cette période j'ai majoritairement voir autres choses que des problèmatiques métiers. J'ai du beaucoup plus me concentrer et passer du temps sur de l'analyse business et problèmatiques métiers. Mais aussi des sujets d'organisation d'équipe et de gestion de projet.",
+    "Details": [
+      "Garant de la qualité et des temps de livraisons des autres projets",
+      "Chef de projet et Product Owner sur l'ERP maison",
+      "Lead dev Java/Spring, et développeur",
+      "Gestion des incidents au global",
+      "Membre du comité stratégique technique du groupe XEFI"
+    ]
   },
   {
+    "id": 4,
     "title": "Chef de projet",
     "company": "Compufirst",
     "dates": "2022 - 2023",
-    "description": "Participation à la refonte du site de l'entreprise..."
+    "description": "Participation à la refonte du site de l'entreprise...",
+    "Details": [
+      "Product Owner",
+      "Gestion de projet (gestion de la legacy et refonte de l’ERP)",
+      "Méthodologie agile (Scrum, kanban)",
+      "Lead dev (accompagnement des plus juniors)",
+      "Priorisation des taches, planifications court/moyen/long termes",
+      "Tecnho utilisé : Spring Boot, NuxtJs 3, MySQL, Docker"
+    ]
   },
   {
+    "id": 3,
     "title": "Développeur logiciel",
     "company": "Compufirst",
-    "dates": "2021 - 2022",
-    "description": "Développement d'un ERP maison en java "
+    "dates": "2022 - 2022",
+    "description": "Développement d'un ERP maison en java ",
+    "Details": [
+      "Analyse des besoins/problématiques métiers",
+      "Qualité du produit",
+      "Maintenance et développement continue",
+      "Gestion des incidents sur l’ERP",
+      "Reverse engineering"
+    ]
   },
   {
+    "id": 2,
     "title": "Développeur logiciel en alternance",
     "company": "Compufirst",
     "dates": "2021 - 2022",
-    "description": "Développement d'un ERP maison en java "
+    "description": "Développement d'un ERP maison en java ",
+    "Details": [
+      "Maintenance et développement de l’ERP interne (Fullstack)",
+      "Etude et utilisation de la BDD (MySQL)",
+      "-Etude de la base actuelle",
+      "-Compréhension et manipulations des structures de données",
+      "Pair-programming"
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Stage : Développeur/Technicien Robotique",
+    "company": "LA CITÉ DU VOLCAN, La Réunion",
+    "dates": "2019",
+    "description": "Développement d'un bras robotisé en C++ et ROS (Robot Operating System)",
+    "Details": [
+      "Développement d'un bras robotisé en C++ (Arduino) et ROS (Robot Operating System)",
+      "Simulation et tests du bras robotisé avec ROS",
+      "Impréssion des pièces 3D du robot"
+    ]
   }
 ]
