@@ -3,6 +3,7 @@
     <Card>
       <template #title>
         <h1 class="text-2xl">{{ experience?.title }}</h1>
+        <p class="text-secondary">{{ experience?.company }}</p>
       </template>
       <template #content>
         <Fieldset legend="Description" :toggleable="true" class="border mb-10">

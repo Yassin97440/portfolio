@@ -25,7 +25,7 @@
               <template #subtitle>
                 <p class="text-secondary">{{ slotProps.item.company }}</p>
               </template>
-              <template #content class="w-full">
+              <template #content class="">
                 <div class="">
 
                   <ul class="relative list-disc ml-3">
