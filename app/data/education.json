@@ -1,20 +1,23 @@
 [
   {
-    "school": "EPSI Montpellier",
-    "degree": "bachelor - Titre RNCP n°6 - CDA",
-    "dates": "2021-2022",
-    "description": "Développement d'applications web et et logiciels. De la conception de la base de données au déplo"
+    "school": "Lycée Amrial Pierre Bouvet",
+    "degree": "Bac STI2D",
+    "dates": "2017 - 2018",
+    "shortDescription": "Bac STI2D option S.I.N mention bien",
+    "description": "Introduction à l'informatique et à la programmation. J'ai pu voir mes premières notions en électronique et en programation de composants. Mais aussi des notions transvérsales"
   },
   {
     "school": "Lycée Roland Garros",
-    "degree": "BTS SN option Electronique et communication",
+    "degree": "BTS SN",
     "dates": "2018 - 2020",
-    "description": "De l'éléctronique accompagné d'énormément de mathématiques et de physique"
+    "shortDescription": "BTS SN option Electronique et communication",
+    "description": "Approfondissement des notions en électronique et en programmation de composants. Mais également en communication de systèmes informatiques. Introduction à la programmation web et d'interfaces graphiques"
   },
   {
-    "school": "Lycée Amrial Pierre Bouvet",
-    "degree": "Bac STI2D ",
-    "dates": "2017 - 2018",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+    "school": "EPSI Montpellier",
+    "degree": "Bachelor - CDA",
+    "dates": "2021-2022",
+    "shortDescription": "Bachelor - Titre RNCP n°6 - Concepteur développeur d'applications",
+    "description": "Développement d'applications web et logiciels. De la conception de la base de données au déplo"
   }
 ]
