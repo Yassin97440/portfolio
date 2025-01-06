@@ -58,12 +58,12 @@
   },
   {
     "id": 1,
-    "title": "Stage : Développeur/Technicien Robotique",
+    "title": "Stage : Développeur/ Technicien Robotique",
     "company": "LA CITÉ DU VOLCAN, La Réunion",
     "dates": "2019",
     "description": "Développement d'un bras robotisé en C++ et ROS (Robot Operating System)",
     "Details": [
-      "Développement d'un bras robotisé en C++ (Arduino) et ROS (Robot Operating System)",
+      "Développement d'un bras robotisé en C++ (Arduino) et ROS ",
       "Simulation et tests du bras robotisé avec ROS",
       "Impréssion des pièces 3D du robot"
     ]
