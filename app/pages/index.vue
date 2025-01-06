@@ -1,5 +1,5 @@
 <template>
-  <div class="p-5 md:p-14 lg:p-20">
+  <div class="p-5 md:p-14 lg:p-28">
     <Card class=" bg-background rounded-lg mb-20 ">
       <template #title>
         <h2 class="text-2xl">Qui suis-je ?</h2>
@@ -11,8 +11,7 @@
             <span class="block indent-4">
               Salut, moi c'est Yassin, j'ai 24 ans et je suis développeur sympa 😄. <br>
               J'ai eu la chance de grandir dans l'océan indien, majoritairement à l'île de la réunion. Avant de venir
-              sur
-              le continent pour continuer mes études et pour découvrir le monde.
+              sur le continent pour continuer mes études et pour découvrir le monde.
             </span>
             <span class="block">
               Cela fait maintenant 4 ans que je suis développeur dans le monde du travail. Dont une année en alternance.
@@ -105,7 +104,7 @@
                 ' - ' +
                 slotProps.item.shortDescription,
               showDelay: 800,
-            }">
+            }" class="text-action">
               {{ slotProps.item.degree }}
             </p>
           </template>
