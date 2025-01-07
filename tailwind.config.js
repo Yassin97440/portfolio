@@ -25,7 +25,7 @@ module.exports = {
         },
     },
     plugins: [
-        require('tailwindcss-primeui')
+        require('tailwindcss-primeui', 'tailwindcss-animated')
     ],
     important: true,
     darkMode: 'class',
