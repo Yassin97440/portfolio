@@ -26,7 +26,8 @@
       "Lead dev (accompagnement des plus juniors)",
       "Priorisation des taches, planifications court/moyen/long termes",
       "Tecnho utilisé : Spring Boot, NuxtJs 3, MySQL, Docker"
-    ]
+    ],
+    "Technos": ["Java", "Spring Framework", "RCP Framework", "MySQL"]
   },
   {
     "id": 3,
@@ -40,7 +41,8 @@
       "Maintenance et développement continue",
       "Gestion des incidents sur l’ERP",
       "Reverse engineering"
-    ]
+    ],
+    "Technos": ["Java", "Spring Framework", "RCP Framework", "MySQL"]
   },
   {
     "id": 2,
@@ -54,7 +56,8 @@
       "-Etude de la base actuelle",
       "-Compréhension et manipulations des structures de données",
       "Pair-programming"
-    ]
+    ],
+    "Technos": ["Java", "Spring Framework", "RCP Framework", "MySQL", "PHP"]
   },
   {
     "id": 1,
@@ -66,6 +69,7 @@
       "Développement d'un bras robotisé en C++ (Arduino) et ROS ",
       "Simulation et tests du bras robotisé avec ROS",
       "Impréssion des pièces 3D du robot"
-    ]
+    ],
+    "Technos": ["C++", "ROS", "Arduino", "3D Printing"]
   }
 ]
