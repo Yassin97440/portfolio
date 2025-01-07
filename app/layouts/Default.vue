@@ -28,7 +28,7 @@ import Toolbar from "primevue/toolbar";
 
 const items = [
   // { label: 'Mes projets', icon: 'pi pi-home', to: '/' },
-  { label: "Me contacter", icon: "pi pi-envelope", to: "/contact" },
+  { label: "Me contacter", icon: "pi pi-envelope", to: "/my/Contact" },
 ];
 </script>
 
