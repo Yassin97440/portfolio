@@ -9,35 +9,21 @@
           <h3 class="text-xl mb-2">Dans les grosss lignes</h3>
           <p class="text-sm space-y-2">
             <span class="block indent-4">
-              Salut, moi c'est Yassin, j'ai 24 ans et je suis développeur sympa
-              😄. <br />
-              J'ai eu la chance de grandir dans l'océan indien, majoritairement
-              à l'île de la réunion. Avant de venir sur le continent pour
-              continuer mes études et pour découvrir le monde.
+              Salut, moi c'est Yassin, j'ai 24 ans et je suis un développeur sympa
+              😄
             </span>
             <span class="block">
               Cela fait maintenant 4 ans que je suis développeur dans le monde
-              du travail. Dont une année en alternance. Avant cela, j'ai suivi
-              un cursus orienté éléctronique et IoT. J'ai voulu développer mes
-              compétences en développement d'intérface graphique et web afin
-              d'avoir un "spectre" de compétences plus large. Ce qui dans l'idée
-              m'aurait permis d'avoir les compétences nécessaires pour concevoir
-              et développer un projet de A à Z. Qu'il soit purement logiciel ou
-              bien en intégrant des systèmes embarqués.
+              du travail. Dont une année en alternance
             </span>
             <span class="block">
-              Mais j'avoue que j'ai beaucoup trop kiffé le développement
-              logiciel et web, et j'ai un peu délaissé l'éléctronique ces 3
-              dernières années. Ce qui m'a permis de découvrir et d'approfondir
-              des notions en développement d'application. De la conception et la
-              mise en place d'une base de données, au développement d'interfaces
-              graphiques, en passant par le développement du back-end. Pendant
-              ma première année je me suis rendu compte que les compétences
-              techniques n'étaient que la moitié des compétences nécessaires
-              pour être un bon développeur. J'ai au fur et à mesure pu découvrir
-              ce qu'est l'analyse du besoin client et son importance. Et peu
-              plus tard j'a eu la chance de voir d'autres problématiques de
-              gestion de projet et la gestion d'équipe....
+              Durant ces 4 dernières années j'ai pu voir et approfondir tout
+              pleins de notions en <a class="font-semibold">gestion et développement d'application</a>.
+              Qu'il soit technique ou "transversale". Que ça soit de
+              <a class="font-semibold">l'analyse du besoin</a> client,
+              gestion de projet, conception et mise en place de
+              base de données, développement d'interfaces graphiques <a class="font-semibold">logiciel et
+                web </a>, développement back-end, etc...
             </span>
           </p>
         </div>
@@ -49,15 +35,9 @@
         <h2 class="text-2xl">Mes Expériences Professionnelles</h2>
       </template>
       <template #content>
-        <Timeline
-          :value="experiences"
-          :align="width >= 768 ? 'alternate' : 'bottom'"
-          class=""
-        >
+        <Timeline :value="experiences" :align="width >= 768 ? 'alternate' : 'bottom'" class="">
           <template #marker="slotProps">
-            <span
-              class="bg-secondary flex w-8 h-8 items-center justify-center rounded-full z-10 shadow-sm"
-            >
+            <span class="bg-secondary flex w-8 h-8 items-center justify-center rounded-full z-10 shadow-sm">
               <i class="pi pi-check"></i>
             </span>
           </template>
@@ -67,9 +47,7 @@
             </p>
           </template>
           <template #content="slotProps">
-            <Card
-              class="my-4 bg-primary animate-fade-left animate-once animate-delay-500 animate-ease-in"
-            >
+            <Card class="my-4 bg-primary">
               <template #title>
                 {{ slotProps.item.title }}
               </template>
@@ -79,19 +57,11 @@
               <template #content class="">
                 <div class="">
                   <ul class="relative list-disc ml-3">
-                    <li
-                      v-for="detail in slotProps.item.Details"
-                      :key="detail"
-                      class="text-left"
-                    >
+                    <li v-for="detail in slotProps.item.Details" :key="detail" class="text-left">
                       {{ detail }}
                     </li>
-                    <Button
-                      class="text-action text-sm absolute left-0"
-                      label="Lire plus"
-                      text
-                      @click="navigateTo(`/experience/${slotProps.item.id}`)"
-                    >
+                    <Button class="text-action text-sm absolute left-0" label="Lire plus" text
+                      @click="navigateTo(`/experience/${slotProps.item.id}`)">
                     </Button>
                   </ul>
                 </div>
@@ -108,16 +78,9 @@
         <h2 class="text-xl font-semibold mt-6 mb-2">Mon Cursus Scolaire</h2>
       </template>
       <template #content>
-        <Timeline
-          :value="education"
-          layout="horizontal"
-          align="top"
-          class="horizontal-timeline w-full grid-flow-col"
-        >
+        <Timeline :value="education" layout="horizontal" align="top" class="horizontal-timeline w-full grid-flow-col">
           <template #marker="slotProps">
-            <span
-              class="bg-secondary flex w-8 h-8 items-center justify-center rounded-full z-10 shadow-sm"
-            >
+            <span class="bg-secondary flex w-8 h-8 items-center justify-center rounded-full z-10 shadow-sm">
               <i class="pi pi-book"></i>
             </span>
           </template>
@@ -125,16 +88,13 @@
             <p class="text-secondary">{{ slotProps.item.dates }}</p>
           </template>
           <template #content="slotProps">
-            <p
-              v-tooltip.top="{
-                value:
-                  slotProps.item.school +
-                  ' - ' +
-                  slotProps.item.shortDescription,
-                showDelay: 800,
-              }"
-              class="text-action"
-            >
+            <p v-tooltip.top="{
+              value:
+                slotProps.item.school +
+                ' - ' +
+                slotProps.item.shortDescription,
+              showDelay: 800,
+            }" class="text-action">
               {{ slotProps.item.degree }}
             </p>
           </template>
