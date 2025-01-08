@@ -7,19 +7,23 @@
       <template #content>
         <p>
           Vous pouvez me contacter par email à
-          <a href="mailto:monemail@example.com" class="text-blue-500">monemail@example.com</a>
+          <a href="mailto:yassinabdulla7@gmail.com" class="text-blue-500"
+            >yassinabdulla7@gmail.com</a
+          >
         </p>
         <p>
           Ou directement via
-          <a href="https://www.linkedin.com/in/monprofil/" target="_blank" class="text-blue-500">
+          <a
+            href="https://www.linkedin.com/in/yassin-abdulla97440/"
+            target="_blank"
+            class="text-blue-500"
+          >
             LinkedIn
           </a>
         </p>
       </template>
-
     </Card>
   </div>
 </template>
 
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
