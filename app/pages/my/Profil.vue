@@ -6,19 +6,22 @@
       </template>
       <template #content>
         <div class="bg-primary mx-5 rounded-lg p-4">
-          <p class="text-sm space-y-2">
-            <span class="block">
+          <p class="text-sm md:text-base space-y-2">
+            <BaseExpandableText class="">
               {{ myselfData.longDescription1 }}
-            </span>
-            <span class="block">
+            </BaseExpandableText>
+
+            <BaseExpandableText>
               {{ myselfData.longDescription2 }}
-            </span>
-            <span class="block">
+            </BaseExpandableText>
+
+            <BaseExpandableText>
               {{ myselfData.longDescription3 }}
-            </span>
-            <span class="block">
+            </BaseExpandableText>
+
+            <BaseExpandableText>
               {{ myselfData.longDescription4 }}
-            </span>
+            </BaseExpandableText>
           </p>
         </div>
       </template>
@@ -56,8 +59,8 @@
 
 <script lang="ts" setup>
 import { usePortfolioStore } from "~/stores/portfolio";
-const portfolioStore = usePortfolioStore();
 
+const portfolioStore = usePortfolioStore();
 const { myselfData } = portfolioStore;
 </script>
 
