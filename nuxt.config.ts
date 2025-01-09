@@ -1,5 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'Yassin Abdulla | Développeur Full Stack',
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/logoYA.png' },
+      ],
+    },
+  },
   future: {
     compatibilityVersion: 4,
   },
