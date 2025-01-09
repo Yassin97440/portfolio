@@ -2,18 +2,23 @@
   <div class="p-5 md:p-14 lg:p-28">
     <Card class="bg-background rounded-lg mb-20">
       <template #title>
-        <h2 class="text-xl">Mon profil</h2>
+        <h2 class="text-xl">Salut</h2>
       </template>
       <template #content>
         <div class="bg-primary mx-5 rounded-lg p-4">
-          <h3 class="text-xl mb-2">Je = Moi</h3>
           <p class="text-sm space-y-2">
-            <span class="block indent-4">
-              Salut, moi c'est Yassin, j'ai 24 ans et je suis un développeur
-              sympa 😄
+            <span class="block">
+              {{ myselfData.longDescription1 }}
             </span>
-            <span class="block"> </span>
-            <span class="block"> </span>
+            <span class="block">
+              {{ myselfData.longDescription2 }}
+            </span>
+            <span class="block">
+              {{ myselfData.longDescription3 }}
+            </span>
+            <span class="block">
+              {{ myselfData.longDescription4 }}
+            </span>
           </p>
         </div>
       </template>
@@ -23,9 +28,13 @@
         <h2 class="text-2xl">Mes compétences</h2>
       </template>
       <template #content>
-        <div class="bg-primary mx-5 rounded-lg p-4">
-          <h3 class="text-xl mb-2">Je = Moi</h3>
-        </div>
+        <BaseSubCard>
+          <div class="flex flex-wrap gap-2">
+            <Chip v-for="skill in myselfData.skills" :key="skill" class="bg-secondary text-white ">
+              {{ skill }}
+            </Chip>
+          </div>
+        </BaseSubCard>
       </template>
     </Card>
     <Card class="bg-background rounded-lg mb-20 pt-1">
@@ -33,10 +42,12 @@
         <h2 class="text-2xl">Mes technologies</h2>
       </template>
       <template #content>
-        <BaseSubCard title="TEST">
-          <template #content>
-            <p>TEST</p>
-          </template>
+        <BaseSubCard title="Technologies">
+          <div class="flex flex-wrap gap-2">
+            <Chip v-for="tech in myselfData.technos" :key="tech" class="bg-secondary text-white">
+              {{ tech }}
+            </Chip>
+          </div>
         </BaseSubCard>
       </template>
     </Card>
@@ -47,7 +58,7 @@
 import { usePortfolioStore } from "~/stores/portfolio";
 const portfolioStore = usePortfolioStore();
 
-const myselfData = portfolioStore.myself;
+const { myselfData } = portfolioStore;
 </script>
 
 <style></style>
