@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import fs from 'fs';
 export default defineNuxtConfig({
   app: {
     head: {
@@ -49,6 +50,13 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
   ],
 
+  devServer: {
+    https: {
+      key: fs.readFileSync('./localhost-key.pem', 'utf-8'),
+      cert: fs.readFileSync('./localhost.pem', 'utf-8')
+    },
+    port: 3000
+  },
 
   compatibilityDate: '2025-01-03'
 })
