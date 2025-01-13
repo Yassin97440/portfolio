@@ -57,15 +57,17 @@
           <template #content="slotProps">
             <Card class="my-4 bg-primary">
               <template #title>
-                {{ slotProps.item.title }}
+                <div class="text-left">
+                  {{ slotProps.item.title }}
+                </div>
               </template>
               <template #subtitle>
-                <div class="flex flex-col md:block">
+                <div class="flex flex-col md:block text-left">
                   <p class="text-secondary">{{ slotProps.item.company }}</p>
                   <p class="text-secondary md:hidden">{{ slotProps.item.dates }}</p>
                 </div>
               </template>
-              <template #content class="">
+              <template #content>
                 <div class="">
                   <ul class="relative list-disc ml-3">
                     <li v-for="detail in slotProps.item.Details" :key="detail" class="text-left">

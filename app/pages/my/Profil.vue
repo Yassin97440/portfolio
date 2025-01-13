@@ -7,6 +7,16 @@
       <template #content>
         <div class="bg-primary mx-5 rounded-lg p-4">
           <p class="text-sm md:text-base space-y-2">
+            J'ai principalement travaillé sur des projets logiciels. Mais également du web pour des interfaces web.
+            J'ai durant ma jeune carrière travaillé sur un ERP maison. Cet ERP gérait le business de l'entrzeprise. De
+            la création d'un compte client à la facturation en passant les achats et autres sujets de l'entreprise.
+            J'ai commencé par développeur avant d'être product owner puis chef de projets total.
+            J'ai donc pu faire pleins de choses (dév de base, débug, receuil besoin client, etude/analyse besoin client,
+            conseil/accompagnement clients, etc...)
+          </p>
+        </div>
+        <!-- <div class="bg-primary mx-5 rounded-lg p-4">
+          <p class="text-sm md:text-base space-y-2">
             <BaseExpandableText class="">
               {{ myselfData.longDescription1 }}
             </BaseExpandableText>
@@ -23,7 +33,7 @@
               {{ myselfData.longDescription4 }}
             </BaseExpandableText>
           </p>
-        </div>
+        </div> -->
       </template>
     </Card>
     <Card class="bg-background rounded-lg mb-20 pt-1">

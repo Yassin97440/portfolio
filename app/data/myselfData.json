@@ -37,5 +37,34 @@
     "Jira",
     "Confluence",
     "Notion"
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Album Digital ",
+      "description": "un projet d'album digital qui prmet de partager des photos. Le but est de pouvoir créer un eveneent avec dates, pui on ajouter albums avec photos. Puis aprtage avec groupes dans quel on est. O utilisateur",
+      "image": "/images/portfolio.jpg",
+      "technologies": [
+        "Nuxt",
+        "TailwindCSS",
+        "Java",
+        "Spring Boot",
+        "MySQL"
+      ],
+      "demoUrl": "https://digilbum.abdulla.fr/",
+      "githubUrl": "https://github.com/Yassin97440/digilbum-front"
+    },
+    {
+      "id": 2,
+      "title": "Portfolio",
+      "description": "Un portfolio qui présente mes expériences et mes projets en tant que développeur",
+      "image": "/images/task-app.jpg",
+      "technologies": [
+        "Nuxt",
+        "TailwindCSS"
+      ],
+      "demoUrl": "https://task-app.com",
+      "githubUrl": "https://github.com/username/task-app"
+    }
   ]
 }
