@@ -12,6 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: "Create env file"
+        run: |
+          touch .env
+          echo NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION }} >> .env
+          cat .env
+
       - name: Build the Docker image
         run: |
           docker build . --file Dockerfile --tag portfolio:${{ github.run_number }}
