@@ -7,6 +7,12 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/png', href: '/logoYA.png' },
       ],
+      meta: [
+        {
+          name: 'google-site-verification',
+          content: "ImFW6sDHGh4hTyrq67W5_u0QABKjflDEwOclhWnq55s",
+        }
+      ]
     },
   },
   future: {
