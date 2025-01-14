@@ -15,6 +15,13 @@ export default defineNuxtConfig({
       ]
     },
   },
+  site: {
+    url: 'https://yassin.abdulla.fr',
+    name: 'Yassin Abdulla | Développeur logiciel',
+    description: 'Développeur logiciel, Full Stack',
+    defaultLocale: 'fr',
+  },
+
   future: {
     compatibilityVersion: 4,
   },
@@ -49,12 +56,15 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: [
-    // Ajoutez ici le module Pinia
-    '@pinia/nuxt',
-    '@primevue/nuxt-module',
-    '@nuxtjs/tailwindcss',
-  ],
+  sitemap: {
+    exclude: [
+      '/my/**',
+
+    ]
+  },
+
+  modules: [// Ajoutez ici le module Pinia
+    '@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
 
   devServer: {
     https: {
