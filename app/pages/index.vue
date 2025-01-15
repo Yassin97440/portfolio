@@ -10,7 +10,7 @@
       </template>
       <template #content>
         <div class="bg-primary mx-5 rounded-lg p-4">
-          <h3 class="text-xl mb-2">Dans les grosss lignes</h3>
+          <h3 class="text-xl mb-2">En quelques mots</h3>
           <p class="text-sm space-y-2">
             <span class="block indent-4">
               Salut, moi c'est Yassin, j'ai 24 ans et je suis un développeur

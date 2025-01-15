@@ -1,6 +1,6 @@
 <template>
-  <div class="px-5 py-7 md:p-14 lg:p-28">
-    <Card class="bg-background rounded-lg mb-20">
+  <div class="px-5 py-7 md:p-14 lg:px-28">
+    <Card class="bg-background rounded-lg mb-5">
       <template #title>
         <h2 class="text-2xl">Mes Projets</h2>
       </template>
@@ -30,13 +30,13 @@
               <div class="flex gap-4 mt-4">
                 <Button v-if="project.demoUrl"
                   class="px-4 py-2 bg-action hover:bg-action/80 text-white rounded-lg text-sm transition-colors"
-                  @click="navigateTo(project.demoUrl)">
+                  @click="openUrl(project.demoUrl)">
                   <i class="pi pi-external-link mr-2"></i>
                   Voir la démo
                 </Button>
                 <Button v-if="project.githubUrl"
                   class="px-4 py-2 bg-secondary hover:bg-secondary/80 text-text rounded-lg text-sm transition-colors"
-                  @click="navigateTo(project.githubUrl)">
+                  @click="openUrl(project.githubUrl)">
                   <i class="pi pi-github mr-2"></i>
                   Code source
                 </Button>
@@ -55,8 +55,12 @@ import { ref } from 'vue'
 import projectsData from '@/data/myselfData.json'
 
 const projects = ref(projectsData.projects)
+
+const openUrl = (url) => {
+  if (typeof window !== 'undefined') {
+    window.open(url, '_blank')
+  }
+}
 </script>
 
-<style scoped>
-/* Suppression des anciennes classes de boutons qui ne sont plus nécessaires */
-</style>
+<style scoped></style>
