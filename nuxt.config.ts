@@ -4,6 +4,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Yassin Abdulla | Développeur Full Stack',
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
       link: [
         { rel: 'icon', type: 'image/png', href: '/logoYA.png' },
       ],
@@ -63,8 +65,9 @@ export default defineNuxtConfig({
     ]
   },
 
-  modules: [// Ajoutez ici le module Pinia
-    '@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
+  modules: [
+    '@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots'
+  ],
 
   devServer: {
     https: {
@@ -74,5 +77,20 @@ export default defineNuxtConfig({
     port: 3000
   },
 
-  compatibilityDate: '2025-01-03'
+  compatibilityDate: '2025-01-03',
+
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://yassin.abdulla.fr',
+      siteName: 'Yassin | Développeur logiciel et web',
+      siteDescription: 'Développeur Full Stack, Java, SPring boot, Nuxt. Machine learning, IA, ',
+      language: 'fr',
+    }
+  },
+
+
+
+  robots: {
+
+  }
 })
