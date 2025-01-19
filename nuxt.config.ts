@@ -69,9 +69,7 @@ export default defineNuxtConfig({
     ]
   },
 
-  modules: [
-    '@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots'
-  ],
+  modules: ['@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/mdc'],
 
   devServer: {
     https: {

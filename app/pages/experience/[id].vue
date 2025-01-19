@@ -7,7 +7,7 @@
       </template>
       <template #content>
         <Fieldset legend="Description" :toggleable="true" class="border mb-10">
-          <p>{{ experience?.description }}</p>
+          <MDC :value="experience?.description || ''" tag="article" />
         </Fieldset>
         <Fieldset legend="Détails" :toggleable="true" class="border mb-10">
           <ul class="relative list-disc ml-3">
@@ -24,8 +24,8 @@ import { usePortfolioStore } from '~/stores/portfolio'
 const route = useRoute()
 const experienceId = route.params.id
 const experience = usePortfolioStore().getExperienceById(Number(experienceId))
+
+
 </script>
 
-<style>
-
-</style>
+<style></style>
