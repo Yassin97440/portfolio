@@ -4,7 +4,7 @@
     "title": "Chef d'équipe",
     "company": "Compufirst",
     "dates": "2023 - Maintenant",
-    "description": "Sur cette période, j'ai, en plus des problèmatiques/sujets métiers, pu traité plus des sujets d'organisation d'équipe et de gestion de projet. Ce qui m'a permit de développer des compétences autres que techniques dans le développement logiciel. ",
+    "description": "Après le départ de notre manager et cheffe de projet, moi et un autre dév qui est arrivé en même temps que moi avons dû prendre en charge la gestion de l'équipe et des projets.\n\nAu fil de l'eau, mon collègue prenait en charge les sujets techniques et moi plutôt les sujets d'organisation d'équipe. Même si tous les deux faisions des deux au quotidien. Étant chefs de projets sur nos projets respectifs, et ayant nos expertises respectives, nous avons pu gérer les problématiques du service IT de façon complémentaire.\n\nÀ la même période, j'ai eu l'opportunité d'intégrer le comité stratégique technique du groupe (XEFI). Ce qui m'a permis de voir des problématiques plus larges d'un point de vue entreprise, avec des enjeux plus élevés.\n\nC'est une expérience extrêmement enrichissante qui m'a permis de découvrir de nouvelles problématiques et d'apprendre à gérer une équipe de développeurs. Mais aussi de découvrir et d'apprendre à gérer des problématiques qui touchent plusieurs domaines et entités d'un groupe. Il m'a fallu communiquer, travailler avec des personnes à distance. J'ai compris rapidement que dans tous les cas, mon meilleur allié est la communication.",
     "Details": [
       "Garant de la qualité et des temps de livraisons des autres projets",
       "Chef de projet et Product Owner sur l'ERP maison",
@@ -18,46 +18,62 @@
     "title": "Chef de projet",
     "company": "Compufirst",
     "dates": "2022 - 2023",
-    "description": "Participation à la refonte du site de l'entreprise...",
+    "description": "### Chef de projet\n\nAvec le temps, je me suis bien amélioré sur des sujets de gestion de projet et de produit (l'ERP). J'ai pu prendre en autonomie sur des sujets de plus en plus complexes et avec plus d'enjeux. À cette même période, à l'aide du référent technique du groupe de l'époque, nous avons commencé à entamer un projet de refonte de l'ERP. Dû aux enjeux de dettes techniques qui font que des demandes simples ont des délais beaucoup trop longs, voire des demandes complexes qui sont impossibles à réaliser.\n\nDe plus, nous étions une équipe de développeurs juniors à récupérer un projet aussi complexe techniquement que fonctionnellement.\n\nLa refonte s'est passée en plusieurs étapes, on a commencé avec une première étape de recherche de technologie et de solution existante qui correspondait à nos besoins et qui s'intégrerait rapidement à l'existant. On a donc pu conceptualiser une architecture de référence en DDD avec les technos suivantes :\n\n- **Frontend :** NuxtJs avec TailwindCSS\n- **Backend :** Spring Boot (facilité de récupérer des modules existants)\n- **Base de données :** MySQL\n- **DevOps :** Docker, Gitlab\n\nSuite à cela, on a commencé une étape de POC (Proof of Concept) pour valider les différentes solutions et technos choisies.\n\nUne fois les POC validées et fait les rectifications nécessaires, on a mis en place une roadmap de développement.\n\nLe référent technique étant parti quelques temps après, j'ai dû être en total autonomie sur la mise en place et l'organisation technique de la nouvelle architecture.\n\nEt en parallèle, il fallait également gérer la legacy toujours en production avec les incidents et demandes.",
     "Details": [
       "Product Owner",
-      "Gestion de projet (gestion de la legacy et refonte de l’ERP)",
+      "Gestion de projet (gestion de la legacy et refonte de l'ERP)",
       "Méthodologie agile (Scrum, kanban)",
       "Lead dev (accompagnement des plus juniors)",
       "Priorisation des taches, planifications court/moyen/long termes",
       "Tecnho utilisé : Spring Boot, NuxtJs 3, MySQL, Docker"
     ],
-    "Technos": ["Java", "Spring Framework", "RCP Framework", "MySQL"]
+    "Technos": [
+      "Java",
+      "Spring Framework",
+      "RCP Framework",
+      "MySQL"
+    ]
   },
   {
     "id": 3,
-    "title": "Développeur logiciel",
+    "title": "Lead Développeur",
     "company": "Compufirst",
     "dates": "2022 - 2022",
-    "description": "Développement d'un ERP maison en java ",
+    "description": "### Lead Développeur\n\nEnsuite j'ai eu l'opportunité d'être lead dév. Ce qui m'a permis de découvrir et d'apprendre l'accompagnement des plus juniors sur le projet. Ça a été une expérience enrichissante sur le plan pédagogique.\n\nJ'ai passé beaucoup de temps à me demander comment expliquer des choses complexes de manière simple et claire. Ce qui n'est pas une mince affaire ! En sachant qu'il fallait jongler avec pas mal de dettes et de contraintes techniques accumulées avec le temps. Mais dans tous les cas, quel plaisir de voir des dévs progresser !\n\nJ'ai également pu avoir la casquette de référent technique pour tout ce qui touche de loin ou de près au projet. Notamment lors de la conception et la mise en place de solutions liées à des problématiques internes.\n\nPuis peu après, ma manager a commencé à me confier des missions de product owner, récolte et analyse du besoin jusqu'à la mise en production. En passant bien sûr par la gestion et l'organisation du projet.",
     "Details": [
       "Analyse des besoins/problématiques métiers",
       "Qualité du produit",
       "Maintenance et développement continue",
-      "Gestion des incidents sur l’ERP",
+      "Gestion des incidents sur l'ERP",
       "Reverse engineering"
     ],
-    "Technos": ["Java", "Spring Framework", "RCP Framework", "MySQL"]
+    "Technos": [
+      "Java",
+      "Spring Framework",
+      "RCP Framework",
+      "MySQL"
+    ]
   },
   {
     "id": 2,
     "title": "Développeur logiciel en alternance",
     "company": "Compufirst",
     "dates": "2021 - 2022",
-    "description": "Développement d'un ERP maison en java ",
+    "description": "### Développeur Full Stack (java)\n\nJ'ai commencé en alternance dans une entreprise de commerce en B2B. J'ai fait dès le début du développement back-end et front-end, participant à la maintenance et à l'amélioration continue des solutions de l'entreprise dans une équipe de plus de 15 développeurs.\n\nJ'ai majoritairement travaillé sur l'outil principal, l'ERP développé en interne depuis une dizaine d'années. Avec une stack full java (spring framework et RCP). C'est durant mes premières missions en alternance où j'ai pu comprendre l'importance du travail en équipe, et la communication vu l'ampleur du projet. Mais aussi la compréhension de \"la logique métier\" et des problématiques business. Qui passe principalement par la communication avec les clients et les utilisateurs.",
     "Details": [
-      "Maintenance et développement de l’ERP interne (Fullstack)",
+      "Maintenance et développement de l'ERP interne (Fullstack)",
       "Etude et utilisation de la BDD (MySQL)",
       "-Etude de la base actuelle",
       "-Compréhension et manipulations des structures de données",
       "Pair-programming"
     ],
-    "Technos": ["Java", "Spring Framework", "RCP Framework", "MySQL", "PHP"]
+    "Technos": [
+      "Java",
+      "Spring Framework",
+      "RCP Framework",
+      "MySQL",
+      "PHP"
+    ]
   },
   {
     "id": 1,
@@ -70,6 +86,11 @@
       "Simulation et tests du bras robotisé avec ROS",
       "Impréssion des pièces 3D du robot"
     ],
-    "Technos": ["C++", "ROS", "Arduino", "3D Printing"]
+    "Technos": [
+      "C++",
+      "ROS",
+      "Arduino",
+      "3D Printing"
+    ]
   }
 ]

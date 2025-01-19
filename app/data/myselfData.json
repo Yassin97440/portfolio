@@ -5,27 +5,37 @@
   "longDescription2": "Cela fait maintenant 4 ans que je suis développeur dans le monde du travail. Dont une année en alternance. Avant cela, j'ai suivi un cursus orienté éléctronique et IoT. J'ai pu y faire beaucoup d'éléctronique (et beaucoup d'équation du coup mdr), et également du développemnt en C++ avec arduino principalement. Mais aussi quelques notion en IHM (interface homme machine) dont des principalement des pages HTML, CSS, et JS. A la fin de mon BTS, j'avais un gros manque de connaissances et de compétences en ce qui concerne le développement d'IHM. J'ai voulu développer mes compétences en développement d'intérface graphique et web afin d'avoir un \"spectre\" de compétences plus large. Ce qui dans l'idée m'aurait permis d'avoir les compétences nécessaires pour concevoir et développer un projet de A à Z. Qu'il soit purement logiciel ou bien en intégrant des systèmes embarqués.",
   "longDescription3": "Mais j'avoue que j'ai beaucoup trop kiffé le développement logiciel et web, et j'ai du coup mis de côté l'éléctronique ces 3 dernières années. C'est que en dévouvrant le monde du développement logiciel et web, je me suis rapidement rendu compte de l'immensité technologique de ce monde, et également cette diversité technique. Ce qui a beacoup attiré mon attention. Plus que l'éléctronique sur le moment. Et pendant ces 4 dernières années j'ai du coup pu découvrir et approfondir des notions en développement d'application. De la conception et la mise en place d'une base de données, au développement d'interfaces graphiques, en passant par le développement du back-end.",
   "longDescription4": "Pendant ma première année en alternance je me suis rendu compte que les compétences techniques n'étaient que la moitié des compétences nécessaires pour être un bon développeur. J'ai au fur et à mesure pu découvrir ce qu'est l'analyse du besoin client et son importance. L'année d'après mon alternance, j'a eu la chance de commencer à avoir des résponsabilités en gestion de projet et lead technique (java) de gestion d'équipe. ",
-  "skills": [
-    "Gestion de projet",
-    "Lead technique",
-    "Gestion d'équipe",
-    "Analyse du besoin client",
-    "Développement d'interfaces graphiques",
-    "Développement back-end",
-    "Conception et mise en place de base de données",
-    "Communication avec les clients",
-    "Communication avec les équipes"
-  ],
-  "technos": [
-    "Java",
-    "Maven",
-    "Spring",
-    "SQL (MySQL)",
-    "Javascript/Typescript",
-    "Nuxt",
-    "Tailwind CSS",
-    "Docker"
-  ],
+  "skills": {
+    "otherSkills": [
+      "Gestion de projet",
+      "Lead Dev Java ",
+      "Gestion d'équipe",
+      "Analyse du besoin client",
+      "Développement d'interfaces graphiques",
+      "Développement back-end",
+      "Conception et mise en place de base de données",
+      "Communication avec les clients",
+      "Communication avec les équipes"
+    ],
+    "technos": {
+      "frontend": [
+        "Nuxt.js",
+        "RCP/SWT (java)",
+        "Tailwind CSS",
+        "Vuetify",
+        "PrimeVue"
+      ],
+      "backend": [
+        "Spring Boot",
+        "Java",
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "MySQL"
+      ]
+    }
+  },
   "tools": [
     "eclipse",
     "Intellij IDEA",
