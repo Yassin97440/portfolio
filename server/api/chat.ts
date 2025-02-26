@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     const client = new Mistral({ apiKey: apiKey });
 
     const chatResponse: ChatCompletionResponse = await client.chat.complete({
-        model: 'mistral-small',
+        model: 'mistral-large-latest',
         messages: chatBotMessages,
     });
 
