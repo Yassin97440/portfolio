@@ -14,7 +14,7 @@
         <div v-for="(message, index) in chatStore.messages" :key="index" class="flex"
           :class="message.role === 'user' ? 'justify-end' : 'justify-start'">
           <div class="message max-w-[80%] rounded-lg p-3"
-            :class="message.role === 'user' ? 'bg-primary text-white' : 'bg-surface-100'">
+            :class="message.role === 'user' ? 'bg-primary ' : 'bg-secondary'">
             {{ message.content }}
           </div>
         </div>
