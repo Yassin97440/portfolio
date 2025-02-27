@@ -1,7 +1,12 @@
 <template>
   <Card class="bg-background rounded-lg mb-20">
     <template #title>
-      <h2 class="text-2xl">Mes Projets</h2>
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl">Mes Projets</h2>
+        <NuxtLink to="/my/projects" class="text-action hover:underline text-sm">
+          voir tout
+        </NuxtLink>
+      </div>
     </template>
     <template #content>
       <Swiper :slides-per-view="'auto'" :centered-slides="true" :space-between="30" :loop="true"
