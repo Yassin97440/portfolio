@@ -12,7 +12,8 @@ export const usePortfolioStore = defineStore('portfolio', {
     }),
     getters: {
         getExperienceById: (state) => (id: number) => state.experiences.find((exp) => exp.id === id),
-        getProjectById: (state) => (id: number) => state.projects.find((exp) => exp.id === id)
-
+        getProjectById: (state) => (id: number) => {
+            return state.projects.find(project => project.id === id)
+        }
     }
 }) 
