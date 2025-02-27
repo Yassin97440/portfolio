@@ -47,33 +47,5 @@
     "Jira",
     "Confluence",
     "Notion"
-  ],
-  "projects": [
-    {
-      "id": 1,
-      "title": "Album Digital",
-      "description": "un projet d'album digital qui permet de partager des photos avec ses proches. l'idée principale que j'avais au début pour cette app était d'avoir la meilleure imerssion dans des souvenirs qu'on regarde à travers des photos partagées. Le but aussi est de pouvoir créer un évènement avec dates, auquel on peut ajouter un ou plusieurs albums avec photos. Ou tout simplement partager un album. L'idée princilale étant de partager des souvenirs, je n'ai pas fais en sorte de pouvoir publier un album pour soi même. Mais ça devrait arriver avec d'autres fonctionnalités. ",
-      "image": "/digilbum_screenshot.png",
-      "technologies": [
-        "Nuxt",
-        "TailwindCSS",
-        "Java",
-        "Spring Boot",
-        "MySQL"
-      ],
-      "demoUrl": "https://digilbum.abdulla.fr/",
-      "githubUrl": "https://github.com/Yassin97440/digilbum-front"
-    },
-    {
-      "id": 2,
-      "title": "Portfolio",
-      "description": "Un portfolio qui présente mes expériences et mes projets en tant que développeur. Voulant partir sur quelque chose de techniquement simple, et ayant vu que j'avais un peu de temps. Je me suis lancé sur l'indexation et le référencement de mon portfolio. Qui est, je pense, un sujet avec un enjeux business fort. C'était pour moi une superbe occasion de découvrir et développeur des compétences en SEO. ",
-      "image": "/portfolio_screenshot.png",
-      "technologies": [
-        "Nuxt",
-        "TailwindCSS"
-      ],
-      "githubUrl": "https://github.com/Yassin97440/portfolio"
-    }
   ]
 }
