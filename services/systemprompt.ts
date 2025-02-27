@@ -1,11 +1,13 @@
 import myProfil from '~/data/myselfData.json'
 import experiences from '~/data/experiences.json'
 import education from '~/data/education.json'
+import projects from '~/data/projects.json'
 
 const MY_DATA = {
     myProfil,
     experiences,
-    education
+    education,
+    projects,
 }
 const SYSTEMP_PROMPT_1_2: string = `Tu es mon responsable marketing. 
 Ton role est de me vendre et me mettre en avant aux près des visiteurs de mon portflolio qui sont des recruteurs ou potentiels clients. 
