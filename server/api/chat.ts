@@ -16,6 +16,7 @@ const handleRequest = (event: H3Event) => {
     }
 }
 export default defineEventHandler(async (event) => {
+    console.log("SERVEUR CHAT")
     // Configurer les headers CORS
     handleRequest(event)
     const chatBotMessages = await readBody(event)
@@ -23,13 +24,18 @@ export default defineEventHandler(async (event) => {
     const apiKey = process.env.MISTRAL_API_KEY;
     const client = new Mistral({ apiKey: apiKey });
 
-    const chatResponse: ChatCompletionResponse = await client.chat.complete({
-        model: 'mistral-large-latest',
-        messages: chatBotMessages,
-    });
+    try {
+        const chatResponse: ChatCompletionResponse = await client.chat.complete({
+            model: 'mistral-large-latest',
+            messages: chatBotMessages,
+        });
 
-    if (!chatResponse.choices?.length) {
-        throw new Error('No response from chat API');
+        if (!chatResponse.choices?.length) {
+            throw new Error('No response from chat API');
+        }
+        return chatResponse.choices[0].message.content;
     }
-    return chatResponse.choices[0].message.content;
+    catch (error) {
+        return error;
+    }
 }) 
