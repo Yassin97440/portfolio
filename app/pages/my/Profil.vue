@@ -3,63 +3,6 @@
     <main>
       <section class="mb-8 md:mb-12">
         <h1 class="text-3xl font-bold mb-4">Mon Profil</h1>
-        <p class="text-xl text-gray-600">Développeur passionné par l'innovation</p>
-      </section>
-
-      <section class="mb-12">
-        <Card class="bg-background rounded-lg">
-          <template #content>
-            <article class="space-y-8 p-6">
-              <div class="prose max-w-none">
-                <h2 class="text-2xl font-semibold mb-4">Qui suis-je ?</h2>
-                <p class="">
-                  {{ myselfData.longDescription1 }}
-                </p>
-              </div>
-
-              <div class="prose max-w-none">
-                <h2 class="text-2xl font-semibold mb-4">Mon Parcours</h2>
-                <p class="">
-                  J'ai toujours aimé résoudre des problèmes et aussi bidouiller sur l'ordinateur. Je me suis dès le
-                  début orienté
-                  dans le domaine de l'informatique et des systèmes numériques.Ca me parassait être une évidence. <br>
-                  Mes dernières années de lycée et mon BTS Système numérique m'ont permis d'approfondir de décourvir et
-                  d'appronfir des notions assez "bas niveau" dans les systèmes numériques, avant de me spécialiser dans
-                  le développement logiciel et web.
-                </p>
-              </div>
-
-              <div class="prose max-w-none">
-                <h2 class="text-2xl font-semibold mb-4">Expériences dans le développement logiciel</h2>
-                <ul class="space-y-4">
-                  <li>
-                    <h3 class="text-xl font-medium mb-2">Après cette expérience</h3>
-                    <p class="">
-                      Aujourd'hui, je pense que je suis loin d'avoir vu 1/4 des problèmatiques qui peuvent être
-                      rencontrés dans le domaine du développement logiciel.
-                      Mais j'ai pu traiter tellement de demandes et problèmatiques, touchant au développement logiciel,
-                      à la digitalisation d'une entreprise, sa stratégie vis à vis du digital. <br>
-                      J'ai pu apprendre à développer un logiciel de la base de données à l'interface utilisateur à
-                      partir d'un besoin.
-                      J'ai pu apprendre à gérer des équipes de développeurs, à gérer des projets, développer avec des
-                      délais très serrés (et très larges aussi). <br>
-                      J'ai appris à prioriser les demandes et les problèmatiques en prenant en compte les enjeux
-                      business et les contraintes techniques. <br>
-                      J'ai appris à commuiquer avec mes clients, avec mon équipe en tant que développeur, mais aussi en
-                      tant que lead dév, chef de projet, et d'équipe.
-                      Et également avec des équipes éxternes. <br>
-                      Tout ça bien sur en faisant des erreurs, en essayant, en allant chercher. <br>
-                      Ce que je peux dire que j'ai étais bien accompagné avec une super équipe, ce qui m'a permit
-                      d'évoluer en autonomie sur pleins de nouveaux sujets.
-                      Je parle plus en détailx
-
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </template>
-        </Card>
       </section>
 
       <section class="mb-12">
@@ -80,7 +23,7 @@
         </Card>
       </section>
 
-      <section class="">
+      <section class="mb-12">
         <Card class="bg-background rounded-lg">
           <template #title>
             <h2 class="text-2xl font-semibold">Technologies</h2>
@@ -121,6 +64,67 @@
           </template>
         </Card>
       </section>
+      <MyDegrees class="mb-12" />
+
+      <section class="mb-12">
+        <Card class="bg-background rounded-lg">
+          <template #content>
+            <article class="space-y-8 p-6">
+              <div class="prose max-w-none">
+                <h2 class="text-2xl font-semibold mb-4">Qui suis-je ?</h2>
+                <p class="">
+                  {{ myselfData.longDescription1 }}
+                </p>
+              </div>
+
+              <div class="prose max-w-none">
+                <h2 class="text-2xl font-semibold mb-4">Mon Parcours</h2>
+                <p class="">
+                  J'ai toujours aimé résoudre des problèmes et aussi bidouiller sur l'ordinateur. Je me suis dès le
+                  début orienté
+                  dans le domaine de l'informatique et des systèmes numériques.Ca me parassait être une évidence. <br>
+                  Mes dernières années de lycée et mon BTS Système numérique m'ont permis d'approfondir de décourvir et
+                  d'appronfir des notions assez "bas niveau" dans les systèmes numériques, avant de me spécialiser dans
+                  le développement logiciel et web.
+                </p>
+              </div>
+
+              <div class="prose max-w-none">
+                <h2 class="text-2xl font-semibold mb-4">Expériences dans le développement logiciel</h2>
+                <ul class="space-y-4">
+                  <li>
+                    <h3 class="text-xl font-medium mb-2">Après cette expérience</h3>
+                    <p class="">
+                      Aujourd'hui, je pense que je suis loin d'avoir vu 1/4 des problèmatiques qui peuvent être
+                      rencontrés dans le domaine du développement logiciel.
+                      Mais j'ai pu traiter beaucoup de demandes et problèmatiques, touchant au développement logiciel et
+                      à coeur métier d'une entreprise. <br>
+                      J'ai pu apprendre à développer un logiciel de la base de données à l'interface utilisateur à
+                      partir d'un besoin.
+                      J'ai pu apprendre à gérer des équipes de développeurs, à gérer des projets, développer avec des
+                      délais très serrés (et très larges aussi). <br>
+                      J'ai appris à prioriser les demandes et les problèmatiques en prenant en compte les enjeux
+                      business et les contraintes techniques. <br>
+                      J'ai appris à commuiquer avec mes clients, avec mon équipe en tant que développeur, mais aussi en
+                      tant que lead dév, chef de projet, et d'équipe.
+                      Et également avec des équipes éxternes. <br>
+                      Tout ça bien sur en faisant des erreurs, en essayant, en allant chercher. <br>
+                      Ce que je peux dire que j'ai étais bien accompagné avec une super équipe, ce qui m'a permit
+                      d'évoluer en autonomie sur pleins de nouveaux sujets. <br>
+                      Aujourd'hui je me spécialise dans l'IA afin de pouvoir proposer des outils numériques avec un
+                      potentiel plus fort.
+
+
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </template>
+        </Card>
+      </section>
+
+
     </main>
   </div>
 </template>
