@@ -1,75 +1,74 @@
-# Nuxt 3 Minimal Starter
+# Portfolio Nuxt 3 avec Chatbot IA
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Portfolio professionnel développé avec Nuxt 3, intégrant un chatbot IA propulsé par Mistral AI pour une expérience utilisateur interactive.
 
-## Setup
+## Technologies Utilisées
 
-Make sure to install the dependencies:
+- **Frontend**: Nuxt 3 (Vue.js)
+- **Styling**: TailwindCSS + PrimeVue
+- **Backend**: API Serverless Nuxt
+- **IA**: Mistral AI
+- **Déploiement**: Docker + GitHub Actions
 
-```bash
-# npm
-npm install
+## Configuration Requise
 
-# pnpm
-pnpm install
+- Node.js 18+
+- Docker (pour le déploiement)
+- Clé API Mistral AI
 
-# yarn
-yarn install
+## Variables d'Environnement
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Créez un fichier `.env` à la racine du projet :
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your_google_verification_code_here
+MISTRAL_API_KEY=your_mistral_api_key_here
 ```
 
-## Production
 
-Build the application for production:
+
+## Déploiement Docker
+
+Le projet inclut un Dockerfile multi-stage pour optimiser le déploiement :
 
 ```bash
-# npm
-npm run build
+# Build de l'image
+docker build -t portfolio .
 
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# Lancement du conteneur
+docker run -p 3000:3000 portfolio
 ```
 
-Locally preview production build:
+## Déploiement Automatisé
 
-```bash
-# npm
-npm run preview
+Le workflow GitHub Actions est configuré pour :
+1. Construire l'image Docker
+2. Déployer automatiquement sur votre serveur
+3. Exposer l'application sur le port 3010
 
-# pnpm
-pnpm run preview
+## Fonctionnalités Principales
 
-# yarn
-yarn preview
+- **Design Responsive**: Interface adaptative avec TailwindCSS
+- **Chatbot IA**: Assistant personnel propulsé par Mistral AI
+- **Thème Adaptatif**: Support des modes clair/sombre
+- **SEO Optimisé**: Meta tags et sitemap automatique
 
-# bun
-bun run preview
+## Structure du Projet
+
+```
+├── app/
+│   ├── assets/         # Styles et ressources
+│   └── components/     # Composants Vue
+├── server/
+│   └── api/           # API Serverless
+├── services/          # Services (Chat, IA)
+└── public/           # Fichiers statiques
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou une pull request.
+
+## Licence
+
+[MIT License](https://opensource.org/licenses/MIT)
