@@ -27,8 +27,6 @@ export const useChatStore = defineStore('chat', {
         const response = await chatService.sendMessage(this.messages)
         if (!response)
           throw new Error('Pas de réponse de mistral');
-
-        console.log("response API", response)
         this.messages.push({
           role: 'assistant',
           content: typeof response === 'string' ? response : response.toString()
