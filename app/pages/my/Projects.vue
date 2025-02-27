@@ -51,10 +51,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import projectsData from '@/data/myselfData.json'
+import { usePortfolioStore } from "@/stores/portfolio";
 
-const projects = ref(projectsData.projects)
+const store = usePortfolioStore();
+
+const projects = store.projects;
 
 const openUrl = (url) => {
   if (typeof window !== 'undefined') {
