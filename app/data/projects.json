@@ -2,6 +2,7 @@
     {
         "id": 1,
         "title": "Digilbum - Album Digital",
+        "shortDescription": "Application web permettant de créer et partager des albums photos numériques avec ses proches, offrant une expérience immersive pour revivre ses souvenirs.",
         "description": "un projet d'album digital qui permet de partager des photos avec ses proches. l'idée principale que j'avais au début pour cette app était d'avoir la meilleure imerssion dans des souvenirs qu'on regarde à travers des photos partagées. Le but aussi est de pouvoir créer un évènement avec dates, auquel on peut ajouter un ou plusieurs albums avec photos. Ou tout simplement partager un album. L'idée princilale étant de partager des souvenirs, je n'ai pas fais en sorte de pouvoir publier un album pour soi même. Mais ça devrait arriver avec d'autres fonctionnalités. ",
         "image": "/digilbum_screenshot.png",
         "technologies": [
@@ -18,6 +19,7 @@
     {
         "id": 2,
         "title": "Portfolio",
+        "shortDescription": "Portfolio personnel développé avec Nuxt et TailwindCSS, mettant en avant mon parcours professionnel et mes projets, avec une attention particulière au SEO.",
         "description": "Un portfolio qui présente mon parcours professionnel. Je voulais mettre en avant mon experience professionnel, mes projets pros ou perso. Mais aussi pour le plaisir de partager des projets que j'ai aimé faire. Voulant partir sur quelque chose de techniquement simple, j'ai fais le choix de Nuxt que je trouve très agréable pour développer une app web front. Je me suis aussi lancé sur l'indexation et le référencement de mon portfolio. Qui est, je pense, un sujet avec un enjeux business fort. C'était pour moi une superbe occasion de découvrir et développeur des compétences en référencement google et un de SEO. J'ai aussi une petie idée de chatbot pour mon portfolio à base d'IA. A la base je voulais m'amuser en local avec des modèles open source puis essayé de faire du fine tuning ou du RAG. Mais c'est overkill en plus de demander beaucoup plus de ressource. Je me suis dis que je pourrai simplement dans un premier temps utiliser un LLM via une API. J'ai choisi fais le choix de Mistral, déjà pour le cout de l'API (gratuit 🤑), mais aussi car je pense quepour mon besoin tout les LLM connue sur le marché font le taff. Et en plus c'est français, ça fait plaisir! ",
         "image": "/portfolio_screenshot.png",
         "technologies": [
@@ -28,8 +30,9 @@
         "type": "Perso"
     },
     {
-        "id": 2,
+        "id": 3,
         "title": "Cat vs dog",
+        "shortDescription": "Projet d'auto-formation en machine learning, développant un modèle de classification d'images pour différencier les chats des chiens en utilisant Python.",
         "description": "Voulant monter en compétences techniquement en machine learning et deep learning, j'ai commencé a m'auto formé en autodidacte. J'ai pu suivre une petite formation aux formats vidéos. Sur la chaine Youtube de MachineLarnia. J'ai pu voir mathéamtiquement ce qu'est un perceptron et ce qui en suit. J'ai aussi pu comprendre les enjeux de la data dans le processus de développement d'un modèle. J'ai pu voir certaines étapes de préparation comme la normalisation des données Je suis passé par des petites révisions en probabiités et en calcul matricielles 😵‍💫. J'ai ensuite pu comprendre comment mettre en oeuvre un réseau de neurone, mais aussi pourquoi et dans quel cas. Comme le but était de comprendre les concepts de base, nous n'avons pas utilisé de librairi",
         "image": "/portfolio_screenshot.png",
         "technologies": [

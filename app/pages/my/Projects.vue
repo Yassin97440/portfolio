@@ -7,7 +7,8 @@
       <template #content>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <BaseSubCard v-for="project in projects" :key="project.id"
-            class="bg-primary hover:transform hover:scale-105 transition-transform">
+            class="bg-primary hover:transform hover:scale-105 transition-transform"
+            @click="navigateToProject(project.id)">
             <template #title>
               <div class="flex justify-between items-center">
                 <h3 class="text-xl">{{ project.title }}</h3>
@@ -18,7 +19,7 @@
               <img v-if="project.image" :src="project.image" :alt="project.title"
                 class="w-full h-48 object-cover rounded-lg" />
 
-              <p class="text-sm">{{ project.description }}</p>
+              <p class="text-sm">{{ project.shortDescription }}</p>
 
               <div class="flex flex-wrap gap-2">
                 <span v-for="tech in project.technologies" :key="tech"
@@ -52,10 +53,15 @@
 
 <script setup>
 import { usePortfolioStore } from "@/stores/portfolio";
+import { useRouter } from "vue-router";
 
 const store = usePortfolioStore();
-
 const projects = store.projects;
+const router = useRouter();
+
+const navigateToProject = (id) => {
+  router.push(`/project/${id}`);
+};
 
 const openUrl = (url) => {
   if (typeof window !== 'undefined') {
