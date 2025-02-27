@@ -2,6 +2,8 @@ import { defineEventHandler, readBody, H3Event } from 'h3'
 import { Mistral } from '@mistralai/mistralai';
 import { ChatCompletionResponse } from '@mistralai/mistralai/models/components';
 
+const config = useRuntimeConfig()
+
 const handleRequest = (event: H3Event) => {
     // Configurer les headers CORS
     setResponseHeaders(event, {
@@ -16,14 +18,12 @@ const handleRequest = (event: H3Event) => {
     }
 }
 export default defineEventHandler(async (event) => {
-    console.log("SERVEUR CHAT")
     // Configurer les headers CORS
     handleRequest(event)
     const chatBotMessages = await readBody(event)
 
-    const apiKey = process.env.MISTRAL_API_KEY;
-
-    const client = new Mistral({ apiKey: apiKey });
+    const apiKey = config.public.mistralApiKey
+    const client = new Mistral({ apiKey: apiKey })
 
     try {
         const chatResponse: ChatCompletionResponse = await client.chat.complete({

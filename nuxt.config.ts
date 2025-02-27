@@ -56,6 +56,12 @@ export default defineNuxtConfig({
     transpile: ['nuxt-primevue'],
   },
 
+  runtimeConfig: {
+    public: {
+      mistralApiKey: process.env.MISTRAL_API_KEY
+    }
+  },
+
   primevue: {
     options: {
       theme: 'none'
