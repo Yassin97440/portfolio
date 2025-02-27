@@ -7,7 +7,8 @@
         </h1>
       </template>
       <template #end>
-        <div class="card flex justify-center">
+        <!-- Menu pour mobile -->
+        <div class="card flex justify-center md:hidden">
           <Button type="button" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
           <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
             <template #item="{ item }">
@@ -21,6 +22,14 @@
               </a>
             </template>
           </Menu>
+        </div>
+        <!-- Boutons pour desktop -->
+        <div class="hidden md:flex gap-6 mr-6">
+          <NuxtLink v-for="item in items" :key="item.to" :to="item.to"
+            class="text-action hover:text-action/80 transition-colors flex items-center gap-2">
+            <i :class="item.icon"></i>
+            {{ item.label }}
+          </NuxtLink>
         </div>
       </template>
     </MenuBar>
@@ -59,8 +68,8 @@ const menu = ref();
 const items = [
   { label: 'Mes projets', icon: 'pi pi-briefcase', to: '/my/projects' },
   { label: "Me contacter", icon: "pi pi-envelope", to: "/my/Contact" },
-  { label: "A propos", icon: "pi pi-user", to: "/about" },
 ];
+
 const toggle = (event: any) => {
   menu.value.toggle(event);
 };
