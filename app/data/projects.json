@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "title": "Album Digital",
+        "title": "Digilbum - Album Digital",
         "description": "un projet d'album digital qui permet de partager des photos avec ses proches. l'idée principale que j'avais au début pour cette app était d'avoir la meilleure imerssion dans des souvenirs qu'on regarde à travers des photos partagées. Le but aussi est de pouvoir créer un évènement avec dates, auquel on peut ajouter un ou plusieurs albums avec photos. Ou tout simplement partager un album. L'idée princilale étant de partager des souvenirs, je n'ai pas fais en sorte de pouvoir publier un album pour soi même. Mais ça devrait arriver avec d'autres fonctionnalités. ",
         "image": "/digilbum_screenshot.png",
         "technologies": [
@@ -12,7 +12,8 @@
             "MySQL"
         ],
         "demoUrl": "https://digilbum.abdulla.fr/",
-        "githubUrl": "https://github.com/Yassin97440/digilbum-front"
+        "githubUrl": "https://github.com/Yassin97440/digilbum-front",
+        "type": "Perso"
     },
     {
         "id": 2,
@@ -23,6 +24,21 @@
             "Nuxt",
             "TailwindCSS"
         ],
-        "githubUrl": "https://github.com/Yassin97440/portfolio"
+        "githubUrl": "https://github.com/Yassin97440/portfolio",
+        "type": "Perso"
+    },
+    {
+        "id": 2,
+        "title": "Cat vs dog",
+        "description": "Voulant monter en compétences techniquement en machine learning et deep learning, j'ai commencé a m'auto formé en autodidacte. J'ai pu suivre une petite formation aux formats vidéos. Sur la chaine Youtube de MachineLarnia. J'ai pu voir mathéamtiquement ce qu'est un perceptron et ce qui en suit. J'ai aussi pu comprendre les enjeux de la data dans le processus de développement d'un modèle. J'ai pu voir certaines étapes de préparation comme la normalisation des données Je suis passé par des petites révisions en probabiités et en calcul matricielles 😵‍💫. J'ai ensuite pu comprendre comment mettre en oeuvre un réseau de neurone, mais aussi pourquoi et dans quel cas. Comme le but était de comprendre les concepts de base, nous n'avons pas utilisé de librairi",
+        "image": "/portfolio_screenshot.png",
+        "technologies": [
+            "Python",
+            "numPy",
+            "Machine learning",
+            "Mathématiques"
+        ],
+        "githubUrl": "https://github.com/Yassin97440/portfolio",
+        "type": "Auto-formation"
     }
 ]
