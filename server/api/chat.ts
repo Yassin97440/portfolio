@@ -22,6 +22,7 @@ export default defineEventHandler(async (event) => {
     const chatBotMessages = await readBody(event)
 
     const apiKey = process.env.MISTRAL_API_KEY;
+
     const client = new Mistral({ apiKey: apiKey });
 
     try {
@@ -33,9 +34,10 @@ export default defineEventHandler(async (event) => {
         if (!chatResponse.choices?.length) {
             throw new Error('No response from chat API');
         }
-        return chatResponse.choices[0].message.content;
+        return { 'message': chatResponse.choices[0].message.content, 'apiKey ': process.env.MISTRAL_API_KEY };
     }
     catch (error) {
-        return error;
+
+        return { error, 'apiKey ': process.env.MISTRAL_API_KEY };
     }
 }) 
