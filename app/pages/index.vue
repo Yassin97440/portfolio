@@ -30,8 +30,8 @@
               développement d'interfaces graphiques
               <a class="font-semibold">logiciel et web </a>, développement
               back-end. <br />
-              Il est possible d'en voir plus sur mon profil sur
-              <a class="text-action" href="/my/profil">ma page profil</a>
+              Il est possible d'en voir plus sur mon profil et mon parcours
+              <a class="text-action" href="/my/profil">ici</a>
             </span>
           </p>
         </div>
