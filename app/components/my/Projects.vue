@@ -11,8 +11,8 @@
     <template #content>
       <Swiper :slides-per-view="'auto'" :centered-slides="true" :space-between="30" :loop="true"
         :pagination="{ clickable: true }" :navigation="true" :modules="[Navigation, Pagination]"
-        class="bg-primary p-4 rounded-lg project-swiper">
-        <SwiperSlide v-for="project in projects" :key="project.id" class="!w-[400px]">
+        class="bg-primary p-4 rounded-lg">
+        <SwiperSlide v-for="project in projects" :key="project.id" class="md:!w-[400px]">
           <div class="border border-secondary rounded p-4 bg-background transition-all duration-300">
             <div class="mb-4">
               <div class="relative mx-auto">
@@ -65,14 +65,10 @@ const getTypeSeverity = (type: string) => {
 </script>
 
 <style scoped>
-.project-swiper {
-  padding: 2rem 0;
-}
-
 :deep(.swiper-slide) {
   opacity: 0.4;
   transform: scale(0.85);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 :deep(.swiper-slide-active) {
@@ -95,6 +91,7 @@ const getTypeSeverity = (type: string) => {
 :deep(.swiper-pagination-bullet) {
   background: var(--text);
 }
+
 
 :deep(.swiper-pagination-bullet-active) {
   background: var(--action);
