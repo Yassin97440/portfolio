@@ -16,7 +16,7 @@
                     </p>
                 </template>
                 <template #content="slotProps">
-                    <Card class="my-4 bg-primary">
+                    <Card class="my-4 bg-primary" data-aos="zoom-in-up" data-aos-duration="1000">
                         <template #title>
                             <div class="text-left">
                                 {{ slotProps.item.title }}

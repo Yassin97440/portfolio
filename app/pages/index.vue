@@ -1,6 +1,6 @@
 <template>
   <div class="px-5 py-7 md:p-14 lg:p-28">
-    <Card class="bg-background rounded-lg mb-20 overflow-visible">
+    <Card class="bg-background rounded-lg mb-20 overflow-visible" data-aos="fade-up" data-aos-duration="500">
       <template #title>
         <div class="relative">
           <img src="~/assets/yassin.jpg" alt="Yassin Abdulla"
@@ -38,7 +38,7 @@
       </template>
     </Card>
 
-    <MyProjects />
+    <MyProjects data-aos="fade-left" data-aos-duration="1000" />
 
     <MyExperiences />
 
