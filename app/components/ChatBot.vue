@@ -24,7 +24,7 @@
           <!-- Suggestions de questions rapides -->
           <div class="quick-questions flex flex-wrap gap-2 justify-center mt-3">
             <Button v-for="question in quickQuestions" :key="question"
-              class="p-button-rounded p-button-outlined p-button-sm" @click="askQuickQuestion(question)">
+              class="p-button-rounded p-button-outlined p-button-sm px-1" @click="askQuickQuestion(question)">
               {{ question }}
             </Button>
           </div>
