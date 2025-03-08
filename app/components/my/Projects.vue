@@ -13,7 +13,9 @@
         :pagination="{ clickable: true }" :navigation="true" :modules="[Navigation, Pagination]"
         class="bg-primary p-4 rounded-lg">
         <SwiperSlide v-for="project in projects" :key="project.id" class="md:!w-[400px]">
-          <div class="border border-secondary rounded p-4 bg-background transition-all duration-300">
+          <div
+            class="border border-secondary rounded p-4 bg-background transition-all duration-300 cursor-pointer hover:shadow-lg"
+            @click="navigateToProject(project.id)">
             <div class="mb-4">
               <div class="relative mx-auto">
                 <img v-if="project.image" :src="project.image" :alt="project.title"
@@ -28,9 +30,10 @@
               </div>
             </div>
             <div class="flex justify-between items-center">
-              <Button icon="pi pi-github" severity="secondary" outlined @click="navigateTo(project.githubUrl)" />
+              <Button icon="pi pi-github" severity="secondary" outlined
+                @click.stop="navigateToGithub(project.githubUrl)" />
               <Button v-if="project.demoUrl" icon="pi pi-external-link" class="ml-2"
-                @click="navigateTo(project.demoUrl)" />
+                @click.stop="navigateToDemo(project.demoUrl)" />
             </div>
           </div>
         </SwiperSlide>
@@ -46,9 +49,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { usePortfolioStore } from "~/stores/portfolio";
+import { useRouter } from "vue-router";
 
 const store = usePortfolioStore();
 const projects = ref(store.projects);
+const router = useRouter();
 
 const getTypeSeverity = (type: string) => {
   switch (type) {
@@ -61,6 +66,18 @@ const getTypeSeverity = (type: string) => {
     default:
       return 'info';
   }
+};
+
+const navigateToProject = (id: number) => {
+  router.push(`/project/${id}`);
+};
+
+const navigateToGithub = (url: string) => {
+  if (url) window.open(url, '_blank');
+};
+
+const navigateToDemo = (url: string) => {
+  if (url) window.open(url, '_blank');
 };
 </script>
 

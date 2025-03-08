@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen text-text relative flex flex-col">
-    <MenuBar class="bg-primary min-w-screen relative z-20">
+    <MenuBar class="bg-primary min-w-screen relative z-20 py-3">
       <template #start>
         <h1 class="ml-4 text-2xl font-bold" @click="navigateTo('/')">
           Yassin Abdulla

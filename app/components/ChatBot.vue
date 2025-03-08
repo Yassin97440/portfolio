@@ -11,6 +11,25 @@
     <Dialog v-model:visible="isOpen" header="Chat" :modal="false" position="bottomright" :style="{ width: '400px' }">
       <!-- Zone des messages -->
       <div class="chat-messages flex flex-col gap-4 overflow-y-auto" ref="messagesContainer">
+        <!-- Message d'accueil quand il n'y a pas de messages -->
+        <div v-if="chatStore.messages.length === 0" class="welcome-message text-center p-4 text-sm opacity-80">
+          <div class="mb-3">
+            <i class="pi pi-info-circle text-2xl"></i>
+          </div>
+          <p class="mb-2">Bonjour ! Je suis l'assistant IA de Yassin.</p>
+          <p class="mb-4">Je peux vous aider à découvrir son parcours, ses compétences ou ses projets. N'hésitez pas à
+            me poser des
+            questions !</p>
+
+          <!-- Suggestions de questions rapides -->
+          <div class="quick-questions flex flex-wrap gap-2 justify-center mt-3">
+            <Button v-for="question in quickQuestions" :key="question"
+              class="p-button-rounded p-button-outlined p-button-sm" @click="askQuickQuestion(question)">
+              {{ question }}
+            </Button>
+          </div>
+        </div>
+
         <div v-for="(message, index) in chatStore.messages" :key="index" class="flex"
           :class="message.role === 'user' ? 'justify-end' : 'justify-start'">
           <div class="message max-w-[80%] rounded-lg p-3"
@@ -47,6 +66,13 @@ const isOpen = ref(false)
 const userInput = ref('')
 const messagesContainer = ref<HTMLElement | null>(null)
 
+// Questions rapides suggérées
+const quickQuestions = [
+  "Quel est son parcours ?",
+  "Quelles sont ses compétences ?",
+  "Parle-moi de ses projets"
+]
+
 const handleClick = () => {
   isOpen.value = !isOpen.value
 }
@@ -56,6 +82,11 @@ const scrollToBottom = async () => {
   if (messagesContainer.value) {
     messagesContainer.value.scrollTop = messagesContainer.value.scrollHeight
   }
+}
+
+const askQuickQuestion = (question: string) => {
+  userInput.value = question
+  sendMessage()
 }
 
 const sendMessage = async () => {
@@ -87,5 +118,18 @@ watch(() => chatStore.messages, scrollToBottom, { deep: true })
 
 :deep(.p-dialog-content) {
   padding: 0 1rem 1rem 1rem;
+}
+
+.quick-questions .p-button {
+  font-size: 0.75rem;
+  background-color: transparent;
+  border-color: var(--secondary);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.quick-questions .p-button:hover {
+  background-color: var(--secondary);
+  color: var(--background);
 }
 </style>

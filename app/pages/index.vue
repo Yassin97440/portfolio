@@ -1,6 +1,6 @@
 <template>
   <div class="px-5 py-7 md:p-14 lg:p-28">
-    <Card class="bg-background rounded-lg mb-20 overflow-visible" data-aos="fade-up" data-aos-duration="500">
+    <Card class="bg-background rounded-lg mb-20 overflow-visible" data-aos="fade-up" data-aos-duration="800">
       <template #title>
         <div class="relative">
           <img src="~/assets/yassin.jpg" alt="Yassin Abdulla"
@@ -17,20 +17,13 @@
               sympa 😄
             </span>
             <span class="block">
-              Cela fait maintenant 4 ans que je suis développeur dans le monde
-              du travail. Dont une année en alternance
-            </span>
-            <span class="block">
-              Durant ces 4 dernières années j'ai pu voir et approfondir tout
-              pleins de notions en
-              <a class="font-semibold">gestion et développement d'application</a>. Qu'il soit technique ou
-              "transversale". Que ça soit de
-              <a class="font-semibold">l'analyse du besoin</a> client, gestion
-              de projet, conception et mise en place de base de données,
-              développement d'interfaces graphiques
-              <a class="font-semibold">logiciel et web </a>, développement
-              back-end. <br />
-              Il est possible d'en voir plus sur mon profil et mon parcours
+              Fort de 4 années d'expérience en tant que développeur, je suis aujourd'hui prêt à mettre mes compétences
+              et mon expertise au service d'entreprises. Et dans les valeurs qui me correspondent.
+              Ayant évolué en tant que lead développeur, puis chef de projet et d'équipe, j'ai acquis non seulement des
+              compétences techniques solides, mais aussi des soft skills qui me permettent de répondre efficacement à
+              vos besoins dans les meilleurs délais.
+
+              N'hésitez pas à me contacter pour discuter de votre projet !
               <a class="text-action" href="/my/profil">ici</a>
             </span>
           </p>
