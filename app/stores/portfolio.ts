@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import experiences from '~/data/experiences.json'
 import education from '~/data/education.json'
 import myselfData from '~/data/myselfData.json'
-import projects from '~/data/projects.json'
+import { projects } from '~/data/projects'
 export const usePortfolioStore = defineStore('portfolio', {
     state: () => ({
         experiences,

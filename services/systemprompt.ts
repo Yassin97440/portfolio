@@ -1,7 +1,7 @@
 import myProfil from '~/data/myselfData.json'
 import experiences from '~/data/experiences.json'
 import education from '~/data/education.json'
-import projects from '~/data/projects.json'
+import { projects } from '~/data/projects'
 
 const MY_DATA = {
     myProfil,
