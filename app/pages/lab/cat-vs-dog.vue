@@ -24,8 +24,8 @@
                                             class="max-h-64 max-w-full rounded-lg mx-auto" />
                                         <div v-if="result"
                                             class="absolute top-2 right-2 px-3 py-1 rounded-lg text-white font-bold"
-                                            :class="result.prediction === 'dog' ? 'bg-blue-500' : 'bg-orange-500'">
-                                            {{ result.prediction === 'dog' ? 'Chien' : 'Chat' }} ({{
+                                            :class="result.prediction === 'Chien' ? 'bg-blue-500' : 'bg-orange-500'">
+                                            {{ result.prediction }} ({{
                                                 Math.round(result.confidence * 100) }}%)
                                         </div>
                                     </div>
@@ -140,7 +140,7 @@ definePageMeta({
 // Données du projet structurées
 const projectData = {
     title: "Classification d'Images : Chat vs Chien",
-    apiEndpoint: "https://api.votredomaine.com/predict",
+    apiEndpoint: "http://localhost:8000/predict/",
     sampleImages: [
         '/lab/cat_vs_dog/sample_cat_1.jpg',
         '/lab/cat_vs_dog/sample_cat_2.jpg',
@@ -195,17 +195,14 @@ const result = ref<{ prediction: string; confidence: number } | null>(null);
 const onFileSelect = async (event: any) => {
     const file = event.files[0];
     if (!file) return;
-
     // Créer un aperçu de l'image
     imagePreview.value = URL.createObjectURL(file);
-
     // Envoyer l'image au serveur
     await classifyImage(file);
 };
 
 const useSampleImage = async (imageSrc: string) => {
     imagePreview.value = imageSrc;
-
     // Convertir l'URL en Blob pour l'envoyer à l'API
     const response = await fetch(imageSrc);
     const blob = await response.blob();
@@ -231,7 +228,7 @@ const classifyImage = async (imageFile: Blob) => {
 
         const data = await response.json();
         result.value = {
-            prediction: data.class_name.toLowerCase(),
+            prediction: data.class_name,
             confidence: data.confidence
         };
     } catch (error) {
