@@ -1,6 +1,7 @@
 import { defineEventHandler, readMultipartFormData, H3Event } from 'h3'
-import { createReadStream } from 'fs'
-import { Readable } from 'stream'
+
+const config = useRuntimeConfig()
+const apiUrl = config.public.catDogApi
 
 export default defineEventHandler(async (event) => {
   try {
@@ -21,7 +22,7 @@ export default defineEventHandler(async (event) => {
     apiFormData.append('file', fileBlob);
 
     // Appeler l'API du modèle
-    const response = await fetch('http://localhost:8000/predict/', {
+    const response = await fetch(apiUrl + '/predict/', {
       method: 'POST',
       body: apiFormData
     });

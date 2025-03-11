@@ -17,6 +17,7 @@ jobs:
           touch .env
           echo NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION }} >> .env
           echo MISTRAL_API_KEY=${{ secrets.MISTRAL_API_KEY }} >> .env
+          cho CAT_DOG_API=${{ secrets.CAT_DOG_API }} >> .env
           cat .env
 
       - name: Build the Docker image
