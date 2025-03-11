@@ -25,7 +25,7 @@
                                         <div v-if="result"
                                             class="absolute top-2 right-2 px-3 py-1 rounded-lg text-white font-bold"
                                             :class="result.prediction === 'dog' ? 'bg-blue-500' : 'bg-orange-500'">
-                                            {{ result.prediction === 'dog' ? 'Chien' : 'Chat' }} ({{
+                                            {{ result.prediction }} ({{
                                                 Math.round(result.confidence * 100) }}%)
                                         </div>
                                     </div>
