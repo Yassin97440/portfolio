@@ -18,14 +18,13 @@ export const useCatVsDogStore = defineStore('catVsDogStore', {
         // Créer un FormData pour envoyer l'image
         const formData = new FormData();
         formData.append('file', imageFile);
+
         // Appeler l'API du serveur Nuxt
         const response = await $fetch('/api/cat-vs-dog', {
           method: 'POST',
           body: formData,
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
         });
+
         const typedResponse = response as PredictionResponse;
         this.result = {
           prediction: typedResponse.className,
