@@ -24,14 +24,15 @@
                                             class="max-h-64 max-w-full rounded-lg mx-auto" />
                                         <div v-if="result"
                                             class="absolute top-2 right-2 px-3 py-1 rounded-lg text-white font-bold"
-                                            :class="result.prediction === 'Chien' ? 'bg-blue-500' : 'bg-orange-500'">
-                                            {{ result.prediction }} ({{
+                                            :class="result.prediction === 'dog' ? 'bg-blue-500' : 'bg-orange-500'">
+                                            {{ result.prediction === 'dog' ? 'Chien' : 'Chat' }} ({{
                                                 Math.round(result.confidence * 100) }}%)
                                         </div>
                                     </div>
 
-                                    <FileUpload v-else :multiple="false" accept="image/*" :maxFileSize="1000000"
-                                        @select="onFileSelect" @error="onFileError" :customUpload="true" class="w-full">
+                                    <FileUpload v-if="!imagePreview" :multiple="false" accept="image/*"
+                                        :maxFileSize="1000000" @select="onImageSelect" @error="onFileError"
+                                        :customUpload="true" class="w-full">
                                         <template #empty>
                                             <div class="flex items-center justify-center flex-col p-6">
                                                 <i class="pi pi-image text-4xl mb-2 text-secondary" />
@@ -47,9 +48,14 @@
                                         </template>
                                     </FileUpload>
 
-                                    <div v-if="imagePreview" class="flex gap-4 mt-4 ">
+                                    <div v-if="imagePreview && !result && !isLoading" class="flex gap-4  mt-4">
+                                        <Button icon="pi pi-search" label="Analyser l'image" @click="analyzeImage"
+                                            class="w-full bg-action" severity="success" />
+                                    </div>
+
+                                    <div v-if="imagePreview" class="flex gap-4 mt-4">
                                         <Button icon="pi pi-refresh" label="Réinitialiser" @click="resetDemo"
-                                            class="w-full" />
+                                            class="w-full" severity="secondary" />
                                     </div>
                                     <ProgressBar v-if="isLoading" mode="indeterminate" class="w-full mt-4" />
                                 </div>
@@ -191,21 +197,37 @@ const imagePreview = ref<string | null>(null);
 const isLoading = ref(false);
 const result = ref<{ prediction: string; confidence: number } | null>(null);
 
-const onFileSelect = async (event: any) => {
+// Séparation de la sélection et de l'analyse
+const onImageSelect = (event: any) => {
     const file = event.files[0];
     if (!file) return;
+
     // Créer un aperçu de l'image
     imagePreview.value = URL.createObjectURL(file);
-    // Envoyer l'image au serveur
-    await classifyImage(file);
+    selectedFile.value = file;
+};
+
+// Variable pour stocker le fichier sélectionné
+const selectedFile = ref<File | null>(null);
+
+// Fonction pour analyser l'image sélectionnée
+const analyzeImage = async () => {
+    if (!selectedFile.value) return;
+    await classifyImage(selectedFile.value);
 };
 
 const useSampleImage = async (imageSrc: string) => {
+    // Réinitialiser le résultat précédent
+    result.value = null;
+
+    // Mettre à jour l'aperçu de l'image
     imagePreview.value = imageSrc;
+
     // Convertir l'URL en Blob pour l'envoyer à l'API
     const response = await fetch(imageSrc);
     const blob = await response.blob();
-    await classifyImage(blob);
+    selectedFile.value = new File([blob], 'sample.jpg', { type: 'image/jpeg' });
+
 };
 
 const classifyImage = async (imageFile: Blob) => {
@@ -246,6 +268,7 @@ const onFileError = (event: any) => {
 const resetDemo = () => {
     imagePreview.value = null;
     result.value = null;
+    selectedFile.value = null;
 };
 </script>
 
