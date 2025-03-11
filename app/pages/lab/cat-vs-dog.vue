@@ -35,23 +35,22 @@
                                         <template #empty>
                                             <div class="flex items-center justify-center flex-col p-6">
                                                 <i class="pi pi-image text-4xl mb-2 text-secondary" />
-                                                <p class="text-secondary">Glissez une image ou cliquez pour sélectionner
+                                                <p class="">Glissez une image ou cliquez sur une image exemple
                                                 </p>
                                             </div>
                                         </template>
                                         <template #header="{ chooseCallback }">
                                             <div class="flex justify-center p-3">
                                                 <Button @click="chooseCallback()" icon="pi pi-upload"
-                                                    label="Sélectionner une image" class="p-button-action" />
+                                                    label="Sélectionner une image" class="p-button-action p-2" />
                                             </div>
                                         </template>
                                     </FileUpload>
 
-                                    <div v-if="imagePreview" class="flex gap-4 w-full mt-4">
+                                    <div v-if="imagePreview" class="flex gap-4 mt-4 ">
                                         <Button icon="pi pi-refresh" label="Réinitialiser" @click="resetDemo"
                                             class="w-full" />
                                     </div>
-
                                     <ProgressBar v-if="isLoading" mode="indeterminate" class="w-full mt-4" />
                                 </div>
                             </template>
