@@ -134,7 +134,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useCatVsDogStore } from '~/stores/cat-vs-dog';
 
 definePageMeta({
     layout: 'default',
@@ -193,9 +194,13 @@ const projectData = {
     ]
 };
 
+const catVsDogStore = useCatVsDogStore();
 const imagePreview = ref<string | null>(null);
-const isLoading = ref(false);
-const result = ref<{ prediction: string; confidence: number } | null>(null);
+const selectedFile = ref<File | null>(null);
+
+// Utiliser les valeurs du store
+const isLoading = computed(() => catVsDogStore.isLoading);
+const result = computed(() => catVsDogStore.result);
 
 // Séparation de la sélection et de l'analyse
 const onImageSelect = (event: any) => {
@@ -207,18 +212,9 @@ const onImageSelect = (event: any) => {
     selectedFile.value = file;
 };
 
-// Variable pour stocker le fichier sélectionné
-const selectedFile = ref<File | null>(null);
-
-// Fonction pour analyser l'image sélectionnée
-const analyzeImage = async () => {
-    if (!selectedFile.value) return;
-    await classifyImage(selectedFile.value);
-};
-
 const useSampleImage = async (imageSrc: string) => {
     // Réinitialiser le résultat précédent
-    result.value = null;
+    catVsDogStore.result = null;
 
     // Mettre à jour l'aperçu de l'image
     imagePreview.value = imageSrc;
@@ -227,36 +223,15 @@ const useSampleImage = async (imageSrc: string) => {
     const response = await fetch(imageSrc);
     const blob = await response.blob();
     selectedFile.value = new File([blob], 'sample.jpg', { type: 'image/jpeg' });
-
 };
 
-const classifyImage = async (imageFile: Blob) => {
-    isLoading.value = true;
-    result.value = null;
-
+// Fonction pour analyser l'image sélectionnée
+const analyzeImage = async () => {
+    if (!selectedFile.value) return;
     try {
-        const formData = new FormData();
-        formData.append('file', imageFile);
-
-        const response = await fetch(projectData.apiEndpoint, {
-            method: 'POST',
-            body: formData
-        });
-
-        if (!response.ok) {
-            throw new Error('Erreur lors de la classification');
-        }
-
-        const data = await response.json();
-        result.value = {
-            prediction: data.class_name,
-            confidence: data.confidence
-        };
+        await catVsDogStore.classifyImage(selectedFile.value);
     } catch (error) {
-        console.error('Erreur:', error);
         // Gérer l'erreur (afficher un message, etc.)
-    } finally {
-        isLoading.value = false;
     }
 };
 
@@ -267,7 +242,7 @@ const onFileError = (event: any) => {
 
 const resetDemo = () => {
     imagePreview.value = null;
-    result.value = null;
+    catVsDogStore.result = null;
     selectedFile.value = null;
 };
 </script>
