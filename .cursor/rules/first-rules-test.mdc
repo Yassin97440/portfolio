@@ -28,5 +28,6 @@ alwaysApply: false
 -code must be in English, comments in French
 -names of variables, functions and classes must be understandable in relation to their context
 -when choosing between js and ts, always favor typscript and strong typing
+-A function must have a responsibility: find the right balance between a function with a single responsibility and simplicity in calling up the function.
 
 -ask questions to make sure you'll be able to meet the need as best you can
