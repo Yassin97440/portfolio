@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen text-text relative flex flex-col">
-    <MenuBar class="bg-primary min-w-screen relative z-20 py-3">
+    <MenuBar class="bg-background min-w-screen relative z-20 py-3">
       <template #start>
         <h1 class="ml-4 text-2xl font-bold" @click="navigateTo('/')">
           Yassin Abdulla
@@ -68,6 +68,7 @@ const menu = ref();
 const items = [
   { label: 'Mes projets', icon: 'pi pi-briefcase', to: '/my/projects' },
   { label: "Me contacter", icon: "pi pi-envelope", to: "/my/Contact" },
+  { label: "Lab", icon: "pi pi-microchip", to: "/lab" },
 ];
 
 const toggle = (event: any) => {
