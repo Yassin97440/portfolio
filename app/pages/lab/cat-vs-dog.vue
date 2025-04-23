@@ -25,8 +25,7 @@
                                         <div v-if="result"
                                             class="absolute top-2 right-2 px-3 py-1 rounded-lg text-white font-bold"
                                             :class="result.prediction === 'dog' ? 'bg-blue-500' : 'bg-orange-500'">
-                                            {{ result.prediction }} ({{
-                                                Math.round(result.confidence * 100) }}%)
+                                            {{ result.prediction }} ({{result.confidence }}%)
                                         </div>
                                     </div>
 
@@ -156,35 +155,33 @@ const projectData = {
         '/lab/cat_vs_dog/sample_dog_3.jpg',
     ],
     explanation: {
-        intro: "Ce modèle utilise un <strong>réseau de neurones convolutif (CNN)</strong> entraîné sur plus de 20 000 images de chats et de chiens.",
+        intro: "Ce modèle utilise un <strong>réseau de neurones convolutif (CNN)</strong> entraîné sur plus de 8 000 images de chats et de chiens. J'ai pu experimenté pas mal de fois différentes configurations en jouant avec les hyper-paramètres jusqu'à stagner dans l'apprentissage sur les configurations les optis que j'avais notés au fur et à mesure. Je pense que je pourrai améliorer les résultats en augmentant le datasets, et/ou en optimisant la transformation d'images pour l'entrainement. Et dans un second temps, j'ai pu essayé <strong>le transfert d'apprentissage en utilisant un modèle pré-entraîné (MobileNet)</strong> pour optimiser la pérformance et la taille du modèle.",
         architecture: [
-            "Couches de convolution pour extraire les caractéristiques",
+            "Couches de convolution pour extraire les caractéristiques/ Couche pré-entrainté (MobileNetV2)",
             "Couches de pooling pour réduire la dimensionnalité",
+            "Couches denses pour la classification finale",
             "Dropout pour éviter le surapprentissage",
-            "Couches denses pour la classification finale"
         ],
-        performance: "Le modèle atteint une précision de 95% sur l'ensemble de test.",
+        performance: "Le modèle atteint une précision de 80% avec les couches CNN entrainé qu'avec ces images. Et 97% avec l'utilisation de transfert d'apprentissage.",
         limitations: [
-            "Images de mauvaise qualité ou très sombres",
-            "Angles inhabituels ou partiels",
-            "Races atypiques ou peu représentées dans les données d'entraînement"
+            "limitations de l'entrainements avec les couches CNN dûe à la taille du dataset je pense "
         ]
     },
     technologies: [
         {
             name: 'TensorFlow/Keras',
-            icon: 'pi pi-server',
+            icon: 'pi pi-microchip-ai',
             description: 'Framework de deep learning utilisé pour construire et entraîner le modèle CNN.'
         },
         {
             name: 'FastAPI',
             icon: 'pi pi-bolt',
-            description: 'API Python haute performance qui sert le modèle et traite les requêtes.'
+            description: 'API Python qui sert le modèle et traite les requêtes.'
         },
         {
             name: 'Nuxt.js',
             icon: 'pi pi-desktop',
-            description: 'Framework Vue.js utilisé pour créer cette interface utilisateur interactive.'
+            description: 'Utilisation du portfolio existant pour la démo'
         },
         {
             name: 'Docker',
