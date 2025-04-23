@@ -1,6 +1,6 @@
 <template>
   <div class="px-5 py-7 md:p-14 lg:p-28">
-    <Card class="bg-background rounded-lg mb-20 overflow-visible" data-aos="fade-up" data-aos-duration="800">
+    <Card class="bg-background rounded-lg mb-20 overflow-visible text-text" data-aos="fade-up" data-aos-duration="800">
       <template #title>
         <div class="relative">
           <img src="~/assets/yassin.jpg" alt="Yassin Abdulla"
@@ -11,7 +11,7 @@
       <template #content>
         <div class="bg-primary mx-5 rounded-lg p-4">
           <h3 class="text-xl mb-2">En quelques mots</h3>
-          <p class="text-sm space-y-2">
+          <p class="text-sm text-secondary space-y-2">
             <span class="block indent-4">
               Salut, moi c'est Yassin, j'ai 24 ans et je suis un développeur
               sympa 😄

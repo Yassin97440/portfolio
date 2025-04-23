@@ -4,13 +4,21 @@
 
 @layer base {
   :root {
-    --primary: #e5e5e5;
-    --secondary: #a3d5f7;
+    --primary: #54240c;
+    --secondary: #84894a;
     --accent: #8b5cf6;
-    --background: #ffffff;
-    --text: #1e293b;
-    --action: #64d8cb;
+    --background: #1b3319;
+    --text: #A6A15E;
+    --action: #91aec1ff;
 
+  }
+
+  :custom {
+    --columbia-blue: #bfd7eaff;
+    --cadet-gray: #91aec1ff;
+    --air-force-blue: #508ca4ff;
+    --shamrock-green: #33964dff;
+    --licorice: #0d0106ff;
   }
 
   .dark {
