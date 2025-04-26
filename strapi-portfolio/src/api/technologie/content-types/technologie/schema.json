@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "technologies",
+  "info": {
+    "singularName": "technologie",
+    "pluralName": "technologies",
+    "displayName": "technologie"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "frontend",
+        "backend",
+        "database",
+        "OPS",
+        "tools",
+        "other"
+      ]
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

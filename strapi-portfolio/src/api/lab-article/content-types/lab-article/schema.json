@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lab_articles",
+  "info": {
+    "singularName": "lab-article",
+    "pluralName": "lab-articles",
+    "displayName": "lab-article"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "summary": {
+      "type": "string"
+    },
+    "content_block": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.rich-text",
+        "shared.seo",
+        "shared.media"
+      ]
+    },
+    "related_project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project",
+      "inversedBy": "lab_article"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    }
+  }
+}

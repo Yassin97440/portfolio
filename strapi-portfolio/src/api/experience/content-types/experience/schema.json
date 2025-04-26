@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experiences",
+  "info": {
+    "singularName": "experience",
+    "pluralName": "experiences",
+    "displayName": "experience"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "start_date": {
+      "required": true,
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill.skill"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "date": {
+      "type": "date"
+    },
+    "isPersonal": {
+      "type": "boolean"
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "parent_project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
+    },
+    "related_projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "inversedBy": "relate_projects"
+    },
+    "relate_projects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::project.project",
+      "mappedBy": "related_projects"
+    },
+    "lab_article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lab-article.lab-article",
+      "mappedBy": "related_project"
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::skill.skill",
+      "inversedBy": "related_projects"
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::technologie.technologie"
+    }
+  }
+}

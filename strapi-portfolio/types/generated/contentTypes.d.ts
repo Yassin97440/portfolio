@@ -502,6 +502,40 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
+  collectionName: 'experiences';
+  info: {
+    displayName: 'experience';
+    pluralName: 'experiences';
+    singularName: 'experience';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    end_date: Schema.Attribute.Date & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience.experience'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    skills: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
+    start_date: Schema.Attribute.Date & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -528,6 +562,203 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLabArticleLabArticle extends Struct.CollectionTypeSchema {
+  collectionName: 'lab_articles';
+  info: {
+    displayName: 'lab-article';
+    pluralName: 'lab-articles';
+    singularName: 'lab-article';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content_block: Schema.Attribute.DynamicZone<
+      ['shared.rich-text', 'shared.seo', 'shared.media']
+    >;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::lab-article.lab-article'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    related_project: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::project.project'
+    >;
+    slug: Schema.Attribute.UID<'title'>;
+    summary: Schema.Attribute.String;
+    tags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Struct.CollectionTypeSchema {
+  collectionName: 'projects';
+  info: {
+    description: '';
+    displayName: 'project';
+    pluralName: 'projects';
+    singularName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    coverImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.Blocks;
+    gallery: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    isPersonal: Schema.Attribute.Boolean;
+    lab_article: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::lab-article.lab-article'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project.project'
+    > &
+      Schema.Attribute.Private;
+    parent_project: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::project.project'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    relate_projects: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::project.project'
+    >;
+    related_projects: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::project.project'
+    >;
+    skills: Schema.Attribute.Relation<'manyToMany', 'api::skill.skill'>;
+    slug: Schema.Attribute.UID<'title'>;
+    technologies: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::technologie.technologie'
+    >;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
+  collectionName: 'skills';
+  info: {
+    description: '';
+    displayName: 'skill';
+    pluralName: 'skills';
+    singularName: 'skill';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    related_projects: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::project.project'
+    >;
+    type: Schema.Attribute.Enumeration<['soft', 'hard']>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTagTag extends Struct.CollectionTypeSchema {
+  collectionName: 'tags';
+  info: {
+    displayName: 'tag';
+    pluralName: 'tags';
+    singularName: 'tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTechnologieTechnologie extends Struct.CollectionTypeSchema {
+  collectionName: 'technologies';
+  info: {
+    displayName: 'technologie';
+    pluralName: 'technologies';
+    singularName: 'technologie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    icon: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::technologie.technologie'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    type: Schema.Attribute.Enumeration<
+      ['frontend', 'backend', 'database', 'OPS', 'tools', 'other']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1047,7 +1278,13 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
+      'api::experience.experience': ApiExperienceExperience;
       'api::global.global': ApiGlobalGlobal;
+      'api::lab-article.lab-article': ApiLabArticleLabArticle;
+      'api::project.project': ApiProjectProject;
+      'api::skill.skill': ApiSkillSkill;
+      'api::tag.tag': ApiTagTag;
+      'api::technologie.technologie': ApiTechnologieTechnologie;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
