@@ -28,19 +28,18 @@
                   <template #content>
                     <div class="code-badge flex items-center mb-5">
                       <i class="pi pi-code text-action mr-2 text-xl"></i>
-                      <span class="text-accent font-medium">Technologies</span>
+                      <span class="text-accent font-medium text-xl">Technologies</span>
                     </div>
                     <div class="flex flex-wrap gap-2 mb-3">
-                      <Chip label="NuxtJS" icon="pi pi-code" class="bg-primary/20 text-text border-none" />
-                      <Chip label="Spring Boot" icon="pi pi-server" class="bg-primary/20 text-text border-none" />
-                      <Chip label="MySQL" icon="pi pi-database" class="bg-primary/20 text-text border-none" />
+                      <BaseTechnologyChip :technologies="project.technologies" />
+
                     </div>
                   </template>
                 </Card>
               </div>
               
               <div class="col-12">
-                <BaseRichText :project="project" />
+                <BaseRichText :content="project.description" />
               </div>
             </div>
           </div>
@@ -52,21 +51,21 @@
 </template>
 
 <script setup>
-import { StrapiTypes } from '~~/services/strapi/StrapiTypes'
+import { useMyStrapiContentStore } from '~/stores/strapi-content'
+
 
 const route = useRoute()
-const { findOne } = useStrapi()
 const project = ref(null)
-
+const strapiContentStore = useMyStrapiContentStore()
 onMounted(() => {
   fetchProject()
 })
 // Récupère un projet spécifique par son slug
 const fetchProject = async () => {
   try {
-    const response = await findOne(StrapiTypes.PROJECT, route.params.id)
-    project.value = response.data
-    console.log("🚀 ~ Projet chargé:", project.value)
+    const response = await strapiContentStore.findProjectById(route.params.id)
+    project.value = response
+    console.log("🚀 ~ Projet chargé:", response)
   } catch (error) {
     console.error("Erreur lors du chargement du projet:", error)
   }
