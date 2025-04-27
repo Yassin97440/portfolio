@@ -16,7 +16,8 @@
                     </p>
                 </template>
                 <template #content="slotProps">
-                    <Card class="my-4 bg-primary" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <Card class="my-4 bg-primary"  @click="navigateTo(`/experience/${slotProps.item.documentId}`)"
+                    data-aos="zoom-in-up" data-aos-duration="1000" >
                         <template #title>
                             <div class="text-left">
                                 {{ slotProps.item.title }}
@@ -30,14 +31,7 @@
                         </template>
                         <template #content>
                             <div class="">
-                                <ul class="relative list-disc ml-3">
-                                    <li v-for="detail in slotProps.item.Details" :key="detail" class="text-left">
-                                        {{ detail }}
-                                    </li>
-                                    <Button class="text-action text-sm absolute left-0" label="Lire plus" text
-                                        @click="navigateTo(`/experience/${slotProps.item.id}`)">
-                                    </Button>
-                                </ul>
+                                <BaseRichText :content="slotProps.item.shortDetails" />
                             </div>
                         </template>
                     </Card>
@@ -50,10 +44,19 @@
 <script setup lang="ts">
 import { usePortfolioStore } from "~/stores/portfolio";
 import { useWindowSize } from "@vueuse/core";
+import { StrapiTypes } from "~~/services/strapi/StrapiTypes";
 
 const { width } = useWindowSize();
 const store = usePortfolioStore();
-const { experiences } = store;
+const experiences = ref<any[]>([]);
+
+const strapi = useStrapi();
+
+onMounted(async () => {
+    const response = await strapi.find(StrapiTypes.EXPERIENCE, { populate: ['skills'] });
+    experiences.value = response.data;
+    console.log("🚀 ~ onMounted ~ response.data:", response.data)
+});
 </script>
 
 <style scoped></style>

@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Chip v-for="technology in technologies" :key="technology.id" :label="technology.name" class="bg-primary/20 text-text border-none" />
+    <Chip v-for="technology in technologies" :key="technology.id" 
+    :label="technology.name" 
+    :icon="getIcon(technology)" 
+    class="bg-primary/20 text-text border-none m-1" />
 
   </div>
 </template>
@@ -13,6 +16,22 @@ const props = defineProps({
     required: true
   }
 })
+
+const getIcon = (technology: any) => {
+  if (technology.type === 'backend') {
+    return 'pi pi-server'
+  } else if (technology.type === 'frontend') {
+    return 'pi pi-code'
+  } else if (technology.type === 'database') {
+    return 'pi pi-database'
+  } else if (technology.type === 'OPS') {
+    return 'pi pi-cloud'
+  } else if (technology.type === 'mobile') {
+    return 'pi pi-mobile'
+  } else if (technology.type === 'other') {
+    return 'pi pi-question'
+  }
+}
 </script>
 
 <style>
