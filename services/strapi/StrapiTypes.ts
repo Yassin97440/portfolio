@@ -1,7 +1,7 @@
 export enum StrapiTypes {
     CATEGORY = 'category',
     EDUCATION = 'education',
-    EXPERIENCE = 'experience',
+    EXPERIENCE = 'experiences',
     LAB_ARTICLE = 'lab-article',
     PROJECT = 'projects',
     SKILL = 'skill',
