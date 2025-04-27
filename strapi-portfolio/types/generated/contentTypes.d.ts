@@ -733,7 +733,8 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
 export interface ApiTechnologieTechnologie extends Struct.CollectionTypeSchema {
   collectionName: 'technologies';
   info: {
-    displayName: 'technologie';
+    description: '';
+    displayName: 'technology';
     pluralName: 'technologies';
     singularName: 'technologie';
   };

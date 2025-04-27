@@ -4,7 +4,8 @@
   "info": {
     "singularName": "technologie",
     "pluralName": "technologies",
-    "displayName": "technologie"
+    "displayName": "technology",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,14 +26,15 @@
       ]
     },
     "icon": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }
