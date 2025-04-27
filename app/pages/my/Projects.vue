@@ -8,7 +8,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <BaseSubCard v-for="project in projects" :key="project.id"
             class="bg-primary hover:transform hover:scale-105 transition-transform"
-            @click="navigateToProject(project.id)">
+            @click="navigateToProject(project.documentId)">
             <template #title>
               <div class="flex justify-between items-center">
                 <h3 class="text-xl">{{ project.title }}</h3>
@@ -16,16 +16,13 @@
             </template>
 
             <div class="space-y-4">
-              <img v-if="project.image" :src="project.image" :alt="project.title"
+              <img v-if="project.coverImage" :src="strapiContentStore.getCoverImageUrl(project.coverImage)" :alt="project.title"
                 class="w-full h-48 object-cover rounded-lg" />
 
               <p class="text-sm">{{ project.shortDescription }}</p>
 
               <div class="flex flex-wrap gap-2">
-                <span v-for="tech in project.technologies" :key="tech"
-                  class="px-2 py-1 bg-secondary rounded-full text-xs">
-                  {{ tech }}
-                </span>
+                <BaseTechnologyChip :technologies="project.technologies" />
               </div>
 
               <div class="flex gap-4 mt-4">
@@ -35,9 +32,9 @@
                   <i class="pi pi-external-link mr-2"></i>
                   Voir la démo
                 </Button>
-                <Button v-if="project.githubUrl"
+                <Button v-if="project.codeSourceUrl"
                   class="px-4 py-2 bg-secondary hover:bg-secondary/80 text-text rounded-lg text-sm transition-colors"
-                  @click="openUrl(project.githubUrl)">
+                  @click="openUrl(project.codeSourceUrl)">
                   <i class="pi pi-github mr-2"></i>
                   Code source
                 </Button>
@@ -54,10 +51,21 @@
 <script setup>
 import { usePortfolioStore } from "@/stores/portfolio";
 import { useRouter } from "vue-router";
+import { StrapiTypes } from "~~/services/strapi/StrapiTypes";
+import { useMyStrapiContentStore } from "@/stores/strapi-content";
 
 const store = usePortfolioStore();
-const projects = store.projects;
 const router = useRouter();
+const strapi = useStrapi();
+const strapiContentStore = useMyStrapiContentStore()
+const projects = ref([])
+
+onMounted(async () => {
+  const response = await strapi.find(StrapiTypes.PROJECT, {populate: ['coverImage', 'technologies']})
+  projects.value = response.data
+  console.log("🚀 ~ onMounted ~ projects.value:", response)
+  
+})
 
 const navigateToProject = (id) => {
   router.push(`/project/${id}`);
