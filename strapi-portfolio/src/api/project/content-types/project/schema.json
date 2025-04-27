@@ -87,6 +87,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::technologie.technologie"
+    },
+    "codeSourceUrl": {
+      "type": "string"
+    },
+    "demoUrl": {
+      "type": "string"
     }
   }
 }
