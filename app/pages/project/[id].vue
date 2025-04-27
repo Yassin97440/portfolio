@@ -1,56 +1,106 @@
 <template>
-    <div class="p-5 md:p-14 lg:p-20">
-        <Card>
-            <template #title>
-                <h1 class="text-2xl">{{ project?.title }}</h1>
-                <p class="text-secondary">{{ project?.type }}</p>
-            </template>
-            <template #content>
-                <img v-if="project?.image" :src="project.image" :alt="project.title"
-                    class="w-full h-64 object-cover rounded-lg mb-6" />
+  <div class="project-container bg-background min-h-screen py-10">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div v-if="project" class="grid">
+        <div class="col-12 lg:col-10 lg:col-offset-1 p-5 bg-opacity-10 bg-white backdrop-blur-sm rounded-xl shadow-lg">
+          <!-- En-tête du projet avec effet gradient -->
+          <div class="project-header mb-8 border-l-4 border-action pl-4">
+            <h1 class="text-4xl font-bold mb-3 text-text">{{ project.title }}</h1>
+            <div class="flex flex-wrap gap-3 mb-4">
+              <Tag severity="info" class="border-none bg-primary/20 ">
+                <i class="pi pi-calendar mr-2"></i>
+                {{ formatDate(project.date) }}
+              </Tag>
+              <Tag v-if="project.isPersonal" severity="success" class="border-none bg-secondary/30 ">
+                <i class="pi pi-user mr-2"></i>
+                Projet Personnel
+              </Tag>
+            </div>
+          </div>
 
-                <Fieldset legend="Description" :toggleable="true" class="border mb-10">
-                    <MDC :value="project?.description || ''" tag="article" />
-                </Fieldset>
+          <Divider class="mb-6 border-action/30" />
 
-                <Fieldset legend="Technologies utilisées" :toggleable="true" class="border mb-10">
-                    <div class="flex flex-wrap gap-2">
-                        <span v-for="tech in project?.technologies" :key="tech"
-                            class="px-3 py-1 bg-secondary rounded-full text-sm">
-                            {{ tech }}
-                        </span>
+          <!-- Contenu du projet avec amélioration visuelle -->
+          <div class="project-content">
+            <div class="grid">
+              <div class="col-12">
+                <Card class="mb-6 border-none bg-secondary shadow-md">
+                  <template #content>
+                    <div class="code-badge flex items-center mb-5">
+                      <i class="pi pi-code text-action mr-2 text-xl"></i>
+                      <span class="text-accent font-medium">Technologies</span>
                     </div>
-                </Fieldset>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                      <Chip label="NuxtJS" icon="pi pi-code" class="bg-primary/20 text-text border-none" />
+                      <Chip label="Spring Boot" icon="pi pi-server" class="bg-primary/20 text-text border-none" />
+                      <Chip label="MySQL" icon="pi pi-database" class="bg-primary/20 text-text border-none" />
+                    </div>
+                  </template>
+                </Card>
+              </div>
+              
+              <div class="col-12">
+                <BaseRichText :project="project" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                <div class="flex gap-4 mt-4">
-                    <Button v-if="project?.demoUrl"
-                        class="px-4 py-2 bg-action hover:bg-action/80 text-white rounded-lg text-sm transition-colors"
-                        @click="openUrl(project.demoUrl)">
-                        <i class="pi pi-external-link mr-2"></i>
-                        Voir la démo
-                    </Button>
-                    <Button v-if="project?.githubUrl"
-                        class="px-4 py-2 bg-secondary hover:bg-secondary/80 text-text rounded-lg text-sm transition-colors"
-                        @click="openUrl(project.githubUrl)">
-                        <i class="pi pi-github mr-2"></i>
-                        Code source
-                    </Button>
-                </div>
-            </template>
-        </Card>
     </div>
+  </div>
 </template>
 
-<script lang="ts" setup>
-import { usePortfolioStore } from '~/stores/portfolio'
+<script setup>
+import { StrapiTypes } from '~~/services/strapi/StrapiTypes'
 
 const route = useRoute()
-const projectId = route.params.id
-const project = usePortfolioStore().getProjectById(Number(projectId))
+const { findOne } = useStrapi()
+const project = ref(null)
 
-const openUrl = (url: string | URL | undefined) => {
-    if (typeof window !== 'undefined') {
-        window.open(url, '_blank')
-    }
+onMounted(() => {
+  fetchProject()
+})
+// Récupère un projet spécifique par son slug
+const fetchProject = async () => {
+  try {
+    const response = await findOne(StrapiTypes.PROJECT, route.params.id)
+    project.value = response.data
+    console.log("🚀 ~ Projet chargé:", project.value)
+  } catch (error) {
+    console.error("Erreur lors du chargement du projet:", error)
+  }
 }
+
+
+// Formate la date pour l'affichage
+const formatDate = (dateString) => {
+  if (!dateString) return ''
+  const date = new Date(dateString)
+  return new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).format(date)
+}
+
 </script>
+
+<style scoped>
+
+
+.project-header {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.code-badge {
+  position: relative;
+}
+
+.code-badge::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--action);
+}
+</style>
