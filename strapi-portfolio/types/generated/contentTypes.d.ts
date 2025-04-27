@@ -505,6 +505,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
 export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
   collectionName: 'experiences';
   info: {
+    description: '';
     displayName: 'experience';
     pluralName: 'experiences';
     singularName: 'experience';
@@ -527,6 +528,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    shortDetails: Schema.Attribute.Blocks;
     skills: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
     start_date: Schema.Attribute.Date & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
