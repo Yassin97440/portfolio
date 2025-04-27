@@ -26,7 +26,7 @@
               <div class="col-12">
                 <Card class="mb-6 border-none bg-secondary shadow-md">
                   <template #content>
-                    <div class="code-badge flex items-center mb-4">
+                    <div class="code-badge flex items-center mb-5">
                       <i class="pi pi-code text-action mr-2 text-xl"></i>
                       <span class="text-accent font-medium">Technologies</span>
                     </div>
@@ -40,13 +40,7 @@
               </div>
               
               <div class="col-12">
-                <div v-for="(block, index) in project.description" :key="index"
-                  class="rich-text-block text-text mb-5 leading-relaxed">
-                  <p v-if="block.type === 'paragraph'" 
-                    class="first-letter:text-2xl first-letter:font-medium first-letter:text-action">
-                    {{ getTextContent(block) }}
-                  </p>
-                </div>
+                <BaseRichText :project="project" />
               </div>
             </div>
           </div>
@@ -79,11 +73,6 @@ const fetchProject = async () => {
   }
 }
 
-// Extrait le texte d'un bloc rich text
-const getTextContent = (block) => {
-  if (!block.children || !block.children.length) return ''
-  return block.children.map(child => child.text || '').join('')
-}
 
 // Formate la date pour l'affichage
 const formatDate = (dateString) => {
@@ -94,15 +83,7 @@ const formatDate = (dateString) => {
 </script>
 
 <style scoped>
-.rich-text-block p {
-  line-height: 1.9;
-  font-size: 1.05rem;
-  transition: all 0.3s ease;
-}
 
-.rich-text-block p:hover {
-  transform: translateX(4px);
-}
 
 .project-header {
   position: relative;
