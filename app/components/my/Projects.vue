@@ -15,10 +15,10 @@
         <SwiperSlide v-for="project in projects" :key="project.id" class="md:!w-[400px]">
           <div
             class="border border-secondary rounded p-4 bg-background transition-all duration-300 cursor-pointer hover:shadow-lg"
-            @click="navigateToProject(project.id)">
+            @click="navigateToProject(project.documentId)">
             <div class="mb-4">
               <div class="relative mx-auto">
-                <img v-if="project.image" :src="project.image" :alt="project.title"
+                <img v-if="project.coverImage" :src="store.getCoverImageUrl(project.coverImage)" :alt="project.title"
                   class="w-full h-40 object-cover rounded" />
                 <Tag :value="project.type" :severity="getTypeSeverity(project.type)" class="absolute left-2 top-2" />
               </div>
@@ -26,7 +26,7 @@
             <div class="mb-4">
               <h3 class="text-xl font-medium mb-2">{{ project.title }}</h3>
               <div class="flex flex-wrap gap-2 mb-4">
-                <Chip v-for="tech in project.technologies" :key="tech" :label="tech" class="bg-secondary text-sm" />
+                <BaseTechnologyChip :technologies="project.technologies" />
               </div>
             </div>
             <div class="flex justify-between items-center">
@@ -48,12 +48,25 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { usePortfolioStore } from "~/stores/portfolio";
 import { useRouter } from "vue-router";
+import { useMyStrapiContentStore } from '@/stores/strapi-content';
+import { StrapiTypes } from '~~/services/strapi/StrapiTypes';
 
-const store = usePortfolioStore();
-const projects = ref(store.projects);
+const store = useMyStrapiContentStore();
+const strapi = useStrapi();
 const router = useRouter();
+
+
+const projects = ref();
+
+onMounted(async () => {
+  const response = await strapi.find(StrapiTypes.PROJECT, {
+    populate: ['coverImage', 'technologies'],
+  });
+  projects.value = response.data;
+  console.log("🚀 ~ onMounted ~ projects.value:", projects.value[0].technologies)
+
+});
 
 const getTypeSeverity = (type: string) => {
   switch (type) {
