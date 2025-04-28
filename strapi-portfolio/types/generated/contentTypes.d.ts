@@ -573,6 +573,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiLabArticleLabArticle extends Struct.CollectionTypeSchema {
   collectionName: 'lab_articles';
   info: {
+    description: '';
     displayName: 'lab-article';
     pluralName: 'lab-articles';
     singularName: 'lab-article';
@@ -604,6 +605,10 @@ export interface ApiLabArticleLabArticle extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'>;
     summary: Schema.Attribute.String;
     tags: Schema.Attribute.Relation<'oneToMany', 'api::tag.tag'>;
+    technologies: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::technologie.technologie'
+    >;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
