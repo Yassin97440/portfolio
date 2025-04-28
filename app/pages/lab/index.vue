@@ -17,10 +17,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card v-for="project in labProjects" :key="project.id"
                 class="bg-background rounded-lg hover:shadow-lg transition-all cursor-pointer"
-                @click="navigateTo(project.route)">
+                @click="navigateTo(`/lab/${project.slug}`)">
                 <template #header>
                     <div class="relative">
-                        <img :src="project.image" :alt="project.title" class="w-full h-48 object-cover" />
+                        <img :src="store.getCoverImageUrl(project.coverImage)" 
+                            :alt="project.title"
+                            class="w-full h-48 object-cover" />
                         <div class="absolute top-0 right-0 bg-action text-white px-3 py-1 rounded-bl-lg">
                             {{ project.category }}
                         </div>
@@ -31,13 +33,15 @@
                 </template>
                 <template #content>
                     <p class="mb-4">
-                        {{ project.description }}
+                        {{ project.summary }}
                     </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <Chip v-for="tech in project.technologies" :key="tech" :label="tech"
-                            class="bg-secondary text-sm" />
+                    <div class="flex justify-around gap-2 mb-4">
+                        <BaseTechnologyChip  :technologies="project.technologies"/>
                     </div>
-                    <Button :label="project.buttonText" icon="pi pi-play" class="w-full" />
+                    <div class="flex justify-center">
+
+                        <Button label="Essayer la démo" icon="pi pi-play" class="bg-action p-1" />
+                    </div>
                 </template>
             </Card>
 
@@ -54,32 +58,24 @@
 </template>
 
 <script setup lang="ts">
+import { useMyStrapiContentStore } from '~/stores/strapi-content';
+import { StrapiTypes } from '~~/services/strapi/StrapiTypes';
+
 // Données des projets du laboratoire
-const labProjects = [
-    {
-        id: 1,
-        title: "Classification d'Images : Chat vs Chien",
-        description: "Un modèle de deep learning qui classifie les images de chats et de chiens avec une précision de 95%. Essayez-le avec vos propres images !",
-        image: "/cat_vs_dog.webp",
-        category: "Deep Learning",
-        technologies: ["Python", "TensorFlow", "FastAPI", "CNN"],
-        buttonText: "Essayer la démo",
-        route: "/lab/cat-vs-dog",
-        status: "active"
-    },
-    // Vous pourrez ajouter d'autres projets ici facilement
-    // {
-    //     id: 2,
-    //     title: "Générateur de texte avec GPT",
-    //     description: "Un modèle de génération de texte basé sur l'architecture GPT, entraîné sur des articles scientifiques.",
-    //     image: "/text_generator.jpg",
-    //     category: "NLP",
-    //     technologies: ["Python", "PyTorch", "Transformers", "CUDA"],
-    //     buttonText: "Générer du texte",
-    //     route: "/lab/text-generator",
-    //     status: "coming-soon"
-    // }
-];
+const labProjects = ref<any[]>([]);
+
+const store = useMyStrapiContentStore();
+const strapi = useStrapi();
+
+onMounted(async () => {
+    const response = await strapi.find(StrapiTypes.LAB_ARTICLE, {
+        populate: ['coverImage', 'technologies'],
+    });
+    labProjects.value = response.data;
+    console.log("🚀 ~ onMounted ~ labProjects.value:", labProjects.value)
+});
+
+
 
 definePageMeta({
     layout: 'default',

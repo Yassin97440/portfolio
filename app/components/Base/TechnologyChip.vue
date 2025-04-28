@@ -1,11 +1,11 @@
 <template>
-  <div>
+
     <Chip v-for="technology in technologies" :key="technology.id" 
     :label="technology.name" 
     :icon="getIcon(technology)" 
     class="bg-primary/20 text-text border-none m-1" />
 
-  </div>
+
 </template>
 
 <script lang="ts" setup>
