@@ -21,7 +21,7 @@
 
               <p class="text-sm">{{ project.shortDescription }}</p>
 
-              <div class="flex flex-wrap gap-2">
+              <div class="flex justify-evenly flex-wrap gap-2">
                 <BaseTechnologyChip :technologies="project.technologies" />
               </div>
 
