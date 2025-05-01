@@ -7,4 +7,5 @@ export enum StrapiTypes {
     SKILL = 'skill',
     TAG = 'tag',
     TECHNOLOGY = 'technology',
+    MY_PROFIL = 'my-profil',
 }

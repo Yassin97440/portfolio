@@ -616,6 +616,45 @@ export interface ApiLabArticleLabArticle extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMyProfilMyProfil extends Struct.SingleTypeSchema {
+  collectionName: 'my_profils';
+  info: {
+    description: '';
+    displayName: 'my-profil';
+    pluralName: 'my-profils';
+    singularName: 'my-profil';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::my-profil.my-profil'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    profilPicture: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    shortDescription: Schema.Attribute.String;
+    skills: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
+    technologies: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::technologie.technologie'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
@@ -1291,6 +1330,7 @@ declare module '@strapi/strapi' {
       'api::experience.experience': ApiExperienceExperience;
       'api::global.global': ApiGlobalGlobal;
       'api::lab-article.lab-article': ApiLabArticleLabArticle;
+      'api::my-profil.my-profil': ApiMyProfilMyProfil;
       'api::project.project': ApiProjectProject;
       'api::skill.skill': ApiSkillSkill;
       'api::tag.tag': ApiTagTag;

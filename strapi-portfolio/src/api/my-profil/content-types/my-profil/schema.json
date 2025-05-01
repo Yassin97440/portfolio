@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "my_profils",
+  "info": {
+    "singularName": "my-profil",
+    "pluralName": "my-profils",
+    "displayName": "my-profil",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::skill.skill"
+    },
+    "technologies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::technologie.technologie"
+    },
+    "shortDescription": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "profilPicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
