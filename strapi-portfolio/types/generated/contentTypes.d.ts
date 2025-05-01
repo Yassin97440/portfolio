@@ -643,7 +643,7 @@ export interface ApiMyProfilMyProfil extends Struct.SingleTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    shortDescription: Schema.Attribute.String;
+    shortDescription: Schema.Attribute.Blocks;
     skills: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'>;
     technologies: Schema.Attribute.Relation<
       'oneToMany',

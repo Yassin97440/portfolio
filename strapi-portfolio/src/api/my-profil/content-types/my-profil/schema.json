@@ -24,9 +24,6 @@
       "relation": "oneToMany",
       "target": "api::technologie.technologie"
     },
-    "shortDescription": {
-      "type": "string"
-    },
     "description": {
       "type": "blocks"
     },
@@ -40,6 +37,9 @@
         "videos",
         "audios"
       ]
+    },
+    "shortDescription": {
+      "type": "blocks"
     }
   }
 }
