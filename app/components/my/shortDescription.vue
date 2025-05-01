@@ -11,7 +11,7 @@
         <div class="bg-primary mx-5 rounded-lg p-4">
           <h3 class="text-xl mb-2">En quelques mots</h3>
           <p class="text-sm text-secondary space-y-2">
-            <BaseRichText :content="profil?.description" />
+            <BaseRichText :content="profil?.shortDescription" />
           </p>
         </div>
       </template>
