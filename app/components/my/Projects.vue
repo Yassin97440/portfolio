@@ -64,7 +64,6 @@ onMounted(async () => {
     populate: ['coverImage', 'technologies'],
   });
   projects.value = response.data;
-  console.log("🚀 ~ onMounted ~ projects.value:", projects.value[0].technologies)
 
 });
 

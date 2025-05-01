@@ -63,7 +63,6 @@ const projects = ref([])
 onMounted(async () => {
   const response = await strapi.find(StrapiTypes.PROJECT, {populate: ['coverImage', 'technologies']})
   projects.value = response.data
-  console.log("🚀 ~ onMounted ~ projects.value:", response)
   
 })
 

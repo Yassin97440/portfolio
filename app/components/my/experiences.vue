@@ -55,7 +55,6 @@ const strapi = useStrapi();
 onMounted(async () => {
     const response = await strapi.find(StrapiTypes.EXPERIENCE, { populate: ['skills'] });
     experiences.value = response.data;
-    console.log("🚀 ~ onMounted ~ response.data:", response.data)
 });
 </script>
 

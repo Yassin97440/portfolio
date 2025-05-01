@@ -65,7 +65,6 @@ const fetchProject = async () => {
   try {
     const response = await strapiContentStore.findProjectById(route.params.id)
     project.value = response
-    console.log("🚀 ~ Projet chargé:", response)
   } catch (error) {
     console.error("Erreur lors du chargement du projet:", error)
   }
