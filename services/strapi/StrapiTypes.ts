@@ -4,8 +4,8 @@ export enum StrapiTypes {
     EXPERIENCE = 'experiences',
     LAB_ARTICLE = 'lab-articles',
     PROJECT = 'projects',
-    SKILL = 'skill',
+    SKILLS = 'skills',
     TAG = 'tag',
-    TECHNOLOGY = 'technology',
+    TECHNOLOGIES = 'technologies',
     MY_PROFIL = 'my-profil',
 }
