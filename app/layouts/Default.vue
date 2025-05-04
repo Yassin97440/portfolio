@@ -33,8 +33,8 @@
         </div>
       </template>
     </MenuBar>
-    <div class="fixed inset-0 w-full h-full">
-      <img class="w-full h-full object-cover blur-md brightness-95" src="~/assets/bgw.webp" alt="Background" />
+    <div class="fixed inset-0 w-full h-full bg-background">
+      <!-- <img class="w-full h-full object-cover blur-md brightness-95" src="~/assets/bgw.webp" alt="Background" /> -->
     </div>
     <main class="relative z-10 min-h-screen pb-20">
       <slot />

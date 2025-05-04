@@ -2,9 +2,9 @@
   <div class="project-container bg-background min-h-screen py-10">
     <div class="container mx-auto px-4 max-w-6xl">
       <div v-if="project" class="grid">
-        <div class="col-12 lg:col-10 lg:col-offset-1 p-5 bg-opacity-10 bg-white backdrop-blur-sm rounded-xl shadow-lg">
+        <div class="col-12 lg:col-10 lg:col-offset-1 p-5 bg-primary backdrop-blur-sm rounded-xl shadow-lg">
           <!-- En-tête du projet avec effet gradient -->
-          <div class="project-header mb-8 border-l-4 border-action pl-4">
+          <div class="project-header mb-8 border-l-4 border-accent pl-4">
             <h1 class="text-4xl font-bold mb-3 text-text">{{ project.title }}</h1>
             <div class="flex flex-wrap gap-3 mb-4">
               <Tag severity="info" class="border-none bg-primary/20 ">
@@ -27,7 +27,7 @@
                 <Card class="mb-6 border-none bg-secondary shadow-md">
                   <template #content>
                     <div class="code-badge flex items-center mb-5">
-                      <i class="pi pi-code text-action mr-2 text-xl"></i>
+                      <i class="pi pi-code text-accent mr-2 text-xl"></i>
                       <span class="text-accent font-medium text-xl">Technologies</span>
                     </div>
                     <div class="flex flex-wrap gap-2 mb-3">
@@ -99,6 +99,6 @@ const formatDate = (dateString) => {
   left: 0;
   width: 40px;
   height: 2px;
-  background-color: var(--action);
+  background-color: var(--accent);
 }
 </style>
