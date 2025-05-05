@@ -2,7 +2,7 @@
   <div class="project-container bg-background min-h-screen py-10">
     <div class="container mx-auto px-4 max-w-6xl">
       <div v-if="project" class="grid">
-        <div class="col-12 lg:col-10 lg:col-offset-1 p-5 bg-primary backdrop-blur-sm rounded-xl shadow-lg">
+        <div class="col-12 lg:col-10 lg:col-offset-1 p-5 bg-opacity-10 bg-white backdrop-blur-sm rounded-xl shadow-lg">
           <!-- En-tête du projet avec effet gradient -->
           <div class="project-header mb-8 border-l-4 border-accent pl-4">
             <h1 class="text-4xl font-bold mb-3 text-text">{{ project.title }}</h1>

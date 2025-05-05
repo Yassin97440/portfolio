@@ -2,7 +2,7 @@
   <div class="min-h-screen text-text relative flex flex-col">
     <MenuBar class="bg-background min-w-screen relative z-20 py-3">
       <template #start>
-        <h1 class="ml-4 text-2xl font-bold" @click="navigateTo('/')">
+        <h1 class="ml-4 text-2xl text-action font-bold" @click="navigateTo('/')">
           Yassin Abdulla
         </h1>
       </template>

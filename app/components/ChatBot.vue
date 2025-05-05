@@ -8,7 +8,9 @@
     </Button>
 
     <!-- Dialog du chat -->
-    <Dialog v-model:visible="isOpen" header="Chat" :modal="false" position="bottomright" :style="{ width: '400px' }">
+    <Dialog v-model:visible="isOpen" header="Chat" :modal="false" position="bottomright" :style="{ width: '400px',
+      backgroundColor: 'var(--background)'
+    }">
       <!-- Zone des messages -->
       <div class="chat-messages flex flex-col gap-4 overflow-y-auto" ref="messagesContainer">
         <!-- Message d'accueil quand il n'y a pas de messages -->
@@ -32,7 +34,7 @@
 
         <div v-for="(message, index) in chatStore.messages" :key="index" class="flex"
           :class="message.role === 'user' ? 'justify-end' : 'justify-start'">
-          <div class="message max-w-[80%] rounded-lg p-3"
+          <div class="message max-w-[80%] rounded-lg p-3 text-text"
             :class="message.role === 'user' ? 'bg-primary ' : 'bg-secondary'">
             {{ message.content }}
           </div>
@@ -103,13 +105,14 @@ watch(() => chatStore.messages, scrollToBottom, { deep: true })
 
 <style scoped>
 .chat-trigger {
-  background-color: var(--primary-color) !important;
+  background-color: var(--action) !important;
   z-index: 1000;
 }
 
 .chat-trigger i {
   color: white;
 }
+
 
 .chat-messages {
   height: 300px;

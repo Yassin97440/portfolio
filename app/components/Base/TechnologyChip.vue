@@ -3,7 +3,7 @@
     <Chip v-for="technology in technologies" :key="technology.id" 
     :label="technology.name" 
     :icon="getIcon(technology)" 
-    class="bg-secondary text-text border-none m-1" />
+    class="bg-action text-text  m-1" />
 
 
 </template>
