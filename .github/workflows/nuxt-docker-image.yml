@@ -3,6 +3,20 @@ name: Docker Image CI
 on:
   push:
     branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  path:
+    paths:
+      - "app/**"
+      - "public/**"
+      - "server/**"
+      - "services/**"
+      - "Dockerfile" 
+      - "package.json"
+      - "package-lock.json"
+      - "nuxt.config.ts"
+      - "tailwind.config.js"
+      - "tsconfig.json"
   workflow_dispatch:
 
 jobs:
