@@ -8,9 +8,7 @@
     </Button>
 
     <!-- Dialog du chat -->
-    <Dialog v-model:visible="isOpen" header="Chat" :modal="false" position="bottomright" :style="{ width: '400px',
-      backgroundColor: 'var(--background)'
-    }">
+    <Dialog v-model:visible="isOpen" header="Chat" pt:root:class="!border-0 !bg-background dark:!bg-gray-900" pt:header:class="!bg-background dark:!bg-gray-900" pt:content:class="!bg-background dark:!bg-gray-900" :modal="false" position="bottomright" :style="{ width: '400px' }" >
       <!-- Zone des messages -->
       <div class="chat-messages flex flex-col gap-4 overflow-y-auto" ref="messagesContainer">
         <!-- Message d'accueil quand il n'y a pas de messages -->
@@ -50,7 +48,7 @@
 
       <!-- Zone de saisie -->
       <div class="flex gap-2 mt-4">
-        <InputText v-model="userInput" placeholder="Écrivez votre message..." class="flex-1"
+        <InputText v-model="userInput" placeholder="Écrivez votre message..." class="flex-1 bg-background text-text"
           :disabled="chatStore.isLoading" @keyup.enter="sendMessage" />
         <Button icon="pi pi-send" @click="sendMessage" :disabled="!userInput.trim() || chatStore.isLoading"
           :loading="chatStore.isLoading" />
@@ -112,6 +110,7 @@ watch(() => chatStore.messages, scrollToBottom, { deep: true })
 .chat-trigger i {
   color: white;
 }
+
 
 
 .chat-messages {
