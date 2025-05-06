@@ -26,7 +26,7 @@ export const useMyStrapiContentStore = defineStore({
       return response.data
     },
     getCoverImageUrl(coverImage: any) {
-      return 'http://localhost:1337' + coverImage.url
+      return 'http://localhost:1337' + coverImage?.url
     },
     getTechnologies(technologies: any[]) {
       return technologies.map((technology: any) => {

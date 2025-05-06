@@ -1,6 +1,6 @@
 <template>
     <div class="px-5 py-7 md:p-14 lg:p-28">
-        <Card class="bg-background rounded-lg mb-10">
+        <Card class="bg-background rounded-lg mb-10 text-text">
             <template #title>
                 <div class="flex justify-between items-center">
                     <h1 class="text-2xl">{{ projectData.title }}</h1>
@@ -15,7 +15,7 @@
                     <div class="demo-section">
                         <Card class="bg-primary mb-6">
                             <template #title>
-                                <h2 class="text-xl">Essayez le modèle</h2>
+                                <h2 class="text-xl text-text">Essayez le modèle</h2>
                             </template>
                             <template #content>
                                 <div class="flex flex-col items-center">
@@ -35,7 +35,7 @@
                                         <template #empty>
                                             <div class="flex items-center justify-center flex-col p-6">
                                                 <i class="pi pi-image text-4xl mb-2 text-secondary" />
-                                                <p class="">Glissez une image ou cliquez sur une image exemple
+                                                <p class="text-text">Glissez une image ou cliquez sur une image exemple
                                                 </p>
                                             </div>
                                         </template>
@@ -63,7 +63,7 @@
 
                         <Card class="bg-primary">
                             <template #title>
-                                <h2 class="text-xl">Images d'exemple</h2>
+                                <h2 class="text-xl text-text">Images d'exemple</h2>
                             </template>
                             <template #content>
                                 <div class="grid grid-cols-3 gap-2">
@@ -79,10 +79,10 @@
                     <div class="explanation-section">
                         <Card class="bg-primary mb-6">
                             <template #title>
-                                <h2 class="text-xl">Comment ça marche ?</h2>
+                                <h2 class="text-xl text-text">Comment ça marche ?</h2>
                             </template>
                             <template #content>
-                                <div class="space-y-4 text-sm">
+                                <div class="space-y-4 text-sm text-text">
                                     <p v-html="projectData.explanation.intro"></p>
 
                                     <h3 class="font-bold mt-4">Architecture du modèle :</h3>
@@ -108,7 +108,7 @@
 
                         <Card class="bg-primary">
                             <template #title>
-                                <h2 class="text-xl">Technologies utilisées</h2>
+                                <h2 class="text-xl text-text">Technologies utilisées</h2>
                             </template>
                             <template #content>
                                 <div class="space-y-4">
@@ -117,7 +117,7 @@
                                         <div class="bg-secondary rounded-full p-2 flex-shrink-0">
                                             <i :class="tech.icon" class="text-lg"></i>
                                         </div>
-                                        <div>
+                                        <div class="text-text">
                                             <h3 class="font-bold">{{ tech.name }}</h3>
                                             <p class="text-sm">{{ tech.description }}</p>
                                         </div>

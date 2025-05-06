@@ -2,7 +2,7 @@
   <div class="px-5 py-7 md:p-14 lg:px-28">
     <Card class="bg-background rounded-lg mb-5">
       <template #title>
-        <h2 class="text-2xl">Mes Projets</h2>
+        <h2 class="text-2xl text-text">Mes Projets</h2>
       </template>
       <template #content>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -11,7 +11,7 @@
             @click="navigateToProject(project.documentId)">
             <template #title>
               <div class="flex justify-between items-center">
-                <h3 class="text-xl">{{ project.title }}</h3>
+                <h3 class="text-xl text-text">{{ project.title }}</h3>
               </div>
             </template>
 

@@ -2,7 +2,7 @@
   <Card class="bg-background rounded-lg mb-20">
     <template #title>
       <div class="flex justify-between items-center">
-        <h2 class="text-2xl">Mes Projets</h2>
+        <h2 class="text-2xl text-text">Mes Projets</h2>
         <NuxtLink to="/my/projects" class="text-action hover:underline text-sm">
           voir tout
         </NuxtLink>

@@ -1,7 +1,7 @@
 <template>
     <Card class="bg-background rounded-lg mb-20">
         <template #title>
-            <h2 class="text-2xl">Mes Expériences Professionnelles</h2>
+            <h2 class="text-2xl text-text">Mes Expériences Professionnelles</h2>
         </template>
         <template #content>
             <Timeline :value="experiences" :align="width >= 768 ? 'alternate' : 'bottom'" class="">
@@ -12,21 +12,21 @@
                 </template>
                 <template #opposite="slotProps">
                     <p class="text-secondary sm hidden md:block">
-                        {{ slotProps.item.dates }}
+                        {{ new Date(slotProps.item.start_date).getFullYear() }}
                     </p>
                 </template>
                 <template #content="slotProps">
                     <Card class="my-4 bg-primary"  @click="navigateTo(`/experience/${slotProps.item.documentId}`)"
                     data-aos="zoom-in-up" data-aos-duration="1000" >
                         <template #title>
-                            <div class="text-left">
+                            <div class="text-left text-text">
                                 {{ slotProps.item.title }}
                             </div>
                         </template>
                         <template #subtitle>
                             <div class="flex flex-col md:block text-left">
                                 <p class="text-secondary">{{ slotProps.item.company }}</p>
-                                <p class="text-secondary md:hidden">{{ slotProps.item.dates }}</p>
+                                <p class="text-secondary sm md:hidden">{{ new Date(slotProps.item.start_date).getFullYear() }}</p>
                             </div>
                         </template>
                         <template #content>

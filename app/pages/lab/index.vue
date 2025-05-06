@@ -3,11 +3,11 @@
         <Card class="bg-background rounded-lg mb-10">
             <template #title>
                 <div class="flex justify-between items-center">
-                    <h1 class="text-3xl">Mon Laboratoire</h1>
+                    <h1 class="text-3xl text-text">Mon Laboratoire</h1>
                 </div>
             </template>
             <template #content>
-                <p class="mb-6 text-lg">
+                <p class="mb-6 text-lg text-text">
                     Bienvenue dans mon laboratoire d'expérimentations ! C'est ici que je présente mes projets techniques
                     avec des démos interactives et des explications plus approfondies.
                 </p>
@@ -16,7 +16,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card v-for="project in labProjects" :key="project.id"
-                class="bg-background rounded-lg hover:shadow-lg transition-all cursor-pointer"
+                class="bg-primary rounded-lg hover:shadow-lg transition-all cursor-pointer"
                 @click="navigateTo(`/lab/${project.slug}`)">
                 <template #header>
                     <div class="relative">
@@ -29,10 +29,10 @@
                     </div>
                 </template>
                 <template #title>
-                    <h2 class="text-2xl">{{ project.title }}</h2>
+                    <h2 class="text-2xl text-text">{{ project.title }}</h2>
                 </template>
                 <template #content>
-                    <p class="mb-4">
+                    <p class="mb-8 text-text">
                         {{ project.summary }}
                     </p>
                     <div class="flex justify-around gap-2 mb-4">
