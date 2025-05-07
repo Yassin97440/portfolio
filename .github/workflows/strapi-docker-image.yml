@@ -3,10 +3,13 @@ name: Docker Image CI
 on:
   push:
     branches: ["main"]
+    paths:
+      - "strapi-portfolio/**"
   pull_request:
     branches: ["main"]
-  paths:
-    - "strapi-portfolio/**"
+    paths:
+      - "strapi-portfolio/**"
+
   workflow_dispatch:
 
 jobs:
