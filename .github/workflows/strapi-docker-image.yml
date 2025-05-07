@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Strapi Docker Image CI
 
 on:
   push:
