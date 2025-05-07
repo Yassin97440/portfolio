@@ -65,4 +65,8 @@ jobs:
             docker load < strapi-portfolio.tar.gz
             docker stop strapi-portfolio || true
             docker rm strapi-portfolio || true
-            docker run -d -p 1337:1337 --network https-net --network portfolio --name strapi-portfolio strapi-portfolio:${{ github.run_number }}
+            docker run -d -p 1337:1337 \
+              --network portfolio \
+              --network https-net \
+              --name strapi-portfolio \
+              strapi-portfolio:${{ github.run_number }}
