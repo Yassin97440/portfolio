@@ -21,20 +21,20 @@ jobs:
 
       - name: "Create env file"
         run: |
-          touch .env
-          echo APP_KEYS=${{ secrets.STRAPI_APP_KEYS }} >> .env
-          echo API_TOKEN_SALT=${{ secrets.STRAPI_API_TOKEN_SALT }} >> .env
-          echo ADMIN_JWT_SECRET=${{ secrets.STRAPI_ADMIN_JWT_SECRET }} >> .env
-          echo TRANSFER_TOKEN_SALT=${{ secrets.STRAPI_TRANSFER_TOKEN_SALT }} >> .env
-          echo JWT_SECRET=${{ secrets.STRAPI_JWT_SECRET }} >> .env
-          echo DATABASE_CLIENT=${{ secrets.STRAPI_DATABASE_CLIENT }} >> .env
-          echo DATABASE_HOST=${{ secrets.STRAPI_DATABASE_HOST }} >> .env
-          echo DATABASE_PORT=${{ secrets.STRAPI_DATABASE_PORT }} >> .env
-          echo DATABASE_NAME=${{ secrets.STRAPI_DATABASE_NAME }} >> .env
-          echo DATABASE_USERNAME=${{ secrets.STRAPI_DATABASE_USERNAME }} >> .env
-          echo DATABASE_PASSWORD=${{ secrets.STRAPI_DATABASE_PASSWORD }} >> .env
-          echo DATABASE_SSL=false >> .env
-          cat .env
+          touch ./strapi-portfolio/.env
+          echo APP_KEYS=${{ secrets.STRAPI_APP_KEYS }} >> ./strapi-portfolio/.env
+          echo API_TOKEN_SALT=${{ secrets.STRAPI_API_TOKEN_SALT }} >> ./strapi-portfolio/.env
+          echo ADMIN_JWT_SECRET=${{ secrets.STRAPI_ADMIN_JWT_SECRET }} >> ./strapi-portfolio/.env
+          echo TRANSFER_TOKEN_SALT=${{ secrets.STRAPI_TRANSFER_TOKEN_SALT }} >> ./strapi-portfolio/.env
+          echo JWT_SECRET=${{ secrets.STRAPI_JWT_SECRET }} >> ./strapi-portfolio/.env
+          echo DATABASE_CLIENT=${{ secrets.STRAPI_DATABASE_CLIENT }} >> ./strapi-portfolio/.env
+          echo DATABASE_HOST=${{ secrets.STRAPI_DATABASE_HOST }} >> ./strapi-portfolio/.env
+          echo DATABASE_PORT=${{ secrets.STRAPI_DATABASE_PORT }} >> ./strapi-portfolio/.env
+          echo DATABASE_NAME=${{ secrets.STRAPI_DATABASE_NAME }} >> ./strapi-portfolio/.env
+          echo DATABASE_USERNAME=${{ secrets.STRAPI_DATABASE_USERNAME }} >> ./strapi-portfolio/.env
+          echo DATABASE_PASSWORD=${{ secrets.STRAPI_DATABASE_PASSWORD }} >> ./strapi-portfolio/.env
+          echo DATABASE_SSL=false >> ./strapi-portfolio/.env
+          cat ./strapi-portfolio/.env
 
       - name: Build the Docker image
         run: |
