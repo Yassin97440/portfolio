@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
     handleRequest(event)
     const chatBotMessages = await readBody(event)
 
-    const apiKey = config.public.mistralApiKey
+    const apiKey = config.mistralApiKey
     const client = new Mistral({ apiKey: apiKey })
 
     try {

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { StrapiTypes } from '~~/services/strapi/StrapiTypes'
-
+const config = useRuntimeConfig()
+const strapiUrl = config.public.strapiUrl
 export const useMyStrapiContentStore = defineStore({
   id: 'myStrapiContentStore',
   state: () => ({ }),
@@ -26,7 +27,7 @@ export const useMyStrapiContentStore = defineStore({
       return response.data
     },
     getCoverImageUrl(coverImage: any) {
-      return 'http://localhost:1337' + coverImage?.url
+      return strapiUrl + coverImage?.url
     },
     getTechnologies(technologies: any[]) {
       return technologies.map((technology: any) => {

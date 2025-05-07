@@ -1,7 +1,7 @@
 import { defineEventHandler, readMultipartFormData, H3Event } from 'h3'
 
 const config = useRuntimeConfig()
-const apiUrl = config.public.catDogApi
+const apiUrl = config.catDogApi
 
 export default defineEventHandler(async (event) => {
   try {

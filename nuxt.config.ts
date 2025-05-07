@@ -57,9 +57,10 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    mistralApiKey: process.env.MISTRAL_API_KEY,
+    catDogApi: process.env.CAT_DOG_API,
     public: {
-      mistralApiKey: process.env.MISTRAL_API_KEY,
-      catDogApi: process.env.CAT_DOG_API
+      strapiUrl: process.env.STRAPI_URL,
     }
   },
 
