@@ -32,6 +32,8 @@ jobs:
           echo NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION }} >> .env
           echo MISTRAL_API_KEY=${{ secrets.MISTRAL_API_KEY }} >> .env
           echo CAT_DOG_API=${{ secrets.CAT_DOG_API }} >> .env
+          echo STRAPI_TOKEN=${{ secrets.STRAPI_TOKEN }} >> .env
+          echo STRAPI_URL=${{ secrets.STRAPI_URL }} >> .env
           cat .env
 
       - name: Build the Docker image
