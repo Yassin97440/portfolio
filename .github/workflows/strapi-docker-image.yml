@@ -38,7 +38,7 @@ jobs:
 
       - name: Build the Docker image
         run: |
-          docker build ./strapi-portfolio --file Dockerfile.prod --tag strapi-portfolio:${{ github.run_number }}
+          docker build ./strapi-portfolio --file ./strapi-portfolio/Dockerfile.prod --tag strapi-portfolio:${{ github.run_number }}
         env:
           TAG: ${{ github.run_number }}
 
