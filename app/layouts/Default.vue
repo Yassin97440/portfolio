@@ -10,7 +10,7 @@
         <!-- Menu pour mobile -->
         <div class="card flex justify-center md:hidden">
           <Button type="button" icon="pi pi-bars" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" />
-          <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
+          <Menu ref="menu" id="overlay_menu" :model="items" :popup="true" class="bg-background">
             <template #item="{ item }">
               <a v-ripple class="flex items-center gap-4 px-4 py-3">
                 <span :class="item.icon" class="text-md" />
