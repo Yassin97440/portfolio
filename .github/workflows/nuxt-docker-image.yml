@@ -28,6 +28,9 @@ jobs:
           echo CAT_DOG_API=${{ secrets.CAT_DOG_API }} >> .env
           echo STRAPI_TOKEN=${{ secrets.STRAPI_TOKEN }} >> .env
           echo STRAPI_URL=${{ secrets.STRAPI_URL }} >> .env
+          echo EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }} >> .env
+          echo EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }} >> .env
+          echo EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }} >> .env
           cat .env
 
       - name: Build the Docker image
