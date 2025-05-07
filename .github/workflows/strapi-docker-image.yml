@@ -5,11 +5,12 @@ on:
     branches: ["main"]
     paths:
       - "strapi-portfolio/**"
+      - ".github/workflows/strapi-docker-image.yml"
   pull_request:
     branches: ["main"]
     paths:
       - "strapi-portfolio/**"
-
+      - ".github/workflows/strapi-docker-image.yml"
   workflow_dispatch:
 
 jobs:
