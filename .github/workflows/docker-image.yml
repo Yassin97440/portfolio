@@ -49,4 +49,4 @@ jobs:
             docker load < portfolio.tar.gz
             docker stop portfolio || true
             docker rm portfolio || true
-            docker run -d -p 3010:3000 --name portfolio portfolio:${{ github.run_number }}
+            docker run -d -p 3010:3000 --network https-net --name portfolio portfolio:${{ github.run_number }}
