@@ -16,8 +16,8 @@
                     </p>
                 </template>
                 <template #content="slotProps">
-                    <Card class="my-4 bg-primary"  @click="navigateTo(`/experience/${slotProps.item.documentId}`)"
-                    data-aos="zoom-in-up" data-aos-duration="1000" >
+                    <Card class="my-4 bg-primary" @click="navigateTo(`/experience/${slotProps.item.documentId}`)"
+                        data-aos="zoom-in-up" data-aos-duration="1000">
                         <template #title>
                             <div class="text-left text-text">
                                 {{ slotProps.item.title }}
@@ -26,7 +26,8 @@
                         <template #subtitle>
                             <div class="flex flex-col md:block text-left">
                                 <p class="text-secondary">{{ slotProps.item.company }}</p>
-                                <p class="text-secondary sm md:hidden">{{ new Date(slotProps.item.start_date).getFullYear() }}</p>
+                                <p class="text-secondary sm md:hidden">{{ new
+                                    Date(slotProps.item.start_date).getFullYear() }}</p>
                             </div>
                         </template>
                         <template #content>
@@ -53,7 +54,7 @@ const experiences = ref<any[]>([]);
 const strapi = useStrapi();
 
 onMounted(async () => {
-    const response = await strapi.find(StrapiTypes.EXPERIENCE, { populate: ['skills'] });
+    const response = await strapi.find(StrapiTypes.EXPERIENCE, { populate: ['skills'], sort: ['start_date:desc'] });
     experiences.value = response.data;
 });
 </script>
