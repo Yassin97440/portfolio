@@ -4,7 +4,7 @@
         <WhoAmI />
         <Expertise />
         <WorkMethod />
-        <Testimonials />
+        <!-- <Testimonials /> -->
         <CallToAction />
     </div>
 </template>
