@@ -19,9 +19,9 @@
                                 <NuxtLink to="/my/Contact" class="btn-primary">
                                     Me contacter
                                 </NuxtLink>
-                                <a href="#services" class="btn-secondary">
-                                    Voir mes services
-                                </a>
+                                <NuxtLink to="/services" class="btn-secondary">
+                                    Mes services
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>

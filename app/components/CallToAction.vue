@@ -7,16 +7,16 @@
                         <div class="cta-text">
                             <h2 class="cta-title">Travaillons ensemble</h2>
                             <p class="cta-description">
-                                Un projet, une idée ou besoin d'un freelance technique fiable ?
+                                Un projet, une idée, une problématique ou un besoin ?
                                 Contactez-moi, ou découvrez mes services en détail.
                             </p>
                             <div class="cta-actions">
                                 <NuxtLink to="/my/Contact" class="cta-button primary">
                                     Me contacter
                                 </NuxtLink>
-                                <a href="#services" class="cta-button secondary">
-                                    Voir mes services
-                                </a>
+                                <NuxtLink to="/services" class="cta-button secondary">
+                                    Mes services
+                                </NuxtLink>
                             </div>
                         </div>
                         <div class="cta-visual">

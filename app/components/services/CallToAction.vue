@@ -31,11 +31,11 @@
                                     <i class="pi pi-send"></i>
                                     Demander un devis
                                 </NuxtLink>
-                                <a href="https://calendly.com/yassin-abdulla" target="_blank"
+                                <!-- <a href="https://calendly.com/yassin-abdulla" target="_blank"
                                     class="cta-button secondary">
                                     <i class="pi pi-calendar"></i>
                                     Prendre rendez-vous
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
