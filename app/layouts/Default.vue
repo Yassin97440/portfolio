@@ -66,7 +66,8 @@
 const menu = ref();
 
 const items = [
-  { label: 'Mes projets', icon: 'pi pi-briefcase', to: '/my/projects' },
+  { label: "Mes services", icon: "pi pi-briefcase", to: "/services" },
+  { label: 'Mes projets', icon: 'pi pi-code', to: '/my/projects' },
   { label: "Lab", icon: "pi pi-microchip", to: "/lab" },
   { label: "Me contacter", icon: "pi pi-envelope", to: "/my/Contact" },
 ];
