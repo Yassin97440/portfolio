@@ -14,7 +14,7 @@ export default defineNuxtConfig({
           name: 'google-site-verification',
           content: process.env.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION
         },
-        { name: 'description', content: 'Développeur logiciel et web Full Stack spécialisé Back-end. Expert en Backend, bases de données et architectures logicielles, Java, Spring Boot, Nuxt Js. Experiences en progiciel, site vitrine, développement web moderne. Conseils digitalisation' },
+        { name: 'description', content: 'Développeur logiciel et web Full Stack spécialisé Back-end. Expert en Backend, bases de données et architectures logicielles, Java, Spring Boot, Nuxt Js. Experiences en progiciel, site vitrine, développement web moderne. Conseils et accompagnements digitalisation' },
         { property: 'og:image', content: 'https://yassin.abdulla.fr/images/og-image.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -60,7 +60,7 @@ export default defineNuxtConfig({
     mistralApiKey: process.env.MISTRAL_API_KEY,
     catDogApi: process.env.CAT_DOG_API,
 
-    
+
     public: {
       emailJsServiceId: process.env.EMAILJS_SERVICE_ID,
       emailJsTemplateId: process.env.EMAILJS_TEMPLATE_ID,

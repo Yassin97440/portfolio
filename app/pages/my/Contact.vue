@@ -15,7 +15,7 @@
                   Que vous ayez un projet en tête, besoin d'une expertise technique, ou simplement envie d'échanger
                   sur des opportunités de collaboration, je suis à votre écoute.
                 </p>
-                
+
                 <!-- Email -->
                 <div class="flex items-center gap-3 p-3 transition-all duration-300 hover:bg-primary/30 rounded-lg">
                   <div class="bg-action/10 p-3 rounded-full">
@@ -23,13 +23,13 @@
                   </div>
                   <div class="w-full overflow-hidden">
                     <p class="text-sm text-secondary font-medium">Email</p>
-                    <a href="mailto:yassin.abdulla.pro@protonmail.com" 
-                       class="text-action font-medium hover:underline block text-ellipsis overflow-hidden">
+                    <a href="mailto:yassin.abdulla.pro@protonmail.com"
+                      class="text-action font-medium hover:underline block text-ellipsis overflow-hidden">
                       yassin.abdulla.pro@protonmail.com
                     </a>
                   </div>
                 </div>
-                
+
                 <!-- Disponibilité -->
                 <div class="flex items-center gap-3 p-3 transition-all duration-300 hover:bg-primary/30 rounded-lg">
                   <div class="bg-action/10 p-3 rounded-full">
@@ -40,7 +40,7 @@
                     <p class="font-medium">Lundi - Vendredi, 9h - 18h</p>
                   </div>
                 </div>
-                
+
                 <!-- Localisation -->
                 <div class="flex items-center gap-3 p-3 transition-all duration-300 hover:bg-primary/30 rounded-lg">
                   <div class="bg-action/10 p-3 rounded-full">
@@ -48,11 +48,11 @@
                   </div>
                   <div>
                     <p class="text-sm text-secondary font-medium">Localisation</p>
-                    <p class="font-medium">Montpellier, France (Remote friendly)</p>
+                    <p class="font-medium">La Réunion (974) et Montpellier, France (Remote friendly)</p>
                   </div>
                 </div>
               </div>
-              
+
               <!-- Réseaux sociaux -->
               <div data-aos="fade-up" data-aos-delay="200">
                 <h3 class="text-xl font-semibold mb-4">Retrouvez-moi sur</h3>
