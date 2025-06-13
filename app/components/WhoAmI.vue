@@ -7,6 +7,13 @@
             <template #content>
                 <BaseSubCard>
                     <div class="who-am-i-content">
+                        <!-- Photo en premier sur mobile -->
+                        <div class="profile-visual">
+                            <div class="profile-placeholder">
+                                <img src="~/assets/yassin.jpg" alt="Yassin Abdulla" class="profile-image" />
+                            </div>
+                        </div>
+
                         <div class="text-content">
                             <p class="intro-text">
                                 Je m'appelle <strong>Yassin</strong>, développeur fullstack, architecte logiciel et
@@ -22,12 +29,6 @@
                             <div class="highlight-box">
                                 <i class="pi pi-lightbulb highlight-icon"></i>
                                 <p>Passion pour l'innovation technique et l'excellence du code</p>
-                            </div>
-                        </div>
-                        <div class="profile-visual">
-                            <div class="profile-placeholder">
-                                <i class="pi pi-user profile-icon"></i>
-                                <p class="profile-text">Photo professionnelle</p>
                             </div>
                         </div>
                     </div>
@@ -108,71 +109,115 @@
 .profile-visual {
     display: flex;
     justify-content: center;
+    order: -1;
+    /* Photo en premier sur mobile */
 }
 
 .profile-placeholder {
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     background-color: var(--primary);
     border-radius: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
 }
 
 .profile-placeholder:hover {
     transform: scale(1.05);
 }
 
-.profile-icon {
-    font-size: 3rem;
-    color: var(--action);
-    margin-bottom: 0.5rem;
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--action);
 }
 
-.profile-text {
-    color: var(--text);
-    font-size: 0.875rem;
-    text-align: center;
-    opacity: 0.7;
+/* Responsive progressif */
+@media (min-width: 480px) {
+    .profile-placeholder {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 767px) {
+    .profile-placeholder {
+        width: 160px;
+        height: 160px;
+    }
 }
 
 @media (min-width: 768px) {
     .who-am-i-content {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .profile-visual {
+        order: 1;
+    }
+
+    .text-content {
+        order: 0;
+    }
+
+    .profile-placeholder {
+        width: 180px;
+        height: 180px;
     }
 }
 
-/* Améliorations Responsive */
+@media (min-width: 1024px) {
+    .who-am-i-content {
+        grid-template-columns: 4fr 1fr;
+    }
+
+    .profile-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .profile-placeholder {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Améliorations Responsive pour le texte */
 @media (max-width: 640px) {
     .intro-text {
         font-size: 1.1rem;
+        text-align: center;
     }
 
     .description-text {
         font-size: 1rem;
+        text-align: center;
     }
 
-    .profile-placeholder {
-        width: 150px;
-        height: 150px;
+    .highlight-box {
+        margin-top: 1.5rem;
     }
+}
 
-    .profile-icon {
-        font-size: 2.5rem;
+@media (min-width: 641px) and (max-width: 767px) {
+
+    .intro-text,
+    .description-text {
+        text-align: left;
     }
 }
 
 @media (min-width: 641px) and (max-width: 1023px) {
     .who-am-i-content {
         gap: 1.5rem;
-    }
-
-    .profile-placeholder {
-        width: 180px;
-        height: 180px;
     }
 }
 </style>
