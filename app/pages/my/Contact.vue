@@ -103,4 +103,11 @@ useHead({
     }
   ]
 })
+
+useSeoMeta({
+  title: 'Contact - Yassin Abdulla | Développeur logiciel - Web',
+  description: 'Contactez-moi pour discuter de vos projets ou pour toute demande de collaboration.',
+  ogTitle: 'Contact - Yassin Abdulla | Développeur logiciel - Web',
+  ogDescription: 'Contactez-moi pour discuter de vos projets ou pour toute demande de collaboration.',
+})
 </script>

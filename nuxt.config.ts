@@ -3,7 +3,7 @@ import fs from 'fs';
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Yassin Abdulla | Développeur logiciel - Backend',
+      title: 'Yassin Abdulla | Développeur logiciel - Web',
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       link: [
@@ -14,7 +14,7 @@ export default defineNuxtConfig({
           name: 'google-site-verification',
           content: process.env.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION
         },
-        { name: 'description', content: 'Développeur logiciel et web Full Stack spécialisé Back-end. Expert en Backend, bases de données et architectures logicielles. Experiences en progiciel, site vitrine, développement web moderne. Conseils et accompagnements digitalisation' },
+        { name: 'description', content: 'Freelance développeur logiciel et web Full Stack Expert en Backend, bases de données et architectures logicielles. Experiences en progiciel, site vitrine, développement web moderne. Conseils et accompagnements digitalisation. Sur Ile de La Réunion (974).' },
         { property: 'og:image', content: 'https://yassin.abdulla.fr/images/og-image.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://yassin.abdulla.fr',
     name: 'Yassin Abdulla | Développeur logiciel',
-    description: 'Freelance développeur logiciel et web Full Stack. Expert en Backend, bases de données et architectures logicielles. Accompagnement technique pour startups, indépendants, TPE, PME.',
+    description: 'Freelance développeur logiciel et web Full Stack. Expert en Backend, bases de données et architectures logicielles. Accompagnement technique en digitalisation pour startups, indépendants, TPE, PME. Sur Ile de La Réunion (974).',
     defaultLocale: 'fr',
   },
 
@@ -77,8 +77,7 @@ export default defineNuxtConfig({
 
   sitemap: {
     exclude: [
-      '/my/**',
-
+      
     ]
   },
 
