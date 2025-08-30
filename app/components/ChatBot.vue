@@ -8,7 +8,7 @@
     </Button>
 
     <!-- Dialog du chat -->
-    <Dialog v-model:visible="isOpen" header="Chat" pt:root:class="!border-0 !bg-background dark:!bg-gray-900" pt:header:class="!bg-background dark:!bg-gray-900" pt:content:class="!bg-background dark:!bg-gray-900" :modal="false" position="bottomright" :style="{ width: '400px' }" >
+    <Dialog v-model:visible="isOpen" header="Chat" pt:root:class="!border-0 !bg-background dark:!bg-gray-900" pt:header:class="!bg-background dark:!bg-gray-900 text-text" pt:content:class="!bg-background dark:!bg-gray-900 text-text" :modal="false" position="bottomright" :style="{ width: '400px' }" >
       <!-- Zone des messages -->
       <div class="chat-messages flex flex-col gap-4 overflow-y-auto" ref="messagesContainer">
         <!-- Message d'accueil quand il n'y a pas de messages -->
