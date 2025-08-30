@@ -68,7 +68,7 @@ const services = [
             'Accompagnement, conseil',
             'Structuration et stratégie de digitalisation'
         ],
-        pricing: 'À partir de 500€/mois ou forfaits à discuter'
+        pricing: 'À partir de 500€/semaine ou forfaits à discuter'
     },
     {
         id: 4,

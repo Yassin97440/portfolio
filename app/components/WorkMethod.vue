@@ -39,27 +39,32 @@
 <script setup lang="ts">
 const workflowSteps = [
     {
-        title: 'Brief & Analyse',
+        title: 'Audit (Analyse & Brief)',
         description: 'Compréhension approfondie de vos besoins et objectifs'
     },
     {
-        title: 'Conception',
+        title: 'Conception (Design & Architecture)',
         description: 'Architecture technique et planification du développement'
     },
     {
-        title: 'Développement',
+        title: 'Développement (Code & Tests)',
         description: 'Implémentation avec des revues régulières et des ajustements'
     },
     {
         title: 'Livraison',
-        description: 'Tests, documentation et déploiement de la solution'
+        description: 'Formation utilisateur, documentation, déploiement'
+    },
+    {
+        title: 'Maintenance & Support',
+        description: 'Suivi et ajustements pour garantir la performance et la satisfaction'
     }
+
 ]
 
 const principles = [
     {
         id: 1,
-        icon: 'pi pi-rocket',
+        icon: 'pi pi-users',
         title: 'Approche personnalisée',
         description: 'Solutions adaptées à vos besoins spécifiques et à votre contexte'
     },
