@@ -36,6 +36,14 @@ const strapi = useStrapi();
 const description = ref<any>(null);
 const skills = ref<any>(null);
 
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://yassin.abdulla.fr/my/profil'
+    }
+  ]
+})
 
 onMounted(async () => {
   const response = await strapi.find(StrapiTypes.MY_PROFIL);

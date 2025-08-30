@@ -52,7 +52,14 @@
 
 <script setup>
 import { useMyStrapiContentStore } from '~/stores/strapi-content'
-
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://yassin.abdulla.fr/project/${route.params.id}`
+    }
+  ]
+})
 
 const route = useRoute()
 const project = ref(null)

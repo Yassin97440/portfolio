@@ -14,7 +14,7 @@ export default defineNuxtConfig({
           name: 'google-site-verification',
           content: process.env.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION
         },
-        { name: 'description', content: 'Développeur logiciel et web Full Stack spécialisé Back-end. Expert en Backend, bases de données et architectures logicielles, Java, Spring Boot, Nuxt Js. Experiences en progiciel, site vitrine, développement web moderne. Conseils et accompagnements digitalisation' },
+        { name: 'description', content: 'Développeur logiciel et web Full Stack spécialisé Back-end. Expert en Backend, bases de données et architectures logicielles. Experiences en progiciel, site vitrine, développement web moderne. Conseils et accompagnements digitalisation' },
         { property: 'og:image', content: 'https://yassin.abdulla.fr/images/og-image.jpg' },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://yassin.abdulla.fr',
     name: 'Yassin Abdulla | Développeur logiciel',
-    description: 'Développeur logiciel et webFull Stack spécialisé en Java, Spring Boot, et développement web moderne. Expert en Backend, bases de données et architectures logicielles.',
+    description: 'Freelance développeur logiciel et web Full Stack. Expert en Backend, bases de données et architectures logicielles. Accompagnement technique pour startups, indépendants, TPE, PME.',
     defaultLocale: 'fr',
   },
 
@@ -82,7 +82,7 @@ export default defineNuxtConfig({
     ]
   },
 
-  modules: ['@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/mdc', 'nuxt-aos', '@nuxtjs/strapi'],
+  modules: ['@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/mdc', 'nuxt-aos', '@nuxtjs/strapi', '@nuxtjs/seo'],
 
   devServer: {
     https: {

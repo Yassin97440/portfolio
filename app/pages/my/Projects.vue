@@ -60,6 +60,15 @@ const strapi = useStrapi();
 const strapiContentStore = useMyStrapiContentStore()
 const projects = ref([])
 
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://yassin.abdulla.fr/my/projects'
+    }
+  ]
+})
+
 onMounted(async () => {
   const response = await strapi.find(StrapiTypes.PROJECT, {populate: ['coverImage', 'technologies']})
   projects.value = response.data

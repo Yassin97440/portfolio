@@ -100,6 +100,15 @@ const route = useRoute()
 const strapi = useStrapi()
 const experience = ref<any>(null)
 
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: `https://yassin.abdulla.fr/experience/${route.params.id}`
+    }
+  ]
+})
+
 onMounted(async () => {
   
   const response = await strapi.findOne(StrapiTypes.EXPERIENCE, String(route.params.id))

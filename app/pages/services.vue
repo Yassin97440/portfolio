@@ -9,6 +9,14 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://yassin.abdulla.fr/services'
+    }
+  ]
+})
 useSeoMeta({
     title: 'Services - Yassin Abdulla | Freelance Développeur Fullstack',
     description: 'Freelance développeur logiciel Montpellier / La Réunion (974) : création d\'applications web, architecture logicielle, IA/automatisation, accompagnement CTO. Devis gratuit.',

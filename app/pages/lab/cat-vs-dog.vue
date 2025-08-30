@@ -135,6 +135,14 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useCatVsDogStore } from '~/stores/cat-vs-dog';
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://yassin.abdulla.fr/lab/cat-vs-dog'
+    }
+  ]
+})
 
 definePageMeta({
     layout: 'default',

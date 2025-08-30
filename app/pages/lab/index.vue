@@ -67,6 +67,15 @@ const labProjects = ref<any[]>([]);
 const store = useMyStrapiContentStore();
 const strapi = useStrapi();
 
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://yassin.abdulla.fr/lab'
+    }
+  ]
+})
+
 onMounted(async () => {
     const response = await strapi.find(StrapiTypes.LAB_ARTICLE, {
         populate: ['coverImage', 'technologies'],

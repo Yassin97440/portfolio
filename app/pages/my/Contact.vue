@@ -95,4 +95,12 @@
 
 <script setup lang="ts">
 import { EnvelopeIcon, ClockIcon, MapPinIcon } from '@heroicons/vue/24/solid'
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://yassin.abdulla.fr/my/Contact'
+    }
+  ]
+})
 </script>
