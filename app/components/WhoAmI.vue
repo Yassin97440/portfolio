@@ -26,6 +26,7 @@
                                 une attention particulière portée à la qualité, la performance et l'expérience
                                 utilisateur.
                             </p>
+                            <p class="description-text"> Vous pouvez en savoir plus sur mon profil <NuxtLink to="/my/profil" class="text-action hover:underline">ici</NuxtLink></p>
                             <div class="highlight-box">
                                 <i class="pi pi-lightbulb highlight-icon"></i>
                                 <p>Passion pour l'innovation technique et l'excellence du code</p>
