@@ -2,7 +2,7 @@
   <div>
     <Card class="w-full bg-background rounded-lg">
       <template #title>
-        <h2 class="text-xl font-semibold mt-6 mb-2">Mon Cursus Scolaire</h2>
+        <h2 class="text-xl text-text font-semibold mt-6 mb-2">Mon Cursus Scolaire</h2>
       </template>
       <template #content>
         <Timeline :value="education" layout="horizontal" align="top" class="horizontal-timeline w-full grid-flow-col">
