@@ -57,10 +57,11 @@
         v-model="formData.message"
         rows="5"
         :class="{'p-invalid': errors.message, 'shadow-action/20 scale-101': fieldFocus.message}"
-        class="w-full p-3 rounded-lg border border-gray-300 focus:border-action focus:ring-1 focus:ring-action transition-all duration-200"
+        class="w-full p-3 rounded-lg border border-gray-300 focus:border-action focus:ring-1 focus:ring-action transition-all duration-200 text-black"
         placeholder="Décrivez votre projet ou votre besoin en détail..."
         @focus="fieldFocus.message = true"
         @blur="fieldFocus.message = false"
+        
       />
       <small v-if="errors.message" class="text-red-500 block mt-1 animate-pulse">{{ errors.message }}</small>
     </div>
@@ -270,12 +271,10 @@ const handleSubmit = async () => {
       found_through: foundThroughOptions.find(option => option.value === formData.foundThrough)?.label || 'Non spécifié'
     };
 
-    const response = await emailjs.send(
-      config.public.emailJsServiceId as string,  // ID de service EmailJS 
-      config.public.emailJsTemplateId as string, // ID du template EmailJS
-      templateParams,
-      config.public.emailJsPublicKey as string   // Clé publique EmailJS
-    );
+    const response = await $fetch('/api/sendContactMail', {
+      method: 'POST',
+      body: templateParams
+    });
     
     if (response.status === 200) {
     formStatus.showMessage = true;

@@ -59,12 +59,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     mistralApiKey: process.env.MISTRAL_API_KEY,
     catDogApi: process.env.CAT_DOG_API,
+    resendApiKey: process.env.RESEND_API_KEY,
 
 
     public: {
-      emailJsServiceId: process.env.EMAILJS_SERVICE_ID,
-      emailJsTemplateId: process.env.EMAILJS_TEMPLATE_ID,
-      emailJsPublicKey: process.env.EMAILJS_PUBLIC_KEY,
+
       strapiUrl: process.env.STRAPI_URL,
     }
   },
