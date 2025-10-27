@@ -70,7 +70,7 @@ onMounted(() => {
 // Récupère un projet spécifique par son slug
 const fetchProject = async () => {
   try {
-    const response = await strapiContentStore.findProjectById(route.params.id)
+    const response = await strapiContentStore.findProjectBySlug(route.params.id)
     project.value = response
   } catch (error) {
     console.error("Erreur lors du chargement du projet:", error)
