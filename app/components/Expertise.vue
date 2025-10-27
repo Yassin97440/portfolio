@@ -33,8 +33,8 @@ const expertises = [
         id: 1,
         icon: 'pi pi-code',
         title: 'Développement web fullstack',
-        description: 'Création d\'applications web complètes avec les dernières technologies.',
-        tags: ['Nuxt 3', 'Spring Boot', 'MySQL', 'PgSQL', 'NodeJs']
+        description: 'Création d\'applications web complètes avec les dernières technologies. De l\'application web classique à la solution sur-mesure. En partant de l\'analyse de besoin jusqu\'au déploiement et la formation des équipes.',
+        tags: ['NuxtJS', 'Spring Boot', 'PostgreSQL', 'MySQL', 'NodeJS']
     },
     {
         id: 2,
@@ -43,26 +43,26 @@ const expertises = [
         description: 'Conception de systèmes robustes et évolutifs.',
         tags: ['SQL/NoSQL', 'DDD', 'Microservices', 'Monolithes']
     },
-    {
-        id: 3,
-        icon: 'pi pi-bolt',
-        title: 'IA & Automatisation intelligente',
-        description: 'Intégration d\'intelligence artificielle dans vos processus.',
-        tags: ['RAG', 'Agents IA', 'LangChain', 'OpenCV']
-    },
-    {
-        id: 4,
-        icon: 'pi pi-wifi',
-        title: 'Développement embarqué & IoT',
-        description: 'Solutions connectées et systèmes embarqués.',
-        tags: ['ESP32', 'Raspberry Pi', 'Arduino']
-    },
+    // {
+    //     id: 3,
+    //     icon: 'pi pi-bolt',
+    //     title: 'IA & Automatisation intelligente',
+    //     description: 'Intégration d\'intelligence artificielle dans vos processus.',
+    //     tags: ['RAG', 'Agents IA', 'LangChain', 'OpenCV']
+    // },
+    // {
+    //     id: 4,
+    //     icon: 'pi pi-wifi',
+    //     title: 'Développement embarqué & IoT',
+    //     description: 'Solutions connectées et systèmes embarqués.',
+    //     tags: ['ESP32', 'Raspberry Pi', 'Arduino']
+    // },
     {
         id: 5,
         icon: 'pi pi-users',
         title: 'Conseil technique',
-        description: 'Accompagnement stratégique et expertise technique.',
-        tags: ['MVP', 'Audit code', 'Stratégie technique']
+        description: 'Accompagnement stratégique et expertise technique. Analyse et conseil dans les choix stratégiques en liens avec le digital et la nuémrisation de votre entreprise.',
+        tags: ['MVP', 'Audit code', 'Stratégie technique', 'Digitalisation', 'Nuémrisation']
     }
 ]
 </script>

@@ -20,9 +20,9 @@
                                 </li>
                             </ul>
 
-                            <div class="service-pricing">
+                            <!-- <div class="service-pricing">
                                 <p class="pricing-text">{{ service.pricing }}</p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </BaseSubCard>
@@ -62,11 +62,12 @@ const services = [
         icon: 'pi pi-users',
         title: 'Accompagnement / CTO freelance',
         features: [
+            'Accompagnement transition digitale (changement ou ajout de logiciel dans les processus métiers)',
+            'Structuration et stratégie de digitalisation',
             'Accompagnement technique ponctuel ou récurrent',
             'Coaching pour devs junior / équipes techniques',
             'Audit de votre système d\'informations',
             'Accompagnement, conseil',
-            'Structuration et stratégie de digitalisation'
         ],
         pricing: 'À partir de 500€/semaine ou forfaits à discuter'
     },

@@ -8,11 +8,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <BaseSubCard v-for="project in projects" :key="project.id"
             class="bg-primary hover:transform hover:scale-105 transition-transform"
-            @click="navigateToProject(project.documentId)">
+            @click="navigateToProject(project.slug)">
             <template #title>
               <div class="flex justify-between items-center">
                 <h3 class="text-xl text-text">{{ project.title }}</h3>
               </div>
+
+
+              
             </template>
 
             <div class="space-y-4">
@@ -75,8 +78,8 @@ onMounted(async () => {
   
 })
 
-const navigateToProject = (id) => {
-  router.push(`/project/${id}`);
+const navigateToProject = (slug) => {
+  router.push(`/project/${slug}`);
 };
 
 const openUrl = (url) => {

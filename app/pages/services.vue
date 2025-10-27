@@ -1,8 +1,9 @@
 <template>
     <div class="services-page">
         <ServicesIntro />
+        <ServicesList />
         <ServicesOffered />
-        <ServicesPackages />
+        <!-- <ServicesPackages /> -->
         <ServicesFAQ />
         <ServicesCallToAction />
     </div>
