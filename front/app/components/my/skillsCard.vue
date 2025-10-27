@@ -42,7 +42,6 @@
 </template>
 
 <script lang="ts" setup>
-import { StrapiTypes } from '~~/services/strapi/StrapiTypes';
 
 interface Skill {
   id: number;

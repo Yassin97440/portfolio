@@ -94,7 +94,6 @@
 </template>
 
 <script lang="ts" setup>
-import { StrapiTypes } from '~~/services/strapi/StrapiTypes'
 
 const route = useRoute()
 const strapi = useStrapi()

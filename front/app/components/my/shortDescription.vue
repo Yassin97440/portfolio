@@ -20,7 +20,6 @@
 
 <script lang="ts" setup>
 import { useMyStrapiContentStore } from '~/stores/strapi-content';
-import { StrapiTypes } from '~~/services/strapi/StrapiTypes';
 const profil = ref<any>(null);
 
 const strapi = useStrapi();

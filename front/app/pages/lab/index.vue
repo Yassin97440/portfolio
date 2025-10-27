@@ -59,7 +59,6 @@
 
 <script setup lang="ts">
 import { useMyStrapiContentStore } from '~/stores/strapi-content';
-import { StrapiTypes } from '~~/services/strapi/StrapiTypes';
 
 // Données des projets du laboratoire
 const labProjects = ref<any[]>([]);

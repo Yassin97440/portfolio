@@ -31,7 +31,6 @@
 </template>
 
 <script lang="ts" setup>
-import { StrapiTypes } from '~~/services/strapi/StrapiTypes';
 
 interface Technology {
   id: number;

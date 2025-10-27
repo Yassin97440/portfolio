@@ -51,7 +51,9 @@
 </template>
 
 <script setup>
-import { useMyStrapiContentStore } from '~/stores/strapi-content'
+const route = useRoute()
+const project = ref(null)
+const strapiContentStore = useMyStrapiContentStore()
 useHead({
   link: [
     {
@@ -61,9 +63,6 @@ useHead({
   ]
 })
 
-const route = useRoute()
-const project = ref(null)
-const strapiContentStore = useMyStrapiContentStore()
 onMounted(() => {
   fetchProject()
 })
@@ -71,6 +70,7 @@ onMounted(() => {
 const fetchProject = async () => {
   try {
     const response = await strapiContentStore.findProjectBySlug(route.params.id)
+    console.log("🚀 ~ fetchProject ~ response:", response)
     project.value = response
   } catch (error) {
     console.error("Erreur lors du chargement du projet:", error)

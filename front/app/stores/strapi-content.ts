@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { StrapiTypes } from '~~/services/strapi/StrapiTypes'
 const config = useRuntimeConfig()
 const strapiUrl = config.public.strapiUrl
 export const useMyStrapiContentStore = defineStore({

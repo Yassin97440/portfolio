@@ -54,7 +54,6 @@
 <script setup>
 import { usePortfolioStore } from "@/stores/portfolio";
 import { useRouter } from "vue-router";
-import { StrapiTypes } from "~~/services/strapi/StrapiTypes";
 import { useMyStrapiContentStore } from "@/stores/strapi-content";
 
 const store = usePortfolioStore();

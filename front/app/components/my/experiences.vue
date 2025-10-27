@@ -45,7 +45,6 @@
 <script setup lang="ts">
 import { usePortfolioStore } from "~/stores/portfolio";
 import { useWindowSize } from "@vueuse/core";
-import { StrapiTypes } from "~~/services/strapi/StrapiTypes";
 
 const { width } = useWindowSize();
 const store = usePortfolioStore();

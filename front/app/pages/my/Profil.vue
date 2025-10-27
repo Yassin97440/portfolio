@@ -27,7 +27,6 @@
 
 <script lang="ts" setup>
 import { usePortfolioStore } from "~/stores/portfolio";
-import { StrapiTypes } from "~~/services/strapi/StrapiTypes";
 
 const portfolioStore = usePortfolioStore();
 const { myselfData } = portfolioStore;
