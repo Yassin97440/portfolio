@@ -14,9 +14,10 @@ export const useStrapiContentStore = defineStore('strapiContentStore', {
       const response = await strapi.findOne(StrapiTypes.PROJECT, id, {populate: ['technologies', 'coverImage', 'skills']})
       return response.data
     },
-    async findProjectBySlug(slug: string) {
+    async findProject(id: string) {
       const strapi = useStrapi()
-      const response = await strapi.findOne(StrapiTypes.PROJECT, {filters: {slug: slug}}, {populate: ['technologies', 'coverImage', 'skills']})
+      const response = await strapi.findOne(StrapiTypes.PROJECT, id,
+        {populate: ['technologies', 'coverImage', 'skills'] as any})
       return response.data
     },
     async findExperiences() {

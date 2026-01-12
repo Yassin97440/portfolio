@@ -52,6 +52,7 @@ export default defineNuxtConfig({
   strapi: {
     url: process.env.STRAPI_URL,
     token: process.env.STRAPI_TOKEN,
+    version: 'v5',
   },
 
   // @nuxt/ui must be first in modules
