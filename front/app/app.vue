@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <UApp>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
     <ChatBot />
-  </div>
+  </UApp>
 </template>
 
 <script setup lang="ts">
@@ -16,5 +16,4 @@ useHead({
     }
   ]
 })
-
 </script>

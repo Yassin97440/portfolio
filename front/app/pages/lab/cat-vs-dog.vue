@@ -1,7 +1,7 @@
 <template>
     <div class="px-5 py-7 md:p-14 lg:p-28">
-        <Card class="bg-background rounded-lg mb-10 text-text">
-            <template #title>
+        <UCard class="bg-background rounded-lg mb-10 text-text" :ui="{ root: 'bg-background rounded-lg' }">
+            <template #header>
                 <div class="flex justify-between items-center">
                     <h1 class="text-2xl">{{ projectData.title }}</h1>
                     <NuxtLink to="/lab" class="text-action hover:underline text-sm">
@@ -9,126 +9,133 @@
                     </NuxtLink>
                 </div>
             </template>
-            <template #content>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Partie démo -->
-                    <div class="demo-section">
-                        <Card class="bg-primary mb-6">
-                            <template #title>
-                                <h2 class="text-xl text-text">Essayez le modèle</h2>
-                            </template>
-                            <template #content>
-                                <div class="flex flex-col items-center">
-                                    <div v-if="imagePreview" class="mb-4 relative w-full">
-                                        <img :src="imagePreview" alt="Preview"
-                                            class="max-h-64 max-w-full rounded-lg mx-auto" />
-                                        <div v-if="result"
-                                            class="absolute top-2 right-2 px-3 py-1 rounded-lg text-white font-bold"
-                                            :class="result.prediction === 'dog' ? 'bg-blue-500' : 'bg-orange-500'">
-                                            {{ result.prediction }} ({{result.confidence }}%)
-                                        </div>
-                                    </div>
-
-                                    <FileUpload v-if="!imagePreview" :multiple="false" accept="image/*"
-                                        :maxFileSize="1000000" @select="onImageSelect" @error="onFileError"
-                                        :customUpload="true" class="w-full">
-                                        <template #empty>
-                                            <div class="flex items-center justify-center flex-col p-6">
-                                                <i class="pi pi-image text-4xl mb-2 text-secondary" />
-                                                <p class="text-text">Glissez une image ou cliquez sur une image exemple
-                                                </p>
-                                            </div>
-                                        </template>
-                                        <template #header="{ chooseCallback }">
-                                            <div class="flex justify-center p-3">
-                                                <Button @click="chooseCallback()" icon="pi pi-upload"
-                                                    label="Sélectionner une image" class="p-button-action p-2" />
-                                            </div>
-                                        </template>
-                                    </FileUpload>
-
-                                    <div v-if="imagePreview && !result && !isLoading" class="flex gap-4  mt-4">
-                                        <Button icon="pi pi-search" label="Analyser l'image" @click="analyzeImage"
-                                            class="w-full bg-action" severity="success" />
-                                    </div>
-
-                                    <div v-if="imagePreview" class="flex gap-4 mt-4">
-                                        <Button icon="pi pi-refresh" label="Réinitialiser" @click="resetDemo"
-                                            class="w-full" severity="secondary" />
-                                    </div>
-                                    <ProgressBar v-if="isLoading" mode="indeterminate" class="w-full mt-4" />
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Partie démo -->
+                <div class="demo-section">
+                    <UCard class="bg-primary mb-6" :ui="{ root: 'bg-primary' }">
+                        <template #header>
+                            <h2 class="text-xl text-text">Essayez le modèle</h2>
+                        </template>
+                        <div class="flex flex-col items-center">
+                            <div v-if="imagePreview" class="mb-4 relative w-full">
+                                <img :src="imagePreview" alt="Preview"
+                                    class="max-h-64 max-w-full rounded-lg mx-auto" />
+                                <div v-if="result"
+                                    class="absolute top-2 right-2 px-3 py-1 rounded-lg text-white font-bold"
+                                    :class="result.prediction === 'dog' ? 'bg-blue-500' : 'bg-orange-500'">
+                                    {{ result.prediction }} ({{ result.confidence }}%)
                                 </div>
-                            </template>
-                        </Card>
+                            </div>
 
-                        <Card class="bg-primary">
-                            <template #title>
-                                <h2 class="text-xl text-text">Images d'exemple</h2>
-                            </template>
-                            <template #content>
-                                <div class="grid grid-cols-3 gap-2">
-                                    <img v-for="(img, index) in projectData.sampleImages" :key="index" :src="img"
-                                        @click="useSampleImage(img)"
-                                        class="w-full h-20 object-cover rounded cursor-pointer hover:opacity-80 transition-opacity" />
+                            <div v-if="!imagePreview" class="w-full border-2 border-dashed border-secondary rounded-lg p-6">
+                                <div class="flex items-center justify-center flex-col">
+                                    <UIcon name="i-lucide-image" class="text-4xl mb-2 text-secondary" />
+                                    <p class="text-text mb-4">Glissez une image ou cliquez sur une image exemple</p>
+                                    <input 
+                                        type="file" 
+                                        accept="image/*" 
+                                        @change="onFileChange"
+                                        class="hidden"
+                                        ref="fileInput"
+                                    />
+                                    <UButton 
+                                        @click="($refs.fileInput as HTMLInputElement)?.click()" 
+                                        icon="i-lucide-upload"
+                                        class="bg-action"
+                                    >
+                                        Sélectionner une image
+                                    </UButton>
                                 </div>
-                            </template>
-                        </Card>
-                    </div>
+                            </div>
 
-                    <!-- Partie explication -->
-                    <div class="explanation-section">
-                        <Card class="bg-primary mb-6">
-                            <template #title>
-                                <h2 class="text-xl text-text">Comment ça marche ?</h2>
-                            </template>
-                            <template #content>
-                                <div class="space-y-4 text-sm text-text">
-                                    <p v-html="projectData.explanation.intro"></p>
+                            <div v-if="imagePreview && !result && !isLoading" class="flex gap-4 mt-4">
+                                <UButton 
+                                    icon="i-lucide-search" 
+                                    @click="analyzeImage"
+                                    class="w-full bg-action"
+                                    color="success"
+                                >
+                                    Analyser l'image
+                                </UButton>
+                            </div>
 
-                                    <h3 class="font-bold mt-4">Architecture du modèle :</h3>
-                                    <ul class="list-disc pl-5 space-y-2">
-                                        <li v-for="(item, index) in projectData.explanation.architecture" :key="index">
-                                            {{ item }}
-                                        </li>
-                                    </ul>
+                            <div v-if="imagePreview" class="flex gap-4 mt-4">
+                                <UButton 
+                                    icon="i-lucide-refresh-cw" 
+                                    @click="resetDemo"
+                                    class="w-full"
+                                    color="neutral"
+                                    variant="outline"
+                                >
+                                    Réinitialiser
+                                </UButton>
+                            </div>
+                            
+                            <UProgress v-if="isLoading" class="w-full mt-4" />
+                        </div>
+                    </UCard>
 
-                                    <h3 class="font-bold mt-4">Performances :</h3>
-                                    <p>{{ projectData.explanation.performance }}</p>
-
-                                    <h3 class="font-bold mt-4">Limitations :</h3>
-                                    <p>Le modèle peut avoir des difficultés avec :</p>
-                                    <ul class="list-disc pl-5">
-                                        <li v-for="(item, index) in projectData.explanation.limitations" :key="index">
-                                            {{ item }}
-                                        </li>
-                                    </ul>
-                                </div>
-                            </template>
-                        </Card>
-
-                        <Card class="bg-primary">
-                            <template #title>
-                                <h2 class="text-xl text-text">Technologies utilisées</h2>
-                            </template>
-                            <template #content>
-                                <div class="space-y-4">
-                                    <div v-for="(tech, index) in projectData.technologies" :key="index"
-                                        class="flex items-start gap-3">
-                                        <div class="bg-secondary rounded-full p-2 flex-shrink-0">
-                                            <i :class="tech.icon" class="text-lg"></i>
-                                        </div>
-                                        <div class="text-text">
-                                            <h3 class="font-bold">{{ tech.name }}</h3>
-                                            <p class="text-sm">{{ tech.description }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </template>
-                        </Card>
-                    </div>
+                    <UCard class="bg-primary" :ui="{ root: 'bg-primary' }">
+                        <template #header>
+                            <h2 class="text-xl text-text">Images d'exemple</h2>
+                        </template>
+                        <div class="grid grid-cols-3 gap-2">
+                            <img v-for="(img, index) in projectData.sampleImages" :key="index" :src="img"
+                                @click="useSampleImage(img)"
+                                class="w-full h-20 object-cover rounded cursor-pointer hover:opacity-80 transition-opacity" />
+                        </div>
+                    </UCard>
                 </div>
-            </template>
-        </Card>
+
+                <!-- Partie explication -->
+                <div class="explanation-section">
+                    <UCard class="bg-primary mb-6" :ui="{ root: 'bg-primary' }">
+                        <template #header>
+                            <h2 class="text-xl text-text">Comment ça marche ?</h2>
+                        </template>
+                        <div class="space-y-4 text-sm text-text">
+                            <p v-html="projectData.explanation.intro"></p>
+
+                            <h3 class="font-bold mt-4">Architecture du modèle :</h3>
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li v-for="(item, index) in projectData.explanation.architecture" :key="index">
+                                    {{ item }}
+                                </li>
+                            </ul>
+
+                            <h3 class="font-bold mt-4">Performances :</h3>
+                            <p>{{ projectData.explanation.performance }}</p>
+
+                            <h3 class="font-bold mt-4">Limitations :</h3>
+                            <p>Le modèle peut avoir des difficultés avec :</p>
+                            <ul class="list-disc pl-5">
+                                <li v-for="(item, index) in projectData.explanation.limitations" :key="index">
+                                    {{ item }}
+                                </li>
+                            </ul>
+                        </div>
+                    </UCard>
+
+                    <UCard class="bg-primary" :ui="{ root: 'bg-primary' }">
+                        <template #header>
+                            <h2 class="text-xl text-text">Technologies utilisées</h2>
+                        </template>
+                        <div class="space-y-4">
+                            <div v-for="(tech, index) in projectData.technologies" :key="index"
+                                class="flex items-start gap-3">
+                                <div class="bg-secondary rounded-full p-2 flex-shrink-0">
+                                    <UIcon :name="tech.icon" class="text-lg" />
+                                </div>
+                                <div class="text-text">
+                                    <h3 class="font-bold">{{ tech.name }}</h3>
+                                    <p class="text-sm">{{ tech.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </UCard>
+                </div>
+            </div>
+        </UCard>
     </div>
 </template>
 
@@ -178,22 +185,22 @@ const projectData = {
     technologies: [
         {
             name: 'TensorFlow/Keras',
-            icon: 'pi pi-microchip-ai',
+            icon: 'i-lucide-cpu',
             description: 'Framework de deep learning utilisé pour construire et entraîner le modèle CNN.'
         },
         {
             name: 'FastAPI',
-            icon: 'pi pi-bolt',
+            icon: 'i-lucide-zap',
             description: 'API Python qui sert le modèle et traite les requêtes.'
         },
         {
             name: 'Nuxt.js',
-            icon: 'pi pi-desktop',
+            icon: 'i-lucide-monitor',
             description: 'Utilisation du portfolio existant pour la démo'
         },
         {
             name: 'Docker',
-            icon: 'pi pi-box',
+            icon: 'i-lucide-box',
             description: 'Conteneurisation du modèle et de l\'API pour un déploiement facile.'
         }
     ]
@@ -202,14 +209,16 @@ const projectData = {
 const catVsDogStore = useCatVsDogStore();
 const imagePreview = ref<string | null>(null);
 const selectedFile = ref<File | null>(null);
+const fileInput = ref<HTMLInputElement | null>(null);
 
 // Utiliser les valeurs du store
 const isLoading = computed(() => catVsDogStore.isLoading);
 const result = computed(() => catVsDogStore.result);
 
-// Séparation de la sélection et de l'analyse
-const onImageSelect = (event: any) => {
-    const file = event.files[0];
+// Gestion du changement de fichier
+const onFileChange = (event: Event) => {
+    const target = event.target as HTMLInputElement;
+    const file = target.files?.[0];
     if (!file) return;
 
     // Créer un aperçu de l'image
@@ -240,62 +249,9 @@ const analyzeImage = async () => {
     }
 };
 
-const onFileError = (event: any) => {
-    // Gérer les erreurs de téléchargement
-    console.error('Erreur de téléchargement:', event);
-};
-
 const resetDemo = () => {
     imagePreview.value = null;
     catVsDogStore.result = null;
     selectedFile.value = null;
 };
 </script>
-
-<style scoped>
-:deep(.p-fileupload-content) {
-    border: 2px dashed var(--secondary);
-    border-radius: 0.5rem;
-    background-color: transparent;
-}
-
-:deep(.p-fileupload-buttonbar) {
-    background-color: transparent;
-    border: none;
-    padding: 0.5rem;
-    justify-content: center;
-}
-
-:deep(.p-fileupload-buttonbar .p-button) {
-    background-color: var(--action);
-    border-color: var(--action);
-    margin: 0;
-}
-
-:deep(.p-fileupload-buttonbar .p-button:hover) {
-    background-color: var(--action);
-    filter: brightness(1.1);
-    border-color: var(--action);
-}
-
-:deep(.p-button-action) {
-    background-color: var(--action);
-    border-color: var(--action);
-}
-
-:deep(.p-button-action:hover) {
-    background-color: var(--action);
-    filter: brightness(1.1);
-    border-color: var(--action);
-}
-
-:deep(.p-fileupload-header) {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-}
-
-:deep(.p-fileupload .p-button-icon-only) {
-    display: none;
-}
-</style>

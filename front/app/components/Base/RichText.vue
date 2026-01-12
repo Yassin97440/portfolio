@@ -43,7 +43,7 @@
         class="pl-5 space-y-2 my-4">
         <li v-for="(item, itemIndex) in block.children" :key="itemIndex" 
           class="flex items-start">
-          <i class="pi pi-circle-fill text-action mr-3 mt-1.5 text-[8px]"></i>
+          <UIcon name="i-lucide-circle" class="text-action mr-3 mt-1.5 text-[8px]" />
           <span>{{ getTextContent(item) }}</span>
         </li>
       </ul>
@@ -114,7 +114,7 @@ const getTextContent = (block: RichTextChild): string => {
 
 <style>
 .rich-text-block {
-  @apply mb-4;
+  margin-bottom: 1rem;
 }
 
 .rich-text-block p {

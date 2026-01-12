@@ -1,14 +1,14 @@
 <template>
   <form @submit.prevent="handleSubmit" class="space-y-6">
     <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="100">
-
-        <!-- Name -->
-      <label for="name" class="block text-sm font-medium mb-1">Nom complet <span class="text-red-500">*</span></label>
-      <InputText
+      <!-- Name -->
+      <label for="name" class="block text-sm font-medium mb-1 text-text">Nom complet <span class="text-red-500">*</span></label>
+      <UInput
         id="name"
         v-model="formData.name"
-        :class="{'p-invalid': errors.name, 'shadow-action/20 scale-101': fieldFocus.name}"
-        class="w-full p-3 rounded-lg border border-gray-300 focus:border-action focus:ring-1 focus:ring-action transition-all duration-200"
+        :color="errors.name ? 'error' : undefined"
+        class="w-full transition-all duration-200"
+        :class="{'shadow-action/20 scale-101': fieldFocus.name}"
         placeholder="Votre nom et prénom"
         @focus="fieldFocus.name = true"
         @blur="fieldFocus.name = false"
@@ -18,12 +18,14 @@
 
     <!-- Email -->
     <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="150">
-      <label for="email" class="block text-sm font-medium mb-1">Email <span class="text-red-500">*</span></label>
-      <InputText
+      <label for="email" class="block text-sm font-medium mb-1 text-text">Email <span class="text-red-500">*</span></label>
+      <UInput
         id="email"
         v-model="formData.email"
-        :class="{'p-invalid': errors.email, 'shadow-action/20 scale-101': fieldFocus.email}"
-        class="w-full p-3 rounded-lg border border-gray-300 focus:border-action focus:ring-1 focus:ring-action transition-all duration-200"
+        type="email"
+        :color="errors.email ? 'error' : undefined"
+        class="w-full transition-all duration-200"
+        :class="{'shadow-action/20 scale-101': fieldFocus.email}"
         placeholder="votre.email@exemple.com"
         @focus="fieldFocus.email = true"
         @blur="fieldFocus.email = false"
@@ -33,16 +35,17 @@
 
     <!-- Subject -->
     <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="200">
-      <label for="subject" class="block text-sm font-medium mb-1">Sujet <span class="text-red-500">*</span></label>
-      <Dropdown
+      <label for="subject" class="block text-sm font-medium mb-1 text-text">Sujet <span class="text-red-500">*</span></label>
+      <USelect
         id="subject"
         v-model="formData.subject"
-        :options="subjectOptions"
-        optionLabel="label"
-        optionValue="value"
+        :items="subjectOptions"
+        value-key="value"
+        label-key="label"
         placeholder="Sélectionnez un sujet"
-        class="w-full p-3 rounded-lg transition-all duration-200"
-        :class="{'p-invalid': errors.subject, 'shadow-action/20 scale-101': fieldFocus.subject}"
+        class="w-full transition-all duration-200"
+        :class="{'shadow-action/20 scale-101': fieldFocus.subject}"
+        :color="errors.subject ? 'error' : undefined"
         @focus="fieldFocus.subject = true"
         @blur="fieldFocus.subject = false"
       />
@@ -51,47 +54,47 @@
 
     <!-- Message -->
     <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="250">
-      <label for="message" class="block text-sm font-medium mb-1">Message <span class="text-red-500">*</span></label>
-      <Textarea
+      <label for="message" class="block text-sm font-medium mb-1 text-text">Message <span class="text-red-500">*</span></label>
+      <UTextarea
         id="message"
         v-model="formData.message"
-        rows="5"
-        :class="{'p-invalid': errors.message, 'shadow-action/20 scale-101': fieldFocus.message}"
-        class="w-full p-3 rounded-lg border border-gray-300 focus:border-action focus:ring-1 focus:ring-action transition-all duration-200 text-black"
+        :rows="5"
+        :color="errors.message ? 'error' : undefined"
+        class="w-full transition-all duration-200"
+        :class="{'shadow-action/20 scale-101': fieldFocus.message}"
         placeholder="Décrivez votre projet ou votre besoin en détail..."
         @focus="fieldFocus.message = true"
         @blur="fieldFocus.message = false"
-        
       />
       <small v-if="errors.message" class="text-red-500 block mt-1 animate-pulse">{{ errors.message }}</small>
     </div>
 
     <!-- Budget -->
     <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="300">
-      <label class="block text-sm font-medium mb-1">Budget estimé (facultatif)</label>
-      <div class="flex flex-wrap gap-2 p-3 bg-primary/50 rounded-lg">
-        <div v-for="option in budgetOptions" :key="option.value" class="flex items-center hover:bg-primary/90 p-2 rounded-lg transition-colors duration-200">
-          <RadioButton 
-            v-model="formData.budget" 
-            :value="option.value" 
-            :inputId="option.value" 
-            class="cursor-pointer"
-          />
-          <label :for="option.value" class="ml-2 cursor-pointer">{{ option.label }}</label>
-        </div>
+      <label class="block text-sm font-medium mb-1 text-text">Budget estimé (facultatif)</label>
+      <div class="p-3 bg-primary/50 rounded-lg">
+        <URadioGroup 
+          v-model="formData.budget" 
+          :items="budgetOptions"
+          value-key="value"
+          label-key="label"
+          orientation="horizontal"
+          variant="list"
+          color="primary"
+        />
       </div>
     </div>
 
     <!-- Found Through -->
     <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="350">
-      <label class="block text-sm font-medium mb-1">Comment m'avez-vous trouvé? (facultatif)</label>
-      <Dropdown
+      <label class="block text-sm font-medium mb-1 text-text">Comment m'avez-vous trouvé? (facultatif)</label>
+      <USelect
         v-model="formData.foundThrough"
-        :options="foundThroughOptions"
-        optionLabel="label"
-        optionValue="value"
+        :items="foundThroughOptions"
+        value-key="value"
+        label-key="label"
         placeholder="Sélectionnez une option"
-        class="w-full p-3 rounded-lg transition-all duration-200"
+        class="w-full transition-all duration-200"
         :class="{'shadow-action/20 scale-101': fieldFocus.foundThrough}"
         @focus="fieldFocus.foundThrough = true"
         @blur="fieldFocus.foundThrough = false"
@@ -100,15 +103,18 @@
 
     <!-- Submit -->
     <div data-aos="fade-up" data-aos-delay="400">
-      <Button 
+      <UButton 
         type="submit" 
         :disabled="submitting"
         :loading="submitting"
-        class="w-full bg-action hover:bg-action/80 text-white pl-4 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+        block
+        class="bg-action hover:bg-action/80 text-white py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
       >
-        <i v-if="submitting" class="pi pi-spin pi-spinner mr-2"></i>
+        <template #leading>
+          <UIcon v-if="submitting" name="i-lucide-loader-2" class="animate-spin" />
+        </template>
         {{ submitting ? 'Envoi en cours...' : 'Envoyer le message' }}
-      </Button>
+      </UButton>
     </div>
 
     <transition name="fade">
@@ -122,7 +128,6 @@
 </template>
 
 <script setup lang="ts">
-import emailjs from '@emailjs/browser';
 interface FormData {
   name: string;
   email: string;
@@ -251,8 +256,6 @@ const resetForm = () => {
   formData.foundThrough = '';
 };
 
-const config = useRuntimeConfig();
-
 const handleSubmit = async () => {
   formStatus.showMessage = false;
   
@@ -295,8 +298,13 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped>
+
 .form-group {
-  @apply rounded-lg p-2 transition-all duration-200;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
 }
 
 .scale-101 {
@@ -313,4 +321,4 @@ const handleSubmit = async () => {
   opacity: 0;
   transform: translateY(-10px);
 }
-</style> 
+</style>

@@ -1,45 +1,46 @@
 <template>
     <section class="testimonials-section">
-        <Card class="testimonials-card">
-            <template #title>
+        <UCard class="testimonials-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <template #header>
                 <h2 class="section-title">Témoignages</h2>
             </template>
-            <template #content>
-                <BaseSubCard>
-                    <div class="testimonials-content">
-                        <div v-if="testimonials.length > 0" class="testimonials-grid">
-                            <div v-for="testimonial in testimonials" :key="testimonial.id" class="testimonial-item">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar">
-                                        <i class="pi pi-user"></i>
-                                    </div>
-                                    <div class="testimonial-info">
-                                        <h4 class="testimonial-name">{{ testimonial.name }}</h4>
-                                        <p class="testimonial-role">{{ testimonial.role }}</p>
-                                    </div>
+            <BaseSubCard>
+                <div class="testimonials-content">
+                    <div v-if="testimonials.length > 0" class="testimonials-grid">
+                        <div v-for="testimonial in testimonials" :key="testimonial.id" class="testimonial-item">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <UIcon name="i-lucide-user" class="text-action text-2xl" />
                                 </div>
-                                <div class="testimonial-rating">
-                                    <i v-for="i in 5" :key="i"
-                                        :class="['pi', i <= testimonial.rating ? 'pi-star-fill' : 'pi-star', 'star-icon']">
-                                    </i>
+                                <div class="testimonial-info">
+                                    <h4 class="testimonial-name">{{ testimonial.name }}</h4>
+                                    <p class="testimonial-role">{{ testimonial.role }}</p>
                                 </div>
-                                <p class="testimonial-text">{{ testimonial.text }}</p>
                             </div>
-                        </div>
-
-                        <div v-else class="testimonials-placeholder">
-                            <div class="placeholder-icon">
-                                <i class="pi pi-comments"></i>
+                            <div class="testimonial-rating">
+                                <UIcon 
+                                    v-for="i in 5" 
+                                    :key="i"
+                                    :name="i <= testimonial.rating ? 'i-lucide-star' : 'i-lucide-star'"
+                                    :class="['star-icon', i <= testimonial.rating ? 'filled' : 'empty']"
+                                />
                             </div>
-                            <h3 class="placeholder-title">Témoignages à venir</h3>
-                            <p class="placeholder-text">
-                                Les retours de mes clients seront bientôt disponibles ici.
-                            </p>
+                            <p class="testimonial-text">{{ testimonial.text }}</p>
                         </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+
+                    <div v-else class="testimonials-placeholder">
+                        <div class="placeholder-icon">
+                            <UIcon name="i-lucide-message-circle" class="text-action text-4xl" />
+                        </div>
+                        <h3 class="placeholder-title">Témoignages à venir</h3>
+                        <p class="placeholder-text">
+                            Les retours de mes clients seront bientôt disponibles ici.
+                        </p>
+                    </div>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 
@@ -121,11 +122,6 @@ const testimonials = ref([
     justify-content: center;
 }
 
-.testimonial-avatar i {
-    color: var(--action);
-    font-size: 1.5rem;
-}
-
 .testimonial-info {
     flex: 1;
 }
@@ -151,8 +147,16 @@ const testimonials = ref([
 }
 
 .star-icon {
-    color: var(--action);
     font-size: 1rem;
+}
+
+.star-icon.filled {
+    color: var(--action);
+}
+
+.star-icon.empty {
+    color: var(--text);
+    opacity: 0.3;
 }
 
 .testimonial-text {
@@ -179,11 +183,6 @@ const testimonials = ref([
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-}
-
-.placeholder-icon i {
-    color: var(--action);
-    font-size: 2.5rem;
 }
 
 .placeholder-title {
@@ -223,10 +222,6 @@ const testimonials = ref([
         flex-shrink: 0;
     }
 
-    .testimonial-avatar i {
-        font-size: 1.25rem;
-    }
-
     .testimonial-info {
         min-width: 0;
         flex: 1;
@@ -248,10 +243,6 @@ const testimonials = ref([
     .placeholder-icon {
         width: 60px;
         height: 60px;
-    }
-
-    .placeholder-icon i {
-        font-size: 2rem;
     }
 
     .placeholder-title {

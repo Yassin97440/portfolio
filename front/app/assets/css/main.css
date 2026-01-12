@@ -1,4 +1,97 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import "~/assets/styles/primevue/tailwind.css";
-@import 'tailwindcss/utilities';
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Custom theme colors - using Nuxt UI conventions */
+@theme {
+  /* Custom colors for your brand */
+  --color-forest-50: #f0fdf0;
+  --color-forest-100: #dcfce7;
+  --color-forest-200: #bbf7d0;
+  --color-forest-300: #86efac;
+  --color-forest-400: #4ade80;
+  --color-forest-500: #1b3319;
+  --color-forest-600: #16291a;
+  --color-forest-700: #15803d;
+  --color-forest-800: #166534;
+  --color-forest-900: #14532d;
+  --color-forest-950: #052e16;
+
+  --color-earth-50: #fdf8f6;
+  --color-earth-100: #f2e8e5;
+  --color-earth-200: #eaddd7;
+  --color-earth-300: #e0cec7;
+  --color-earth-400: #d2bab0;
+  --color-earth-500: #54240c;
+  --color-earth-600: #492009;
+  --color-earth-700: #3e1c08;
+  --color-earth-800: #341706;
+  --color-earth-900: #291305;
+  --color-earth-950: #1f0e03;
+
+  --color-olive-50: #fafaf0;
+  --color-olive-100: #f5f5dc;
+  --color-olive-200: #e6e5cd;
+  --color-olive-300: #d4d3a8;
+  --color-olive-400: #a6a050;
+  --color-olive-500: #84894a;
+  --color-olive-600: #6b6f3c;
+  --color-olive-700: #52552e;
+  --color-olive-800: #3a3c20;
+  --color-olive-900: #212212;
+  --color-olive-950: #0f1009;
+}
+
+:root {
+  /* Override Nuxt UI primary color with earth tones */
+  --ui-primary: var(--color-earth-500);
+  --ui-secondary: var(--color-olive-500);
+
+  /* Custom background - forest green theme */
+  --ui-bg: var(--color-forest-500);
+  --ui-bg-muted: var(--color-forest-600);
+  --ui-bg-elevated: var(--color-forest-700);
+  --ui-bg-accented: var(--color-earth-500);
+  
+  /* Custom text colors */
+  --ui-text: var(--color-olive-200);
+  --ui-text-muted: var(--color-olive-300);
+  --ui-text-dimmed: var(--color-olive-400);
+  --ui-text-highlighted: var(--color-olive-100);
+
+  /* Custom border colors */
+  --ui-border: var(--color-forest-600);
+  --ui-border-muted: var(--color-forest-700);
+  --ui-border-accented: var(--color-olive-500);
+
+  /* Larger radius for a softer look */
+  --ui-radius: 0.5rem;
+}
+
+.dark {
+  --ui-primary: var(--color-olive-400);
+  --ui-secondary: var(--color-olive-500);
+
+  --ui-bg: var(--color-forest-900);
+  --ui-bg-muted: var(--color-forest-800);
+  --ui-bg-elevated: var(--color-forest-700);
+  --ui-bg-accented: var(--color-earth-700);
+
+  --ui-text: var(--color-olive-100);
+  --ui-text-muted: var(--color-olive-200);
+  --ui-text-dimmed: var(--color-olive-300);
+  --ui-text-highlighted: white;
+
+  --ui-border: var(--color-forest-700);
+  --ui-border-muted: var(--color-forest-600);
+  --ui-border-accented: var(--color-olive-600);
+}
+
+/* Legacy custom CSS variables for backward compatibility */
+:root {
+  --primary: var(--color-earth-500);
+  --secondary: var(--color-olive-500);
+  --accent: var(--color-earth-600);
+  --background: var(--color-forest-500);
+  --text: var(--color-olive-200);
+  --action: var(--color-olive-400);
+}

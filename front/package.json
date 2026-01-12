@@ -11,36 +11,24 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.2.0",
     "@mistralai/mistralai": "^1.5.0",
-    "@nuxtjs/color-mode": "^3.5.2",
-    "@nuxtjs/robots": "^5.1.1",
-    "@pinia/nuxt": "^0.4.7",
+    "@nuxt/ui": "^4.3.0",
+    "@pinia/nuxt": "^0.11.3",
     "@vueuse/core": "^12.3.0",
-    "nuxt": "^4.2.0",
-    "nuxt-aos": "^1.2.5",
-    "nuxt-og-image": "^5.1.12",
-    "nuxt-schema-org": "^5.0.9",
-    "pinia": "^3.0.3",
-    "primeicons": "^7.0.0",
-    "primevue": "^3.53.1",
+    "nuxt": "^4.2.2",
+    "pinia": "^3.0.4",
     "resend": "^6.0.2",
     "swiper": "^11.2.4",
-    "tailwindcss-primeui": "^0.3.4",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue": "^3.5.0",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@nuxtjs/mdc": "^0.13.1",
+    "@nuxtjs/robots": "^5.2.0",
     "@nuxtjs/seo": "^3.1.0",
     "@nuxtjs/sitemap": "^7.0.2",
     "@nuxtjs/strapi": "^2.0.0",
-    "@nuxtjs/tailwindcss": "^6.12.2",
-    "@primevue/nuxt-module": "^4.2.5",
-    "autoprefixer": "^10.4.20",
-    "nuxt-primevue": "^0.3.1",
-    "postcss": "^8.4.49",
-    "postcss-import": "^16.1.0",
-    "tailwindcss-animated": "^1.1.2"
+    "nuxt-aos": "^1.2.5",
+    "typescript": "^5.9.3"
   }
 }

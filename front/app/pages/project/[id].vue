@@ -7,35 +7,32 @@
           <div class="project-header mb-8 border-l-4 border-accent pl-4">
             <h1 class="text-4xl font-bold mb-3 text-text">{{ project.title }}</h1>
             <div class="flex flex-wrap gap-3 mb-4">
-              <Tag severity="info" class="border-none bg-primary/20 ">
-                <i class="pi pi-calendar mr-2"></i>
+              <UBadge color="info" variant="subtle" class="border-none bg-primary/20">
+                <UIcon name="i-lucide-calendar" class="mr-2" />
                 {{ formatDate(project.date) }}
-              </Tag>
-              <Tag v-if="project.isPersonal" severity="success" class="border-none bg-secondary/30 ">
-                <i class="pi pi-user mr-2"></i>
+              </UBadge>
+              <UBadge v-if="project.isPersonal" color="success" variant="subtle" class="border-none bg-secondary/30">
+                <UIcon name="i-lucide-user" class="mr-2" />
                 Projet Personnel
-              </Tag>
+              </UBadge>
             </div>
           </div>
 
-          <Divider class="mb-6 border-action/30" />
+          <USeparator class="mb-6" />
 
           <!-- Contenu du projet avec amélioration visuelle -->
           <div class="project-content">
             <div class="grid">
               <div class="col-12">
-                <Card class="mb-6 border-none bg-secondary shadow-md">
-                  <template #content>
-                    <div class="code-badge flex items-center mb-5">
-                      <i class="pi pi-code text-accent mr-2 text-xl"></i>
-                      <span class="text-accent font-medium text-xl">Technologies</span>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-3">
-                      <BaseTechnologyChip :technologies="project.technologies" />
-
-                    </div>
-                  </template>
-                </Card>
+                <UCard class="mb-6 border-none bg-secondary shadow-md" :ui="{ root: 'bg-secondary border-none' }">
+                  <div class="code-badge flex items-center mb-5">
+                    <UIcon name="i-lucide-code" class="text-accent mr-2 text-xl" />
+                    <span class="text-accent font-medium text-xl">Technologies</span>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mb-3">
+                    <BaseTechnologyChip :technologies="project.technologies" />
+                  </div>
+                </UCard>
               </div>
               
               <div class="col-12">
@@ -51,9 +48,11 @@
 </template>
 
 <script setup>
+import { useStrapiContentStore } from '~/stores/strapiContent'
+
 const route = useRoute()
 const project = ref(null)
-const strapiContentStore = useMyStrapiContentStore()
+const strapiContentStore = useStrapiContentStore()
 useHead({
   link: [
     {
@@ -63,9 +62,6 @@ useHead({
   ]
 })
 
-onMounted(() => {
-  fetchProject()
-})
 // Récupère un projet spécifique par son slug
 const fetchProject = async () => {
   try {
@@ -77,6 +73,9 @@ const fetchProject = async () => {
   }
 }
 
+onMounted(() => {
+  fetchProject()
+})
 
 // Formate la date pour l'affichage
 const formatDate = (dateString) => {

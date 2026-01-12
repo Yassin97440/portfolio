@@ -1,22 +1,20 @@
 <template>
     <section class="services-list-section">
-        <Card class="services-list-card">
-            <template #title>
+        <UCard class="services-list-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <template #header>
                 <h2 class="section-title">Mes services</h2>
             </template>
-            <template #content>
-                <BaseSubCard>
-                    <div class="services-grid">
-                        <div v-for="service in services" :key="service.id" class="service-item">
-                            <div class="service-header">
-                                <i :class="service.icon" class="service-icon"></i>
-                                <h3 class="service-title">{{ service.title }}</h3>
-                            </div>
+            <BaseSubCard>
+                <div class="services-grid">
+                    <div v-for="service in services" :key="service.id" class="service-item">
+                        <div class="service-header">
+                            <UIcon :name="service.icon" class="service-icon" />
+                            <h3 class="service-title">{{ service.title }}</h3>
                         </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 
@@ -24,37 +22,37 @@
 const services = [
     {
         id: 1,
-        icon: 'pi pi-search',
+        icon: 'i-lucide-search',
         title: 'Audit et conseil'
     },
     {
         id: 2,
-        icon: 'pi pi-cog',
+        icon: 'i-lucide-settings',
         title: 'Analyse et optimisation des processus métiers'
     },
     {
         id: 6,
-        icon: 'pi pi-users',
+        icon: 'i-lucide-users',
         title: 'Accompagnement direction/référent technique'
     },
     {
         id: 3,
-        icon: 'pi pi-sitemap',
+        icon: 'i-lucide-git-branch',
         title: 'Architecture logicielle'
     },
     {
         id: 4,
-        icon: 'pi pi-code',
+        icon: 'i-lucide-code',
         title: 'Développement web fullstack'
     },
     {
         id: 5,
-        icon: 'pi pi-wrench',
+        icon: 'i-lucide-wrench',
         title: 'Solutions sur-mesure'
     },
     {
         id: 7,
-        icon: 'pi pi-bolt',
+        icon: 'i-lucide-zap',
         title: 'IA / Automatisation intelligente'
     }
 ]

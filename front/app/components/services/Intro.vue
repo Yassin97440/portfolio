@@ -1,34 +1,32 @@
 <template>
     <section class="services-intro-section">
-        <Card class="services-intro-card">
-            <template #content>
-                <BaseSubCard>
-                    <div class="intro-content">
-                        <h1 class="intro-title">Mes Services Freelance</h1>
-                        <p class="intro-description">
-                            En tant que <strong>freelance développeur logiciel</strong>, je propose des prestations sur
-                            mesure autour de l'accompagnement digital, du développement web et logiciel, de
-                            l'architecture logicielle, de l'automatisation, de l'intelligence artificielle et de la
-                            gestion de système d'informations.
-                        </p>
-                        <div class="intro-highlights">
-                            <div class="highlight-item">
-                                <i class="pi pi-check-circle highlight-icon"></i>
-                                <span>Solutions sur-mesure</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="pi pi-check-circle highlight-icon"></i>
-                                <span>Expertise technique avancée</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="pi pi-check-circle highlight-icon"></i>
-                                <span>Accompagnement personnalisé</span>
-                            </div>
+        <UCard class="services-intro-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <BaseSubCard>
+                <div class="intro-content">
+                    <h1 class="intro-title">Mes Services Freelance</h1>
+                    <p class="intro-description">
+                        En tant que <strong>freelance développeur logiciel</strong>, je propose des prestations sur
+                        mesure autour de l'accompagnement digital, du développement web et logiciel, de
+                        l'architecture logicielle, de l'automatisation, de l'intelligence artificielle et de la
+                        gestion de système d'informations.
+                    </p>
+                    <div class="intro-highlights">
+                        <div class="highlight-item">
+                            <UIcon name="i-lucide-check-circle" class="highlight-icon" />
+                            <span>Solutions sur-mesure</span>
+                        </div>
+                        <div class="highlight-item">
+                            <UIcon name="i-lucide-check-circle" class="highlight-icon" />
+                            <span>Expertise technique avancée</span>
+                        </div>
+                        <div class="highlight-item">
+                            <UIcon name="i-lucide-check-circle" class="highlight-icon" />
+                            <span>Accompagnement personnalisé</span>
                         </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 

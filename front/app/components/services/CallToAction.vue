@@ -1,64 +1,57 @@
 <template>
     <section class="services-cta-section">
-        <Card class="services-cta-card">
-            <template #content>
-                <BaseSubCard>
-                    <div class="cta-content">
-                        <div class="cta-main">
-                            <h2 class="cta-title">Un besoin spécifique ? Parlons-en.</h2>
-                            <p class="cta-subtitle">
-                                Je suis réactif et transparent. Échangeons sur votre projet pour définir ensemble la
-                                meilleure approche technique.
-                            </p>
+        <UCard class="services-cta-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <BaseSubCard>
+                <div class="cta-content">
+                    <div class="cta-main">
+                        <h2 class="cta-title">Un besoin spécifique ? Parlons-en.</h2>
+                        <p class="cta-subtitle">
+                            Je suis réactif et transparent. Échangeons sur votre projet pour définir ensemble la
+                            meilleure approche technique.
+                        </p>
 
-                            <div class="cta-features">
-                                <div class="cta-feature">
-                                    <i class="pi pi-clock feature-icon"></i>
-                                    <span>Réponse sous 24h</span>
-                                </div>
-                                <div class="cta-feature">
-                                    <i class="pi pi-shield feature-icon"></i>
-                                    <span>Devis gratuit</span>
-                                </div>
-                                <div class="cta-feature">
-                                    <i class="pi pi-comments feature-icon"></i>
-                                    <span>Échange transparent</span>
-                                </div>
+                        <div class="cta-features">
+                            <div class="cta-feature">
+                                <UIcon name="i-lucide-clock" class="feature-icon" />
+                                <span>Réponse sous 24h</span>
                             </div>
-
-                            <div class="cta-actions">
-                                <NuxtLink to="/my/Contact" class="cta-button primary">
-                                    <i class="pi pi-send"></i>
-                                    Demander un devis
-                                </NuxtLink>
-                                <!-- <a href="https://calendly.com/yassin-abdulla" target="_blank"
-                                    class="cta-button secondary">
-                                    <i class="pi pi-calendar"></i>
-                                    Prendre rendez-vous
-                                </a> -->
+                            <div class="cta-feature">
+                                <UIcon name="i-lucide-shield" class="feature-icon" />
+                                <span>Devis gratuit</span>
+                            </div>
+                            <div class="cta-feature">
+                                <UIcon name="i-lucide-message-circle" class="feature-icon" />
+                                <span>Échange transparent</span>
                             </div>
                         </div>
 
-                        <div class="cta-visual">
-                            <div class="visual-container">
-                                <div class="visual-circle main-circle">
-                                    <i class="pi pi-user main-icon"></i>
-                                </div>
-                                <div class="visual-circle floating-circle circle-1">
-                                    <i class="pi pi-code"></i>
-                                </div>
-                                <div class="visual-circle floating-circle circle-2">
-                                    <i class="pi pi-bolt"></i>
-                                </div>
-                                <div class="visual-circle floating-circle circle-3">
-                                    <i class="pi pi-cog"></i>
-                                </div>
+                        <div class="cta-actions">
+                            <NuxtLink to="/my/Contact" class="cta-button primary">
+                                <UIcon name="i-lucide-send" />
+                                Demander un devis
+                            </NuxtLink>
+                        </div>
+                    </div>
+
+                    <div class="cta-visual">
+                        <div class="visual-container">
+                            <div class="visual-circle main-circle">
+                                <UIcon name="i-lucide-user" class="main-icon" />
+                            </div>
+                            <div class="visual-circle floating-circle circle-1">
+                                <UIcon name="i-lucide-code" />
+                            </div>
+                            <div class="visual-circle floating-circle circle-2">
+                                <UIcon name="i-lucide-zap" />
+                            </div>
+                            <div class="visual-circle floating-circle circle-3">
+                                <UIcon name="i-lucide-settings" />
                             </div>
                         </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 
@@ -167,10 +160,6 @@
     color: white;
 }
 
-.cta-button i {
-    font-size: 1rem;
-}
-
 .cta-visual {
     display: flex;
     justify-content: center;
@@ -211,9 +200,6 @@
     width: 60px;
     height: 60px;
     border: 2px solid var(--action);
-}
-
-.floating-circle i {
     color: var(--action);
     font-size: 1.5rem;
 }
@@ -297,9 +283,6 @@
     .floating-circle {
         width: 45px;
         height: 45px;
-    }
-
-    .floating-circle i {
         font-size: 1.25rem;
     }
 }
@@ -336,9 +319,6 @@
     .floating-circle {
         width: 70px;
         height: 70px;
-    }
-
-    .floating-circle i {
         font-size: 1.75rem;
     }
 }

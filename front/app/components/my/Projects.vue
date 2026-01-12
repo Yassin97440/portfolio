@@ -1,6 +1,6 @@
 <template>
-  <Card class="bg-background rounded-lg mb-20">
-    <template #title>
+  <UCard class="bg-background rounded-lg mb-20" :ui="{ root: 'bg-background rounded-lg' }">
+    <template #header>
       <div class="flex justify-between items-center">
         <h2 class="text-2xl text-text">Mes Projets</h2>
         <NuxtLink to="/my/projects" class="text-action hover:underline text-sm">
@@ -8,38 +8,44 @@
         </NuxtLink>
       </div>
     </template>
-    <template #content>
-      <Swiper :slides-per-view="'auto'" :centered-slides="true" :space-between="30" :loop="true"
-        :pagination="{ clickable: true }" :navigation="true" :modules="[Navigation, Pagination]"
-        class="bg-primary p-4 rounded-lg">
-        <SwiperSlide v-for="project in projects" :key="project.id" class="md:!w-[400px]">
-          <div
-            class="border border-secondary rounded p-4 bg-background transition-all duration-300 cursor-pointer hover:shadow-lg"
-            @click="navigateToProject(project.documentId)">
-            <div class="mb-4">
-              <div class="relative mx-auto">
-                <img v-if="project.coverImage" :src="store.getCoverImageUrl(project.coverImage)" :alt="project.title"
-                  class="w-full h-40 object-cover rounded" />
-                <Tag :value="project.type" :severity="getTypeSeverity(project.type)" class="absolute left-2 top-2" />
-              </div>
-            </div>
-            <div class="mb-4">
-              <h3 class="text-xl font-medium mb-2">{{ project.title }}</h3>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <BaseTechnologyChip :technologies="project.technologies" />
-              </div>
-            </div>
-            <div class="flex justify-between items-center">
-              <Button icon="pi pi-github" severity="secondary" outlined
-                @click.stop="navigateToGithub(project.githubUrl)" />
-              <Button v-if="project.demoUrl" icon="pi pi-external-link" class="ml-2"
-                @click.stop="navigateToDemo(project.demoUrl)" />
+    <Swiper :slides-per-view="'auto'" :centered-slides="true" :space-between="30" :loop="true"
+      :pagination="{ clickable: true }" :navigation="true" :modules="[Navigation, Pagination]"
+      class="bg-primary p-4 rounded-lg">
+      <SwiperSlide v-for="project in projects" :key="project.id" class="md:!w-[400px]">
+        <div
+          class="border border-secondary rounded p-4 bg-background transition-all duration-300 cursor-pointer hover:shadow-lg"
+          @click="navigateToProject(project.documentId)">
+          <div class="mb-4">
+            <div class="relative mx-auto">
+              <img v-if="project.coverImage" :src="store.getCoverImageUrl(project.coverImage)" :alt="project.title"
+                class="w-full h-40 object-cover rounded" />
+              <UBadge :label="project.type" :color="getTypeColor(project.type)" class="absolute left-2 top-2" />
             </div>
           </div>
-        </SwiperSlide>
-      </Swiper>
-    </template>
-  </Card>
+          <div class="mb-4">
+            <h3 class="text-xl font-medium mb-2">{{ project.title }}</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <BaseTechnologyChip :technologies="project.technologies" />
+            </div>
+          </div>
+          <div class="flex justify-between items-center">
+            <UButton 
+              icon="i-simple-icons-github" 
+              color="neutral" 
+              variant="outline"
+              @click.stop="navigateToGithub(project.githubUrl)" 
+            />
+            <UButton 
+              v-if="project.demoUrl" 
+              icon="i-lucide-external-link" 
+              class="ml-2"
+              @click.stop="navigateToDemo(project.demoUrl)" 
+            />
+          </div>
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  </UCard>
 </template>
 
 <script setup lang="ts">
@@ -49,7 +55,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useRouter } from "vue-router";
-import { useMyStrapiContentStore } from '@/stores/strapi-content';
+import { useMyStrapiContentStore } from '~/stores/strapiContent';
 
 const store = useMyStrapiContentStore();
 const strapi = useStrapi();
@@ -66,7 +72,7 @@ onMounted(async () => {
 
 });
 
-const getTypeSeverity = (type: string) => {
+const getTypeColor = (type: string) => {
   switch (type) {
     case 'Pro':
       return 'success';
@@ -75,7 +81,7 @@ const getTypeSeverity = (type: string) => {
     case 'Auto-formation':
       return 'warning';
     default:
-      return 'info';
+      return 'neutral';
   }
 };
 

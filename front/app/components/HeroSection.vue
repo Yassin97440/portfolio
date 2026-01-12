@@ -1,42 +1,40 @@
 <template>
     <section class="hero-section">
-        <Card class="hero-card">
-            <template #content>
-                <BaseSubCard title="Ingénieur logiciel — je conçois vos solutions sur mesure">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <p class="hero-subtitle">
-                                Architecture, développement logiciel/WEB, digitalisation, automatisation : je transforme
-                                vos idées en produits performants et maintenables.
-                            </p>
-                            <div class="tech-stack">
-                                <div class="tech-item" v-for="tech in techStack" :key="tech.name">
-                                    <i :class="tech.icon"></i>
-                                    <span>{{ tech.name }}</span>
-                                </div>
-                            </div>
-                            <div class="hero-actions">
-                                <NuxtLink to="/my/Contact" class="btn-primary">
-                                    Me contacter
-                                </NuxtLink>
-                                <NuxtLink to="/services" class="btn-secondary">
-                                    Mes services
-                                </NuxtLink>
+        <UCard class="hero-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <BaseSubCard title="Ingénieur logiciel — je conçois vos solutions sur mesure">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-subtitle">
+                            Architecture, développement logiciel/WEB, digitalisation, automatisation : je transforme
+                            vos idées en produits performants et maintenables.
+                        </p>
+                        <div class="tech-stack">
+                            <div class="tech-item" v-for="tech in techStack" :key="tech.name">
+                                <UIcon :name="tech.icon" class="text-action text-xl" />
+                                <span>{{ tech.name }}</span>
                             </div>
                         </div>
+                        <div class="hero-actions">
+                            <NuxtLink to="/my/Contact" class="btn-primary">
+                                Me contacter
+                            </NuxtLink>
+                            <NuxtLink to="/services" class="btn-secondary">
+                                Mes services
+                            </NuxtLink>
+                        </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 
 <script setup lang="ts">
 const techStack = [
-    { name: 'Web', icon: 'pi pi-globe' },
-    { name: 'Logiciel', icon: 'pi pi-code' },
-    { name: 'Automatisation', icon: 'pi pi-bolt' },
-    { name: 'Stratégie digitalisation', icon: 'pi pi-chart-line' }
+    { name: 'Web', icon: 'i-lucide-globe' },
+    { name: 'Logiciel', icon: 'i-lucide-code' },
+    { name: 'Automatisation', icon: 'i-lucide-zap' },
+    { name: 'Stratégie digitalisation', icon: 'i-lucide-trending-up' }
 ]
 </script>
 
@@ -133,11 +131,6 @@ const techStack = [
 
 .tech-item:hover {
     transform: translateY(-3px);
-}
-
-.tech-item i {
-    color: var(--action);
-    font-size: 1.25rem;
 }
 
 .tech-item span {

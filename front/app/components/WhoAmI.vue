@@ -1,41 +1,39 @@
 <template>
     <section class="who-am-i-section">
-        <Card class="who-am-i-card">
-            <template #title>
+        <UCard class="who-am-i-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <template #header>
                 <h2 class="section-title">Qui suis-je ?</h2>
             </template>
-            <template #content>
-                <BaseSubCard>
-                    <div class="who-am-i-content">
-                        <!-- Photo en premier sur mobile -->
-                        <div class="profile-visual">
-                            <div class="profile-placeholder">
-                                <img src="~/assets/yassin.jpg" alt="Yassin Abdulla" class="profile-image" />
-                            </div>
-                        </div>
-
-                        <div class="text-content">
-                            <p class="intro-text">
-                                Je m'appelle <strong>Yassin</strong>, développeur fullstack, architecte logiciel et
-                                passionné d'intelligence artificielle.
-                            </p>
-                            <p class="description-text">
-                                Après plusieurs années en tant que développeur, lead dev et chef de projet, j'aide
-                                aujourd'hui
-                                startups, PME et indépendants à concevoir des solutions robustes et évolutives — avec
-                                une attention particulière portée à la qualité, la performance et l'expérience
-                                utilisateur.
-                            </p>
-                            <p class="description-text"> Vous pouvez en savoir plus sur mon profil <NuxtLink to="/my/profil" class="text-action hover:underline">ici</NuxtLink></p>
-                            <div class="highlight-box">
-                                <i class="pi pi-lightbulb highlight-icon"></i>
-                                <p>Passion pour l'innovation technique et l'excellence du code</p>
-                            </div>
+            <BaseSubCard>
+                <div class="who-am-i-content">
+                    <!-- Photo en premier sur mobile -->
+                    <div class="profile-visual">
+                        <div class="profile-placeholder">
+                            <img src="~/assets/yassin.jpg" alt="Yassin Abdulla" class="profile-image" />
                         </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+
+                    <div class="text-content">
+                        <p class="intro-text">
+                            Je m'appelle <strong>Yassin</strong>, développeur fullstack, architecte logiciel et
+                            passionné d'intelligence artificielle.
+                        </p>
+                        <p class="description-text">
+                            Après plusieurs années en tant que développeur, lead dev et chef de projet, j'aide
+                            aujourd'hui
+                            startups, PME et indépendants à concevoir des solutions robustes et évolutives — avec
+                            une attention particulière portée à la qualité, la performance et l'expérience
+                            utilisateur.
+                        </p>
+                        <p class="description-text"> Vous pouvez en savoir plus sur mon profil <NuxtLink to="/my/profil" class="text-action hover:underline">ici</NuxtLink></p>
+                        <div class="highlight-box">
+                            <UIcon name="i-lucide-lightbulb" class="highlight-icon" />
+                            <p>Passion pour l'innovation technique et l'excellence du code</p>
+                        </div>
+                    </div>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 

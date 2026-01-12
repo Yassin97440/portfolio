@@ -11,13 +11,11 @@
       <MyDegrees class="mb-12" />
 
       <section class="mb-12">
-        <Card class="bg-background rounded-lg">
-          <template #content>
-            <article class="space-y-8 p-6">
-              <BaseRichText :content="description?.description" />
-            </article>
-          </template>
-        </Card>
+        <UCard class="bg-background rounded-lg" :ui="{ root: 'bg-background rounded-lg' }">
+          <article class="space-y-8 p-6">
+            <BaseRichText :content="description?.description" />
+          </article>
+        </UCard>
       </section>
 
 
@@ -26,10 +24,7 @@
 </template>
 
 <script lang="ts" setup>
-import { usePortfolioStore } from "~/stores/portfolio";
 
-const portfolioStore = usePortfolioStore();
-const { myselfData } = portfolioStore;
 
 const strapi = useStrapi();
 const description = ref<any>(null);
@@ -63,7 +58,15 @@ useSeoMeta({
 
 <style>
 .prose {
-  @apply text-base md:text-lg;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .prose {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
 }
 
 /* Ajout d'une règle CSS native plus performante */

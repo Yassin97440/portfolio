@@ -1,33 +1,31 @@
 <template>
     <section class="cta-section">
-        <Card class="cta-card">
-            <template #content>
-                <BaseSubCard>
-                    <div class="cta-content">
-                        <div class="cta-text">
-                            <h2 class="cta-title">Travaillons ensemble</h2>
-                            <p class="cta-description">
-                                Un projet, une idée, une problématique ou un besoin ?
-                                Contactez-moi, ou découvrez mes services en détail.
-                            </p>
-                            <div class="cta-actions">
-                                <NuxtLink to="/my/Contact" class="cta-button primary">
-                                    Me contacter
-                                </NuxtLink>
-                                <NuxtLink to="/services" class="cta-button secondary">
-                                    Mes services
-                                </NuxtLink>
-                            </div>
-                        </div>
-                        <div class="cta-visual">
-                            <div class="cta-decoration">
-                                <i class="pi pi-send"></i>
-                            </div>
+        <UCard class="cta-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <BaseSubCard>
+                <div class="cta-content">
+                    <div class="cta-text">
+                        <h2 class="cta-title">Travaillons ensemble</h2>
+                        <p class="cta-description">
+                            Un projet, une idée, une problématique ou un besoin ?
+                            Contactez-moi, ou découvrez mes services en détail.
+                        </p>
+                        <div class="cta-actions">
+                            <NuxtLink to="/my/Contact" class="cta-button primary">
+                                Me contacter
+                            </NuxtLink>
+                            <NuxtLink to="/services" class="cta-button secondary">
+                                Mes services
+                            </NuxtLink>
                         </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+                    <div class="cta-visual">
+                        <div class="cta-decoration">
+                            <UIcon name="i-lucide-send" class="text-action text-5xl relative z-1" />
+                        </div>
+                    </div>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 
@@ -134,13 +132,6 @@
     opacity: 0.3;
 }
 
-.cta-decoration i {
-    color: var(--action);
-    font-size: 3rem;
-    position: relative;
-    z-index: 1;
-}
-
 /* Responsive */
 @media (max-width: 640px) {
     .cta-title {
@@ -164,10 +155,6 @@
         width: 100px;
         height: 100px;
     }
-
-    .cta-decoration i {
-        font-size: 2.5rem;
-    }
 }
 
 @media (min-width: 768px) {
@@ -178,10 +165,6 @@
     .cta-decoration {
         width: 150px;
         height: 150px;
-    }
-
-    .cta-decoration i {
-        font-size: 3.5rem;
     }
 }
 

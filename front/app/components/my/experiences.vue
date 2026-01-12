@@ -43,11 +43,9 @@
 </template>
 
 <script setup lang="ts">
-import { usePortfolioStore } from "~/stores/portfolio";
 import { useWindowSize } from "@vueuse/core";
 
 const { width } = useWindowSize();
-const store = usePortfolioStore();
 const experiences = ref<any[]>([]);
 
 const strapi = useStrapi();

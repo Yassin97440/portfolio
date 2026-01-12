@@ -1,37 +1,35 @@
 <template>
     <section class="services-packages-section">
-        <Card class="services-packages-card">
-            <template #title>
+        <UCard class="services-packages-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <template #header>
                 <h2 class="section-title">Formules</h2>
             </template>
-            <template #content>
-                <BaseSubCard>
-                    <div class="packages-grid">
-                        <div v-for="package_ in packages" :key="package_.id" class="package-item">
-                            <div class="package-header">
-                                <h3 class="package-name">{{ package_.name }}</h3>
-                                <div class="package-price">{{ package_.price }}</div>
-                            </div>
+            <BaseSubCard>
+                <div class="packages-grid">
+                    <div v-for="package_ in packages" :key="package_.id" class="package-item">
+                        <div class="package-header">
+                            <h3 class="package-name">{{ package_.name }}</h3>
+                            <div class="package-price">{{ package_.price }}</div>
+                        </div>
 
-                            <p class="package-description">{{ package_.description }}</p>
+                        <p class="package-description">{{ package_.description }}</p>
 
-                            <ul class="package-features">
-                                <li v-for="feature in package_.features" :key="feature" class="package-feature">
-                                    <i class="pi pi-check feature-check"></i>
-                                    {{ feature }}
-                                </li>
-                            </ul>
+                        <ul class="package-features">
+                            <li v-for="feature in package_.features" :key="feature" class="package-feature">
+                                <UIcon name="i-lucide-check" class="feature-check" />
+                                {{ feature }}
+                            </li>
+                        </ul>
 
-                            <div class="package-action">
-                                <NuxtLink to="/my/Contact" class="package-button">
-                                    {{ package_.buttonText }}
-                                </NuxtLink>
-                            </div>
+                        <div class="package-action">
+                            <NuxtLink to="/my/Contact" class="package-button">
+                                {{ package_.buttonText }}
+                            </NuxtLink>
                         </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 

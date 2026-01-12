@@ -1,38 +1,36 @@
 <template>
     <section class="work-method-section">
-        <Card class="work-method-card">
-            <template #title>
+        <UCard class="work-method-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <template #header>
                 <h2 class="section-title">Comment je travaille ?</h2>
             </template>
-            <template #content>
-                <BaseSubCard>
-                    <div class="work-method-content">
-                        <div class="workflow-diagram">
-                            <div class="workflow-step" v-for="(step, index) in workflowSteps" :key="index">
-                                <div class="step-number">{{ index + 1 }}</div>
-                                <div class="step-content">
-                                    <h4 class="step-title">{{ step.title }}</h4>
-                                    <p class="step-description">{{ step.description }}</p>
-                                </div>
-                                <div class="step-connector" v-if="index < workflowSteps.length - 1"></div>
+            <BaseSubCard>
+                <div class="work-method-content">
+                    <div class="workflow-diagram">
+                        <div class="workflow-step" v-for="(step, index) in workflowSteps" :key="index">
+                            <div class="step-number">{{ index + 1 }}</div>
+                            <div class="step-content">
+                                <h4 class="step-title">{{ step.title }}</h4>
+                                <p class="step-description">{{ step.description }}</p>
                             </div>
+                            <div class="step-connector" v-if="index < workflowSteps.length - 1"></div>
                         </div>
+                    </div>
 
-                        <div class="work-principles">
-                            <div class="principle-item" v-for="principle in principles" :key="principle.id">
-                                <div class="principle-icon">
-                                    <i :class="principle.icon"></i>
-                                </div>
-                                <div class="principle-content">
-                                    <h4 class="principle-title">{{ principle.title }}</h4>
-                                    <p class="principle-description">{{ principle.description }}</p>
-                                </div>
+                    <div class="work-principles">
+                        <div class="principle-item" v-for="principle in principles" :key="principle.id">
+                            <div class="principle-icon">
+                                <UIcon :name="principle.icon" class="text-white text-xl" />
+                            </div>
+                            <div class="principle-content">
+                                <h4 class="principle-title">{{ principle.title }}</h4>
+                                <p class="principle-description">{{ principle.description }}</p>
                             </div>
                         </div>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 
@@ -64,25 +62,25 @@ const workflowSteps = [
 const principles = [
     {
         id: 1,
-        icon: 'pi pi-users',
+        icon: 'i-lucide-users',
         title: 'Approche personnalisée',
         description: 'Solutions adaptées à vos besoins spécifiques et à votre contexte'
     },
     {
         id: 2,
-        icon: 'pi pi-comments',
+        icon: 'i-lucide-message-circle',
         title: 'Communication claire',
         description: 'Échanges réguliers et transparents tout au long du projet'
     },
     {
         id: 3,
-        icon: 'pi pi-file',
+        icon: 'i-lucide-file-text',
         title: 'Livrables documentés',
         description: 'Code maintenable et documentation complète pour une pérennité optimale'
     },
     {
         id: 4,
-        icon: 'pi pi-chart-line',
+        icon: 'i-lucide-trending-up',
         title: 'Focus performance',
         description: 'Optimisation continue pour des solutions rapides et efficaces'
     }
@@ -198,11 +196,6 @@ const principles = [
     flex-shrink: 0;
 }
 
-.principle-icon i {
-    color: white;
-    font-size: 1.25rem;
-}
-
 .principle-content {
     flex: 1;
 }
@@ -265,10 +258,6 @@ const principles = [
         width: 32px;
         height: 32px;
         flex-shrink: 0;
-    }
-
-    .principle-icon i {
-        font-size: 1rem;
     }
 
     .principle-content {

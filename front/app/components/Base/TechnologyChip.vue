@@ -1,16 +1,17 @@
 <template>
-
-    <Chip v-for="technology in technologies" :key="technology.id" 
-    :label="technology.name" 
-    :icon="getIcon(technology)" 
-    class="bg-action text-text  m-1" />
-
-
+  <UBadge 
+    v-for="technology in technologies" 
+    :key="technology.id" 
+    :label="technology.name"
+    :icon="getIcon(technology)"
+    color="neutral"
+    variant="solid"
+    class="bg-action text-text m-1"
+  />
 </template>
 
 <script lang="ts" setup>
-
-const props = defineProps({
+defineProps({
   technologies: {
     type: Object,
     required: true
@@ -19,21 +20,18 @@ const props = defineProps({
 
 const getIcon = (technology: any) => {
   if (technology.type === 'backend') {
-    return 'pi pi-server'
+    return 'i-lucide-server'
   } else if (technology.type === 'frontend') {
-    return 'pi pi-code'
+    return 'i-lucide-code'
   } else if (technology.type === 'database') {
-    return 'pi pi-database'
+    return 'i-lucide-database'
   } else if (technology.type === 'OPS') {
-    return 'pi pi-cloud'
+    return 'i-lucide-cloud'
   } else if (technology.type === 'mobile') {
-    return 'pi pi-mobile'
+    return 'i-lucide-smartphone'
   } else if (technology.type === 'other') {
-    return 'pi pi-question'
+    return 'i-lucide-help-circle'
   }
+  return 'i-lucide-circle'
 }
 </script>
-
-<style>
-
-</style>

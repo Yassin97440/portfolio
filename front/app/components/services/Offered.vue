@@ -1,33 +1,27 @@
 <template>
     <section class="services-offered-section">
-        <Card class="services-offered-card">
-            <template #title>
+        <UCard class="services-offered-card" :ui="{ root: 'bg-background rounded-lg' }">
+            <template #header>
                 <h2 class="section-title">Services Proposés</h2>
             </template>
-            <template #content>
-                <BaseSubCard>
-                    <div class="services-grid">
-                        <div v-for="service in services" :key="service.id" class="service-item">
-                            <div class="service-header">
-                                <i :class="service.icon" class="service-icon"></i>
-                                <h3 class="service-title">{{ service.title }}</h3>
-                            </div>
-
-                            <ul class="service-features">
-                                <li v-for="feature in service.features" :key="feature" class="service-feature">
-                                    <i class="pi pi-check feature-check"></i>
-                                    {{ feature }}
-                                </li>
-                            </ul>
-
-                            <!-- <div class="service-pricing">
-                                <p class="pricing-text">{{ service.pricing }}</p>
-                            </div> -->
+            <BaseSubCard>
+                <div class="services-grid">
+                    <div v-for="service in services" :key="service.id" class="service-item">
+                        <div class="service-header">
+                            <UIcon :name="service.icon" class="service-icon" />
+                            <h3 class="service-title">{{ service.title }}</h3>
                         </div>
+
+                        <ul class="service-features">
+                            <li v-for="feature in service.features" :key="feature" class="service-feature">
+                                <UIcon name="i-lucide-check" class="feature-check" />
+                                {{ feature }}
+                            </li>
+                        </ul>
                     </div>
-                </BaseSubCard>
-            </template>
-        </Card>
+                </div>
+            </BaseSubCard>
+        </UCard>
     </section>
 </template>
 
@@ -35,7 +29,7 @@
 const services = [
     {
         id: 1,
-        icon: 'pi pi-code',
+        icon: 'i-lucide-code',
         title: 'Solutions sur-mesure',
         features: [
             'Applications web et logiciels (frontend/backend)',
@@ -48,7 +42,7 @@ const services = [
     },
     {
         id: 2,
-        icon: 'pi pi-sitemap',
+        icon: 'i-lucide-git-branch',
         title: 'Architecture logicielle & bases de données',
         features: [
             'Conception DDD, monolithes modulaires ou microservices',
@@ -59,7 +53,7 @@ const services = [
     },
     {
         id: 3,
-        icon: 'pi pi-users',
+        icon: 'i-lucide-users',
         title: 'Accompagnement / CTO freelance',
         features: [
             'Accompagnement transition digitale (changement ou ajout de logiciel dans les processus métiers)',
@@ -73,7 +67,7 @@ const services = [
     },
     {
         id: 4,
-        icon: 'pi pi-bolt',
+        icon: 'i-lucide-zap',
         title: 'IA / Automatisation intelligente',
         features: [
             'Mise en place de support client',

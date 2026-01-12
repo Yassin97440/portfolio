@@ -28,59 +28,42 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
   },
 
-  future: {
-    compatibilityVersion: 4,
-  },
-
   devtools: { enabled: true },
 
   ssr: false,
-  css: [
-    '~/assets/css/tailwind.css',
-    'primevue/resources/themes/lara-light-blue/theme.css',
-    'primevue/resources/primevue.css',
-    'primeicons/primeicons.css',
-  ],
 
-  postcss: {
-    plugins: {
-      'postcss-import': {},
-      tailwindcss: {},
-      autoprefixer: {},
-      'postcss-nesting': {},
-
-    },
-  },
-
-  build: {
-    transpile: ['nuxt-primevue'],
-  },
+  // CSS with Nuxt UI imports
+  css: ['~/assets/css/main.css'],
 
   runtimeConfig: {
     mistralApiKey: process.env.MISTRAL_API_KEY,
     catDogApi: process.env.CAT_DOG_API,
     resendApiKey: process.env.RESEND_API_KEY,
 
-
     public: {
-
       strapiUrl: process.env.STRAPI_URL,
     }
   },
 
-  primevue: {
-    options: {
-      theme: 'none'
+  sitemap: {
+    exclude: []
+  },
+
+  strapi: {
+    url: process.env.STRAPI_URL,
+    token: process.env.STRAPI_TOKEN,
+  },
+
+  // @nuxt/ui must be first in modules
+  modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/mdc', 'nuxt-aos', '@nuxtjs/strapi', '@nuxtjs/seo'],
+
+  // Nuxt UI configuration
+  ui: {
+    theme: {
+      colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error'],
+      transitions: true
     }
   },
-
-  sitemap: {
-    exclude: [
-      
-    ]
-  },
-
-  modules: ['@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/tailwindcss', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/mdc', 'nuxt-aos', '@nuxtjs/strapi', '@nuxtjs/seo'],
 
   devServer: {
     https: {
@@ -92,10 +75,7 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-01-03',
 
+  ogImage: { enabled: false },
 
-
-
-  robots: {
-
-  }
+  robots: {}
 })

@@ -1,8 +1,7 @@
 import { defineStore } from 'pinia'
 const config = useRuntimeConfig()
 const strapiUrl = config.public.strapiUrl
-export const useMyStrapiContentStore = defineStore({
-  id: 'myStrapiContentStore',
+export const useStrapiContentStore = defineStore('strapiContentStore', {
   state: () => ({ }),
   actions: {
     async findProjects() {

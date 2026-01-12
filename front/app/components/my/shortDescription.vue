@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useMyStrapiContentStore } from '~/stores/strapi-content';
+import { useMyStrapiContentStore } from '~/stores/strapiContent';
 const profil = ref<any>(null);
 
 const strapi = useStrapi();
