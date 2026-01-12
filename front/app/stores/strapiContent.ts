@@ -30,8 +30,8 @@ export const useStrapiContentStore = defineStore('strapiContentStore', {
       return response.data
     },
     getCoverImageUrl(coverImage: any) {
-      const strapiUrl = useStrapiUrl()
-      return strapiUrl + coverImage?.url
+      const media = useStrapiMedia(coverImage?.url)
+      return media
     },
     getTechnologies(technologies: any[]) {
       return technologies.map((technology: any) => {
