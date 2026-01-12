@@ -33,6 +33,7 @@ jobs:
 
       - name: Build the Docker image
         run: |
+          cd front/
           docker build . --file Dockerfile --tag portfolio:${{ github.run_number }}
         env:
           TAG: ${{ github.run_number }}
