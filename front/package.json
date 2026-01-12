@@ -12,9 +12,11 @@
   },
   "dependencies": {
     "@mistralai/mistralai": "^1.5.0",
+    "@nuxt/content": "^3.10.0",
     "@nuxt/ui": "^4.3.0",
     "@pinia/nuxt": "^0.11.3",
     "@vueuse/core": "^12.3.0",
+    "better-sqlite3": "^12.6.0",
     "nuxt": "^4.2.2",
     "pinia": "^3.0.4",
     "resend": "^6.0.2",
@@ -23,6 +25,7 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.84",
     "@nuxtjs/mdc": "^0.13.1",
     "@nuxtjs/robots": "^5.2.0",
     "@nuxtjs/seo": "^3.1.0",

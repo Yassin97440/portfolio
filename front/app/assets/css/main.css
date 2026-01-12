@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* Scan content directory for Tailwind classes in Markdown files */
+@source "../../../content/**/*";
+
 /* Custom theme colors - using Nuxt UI conventions */
 @theme {
   /* Custom colors for your brand */
@@ -44,8 +47,9 @@
 
 :root {
   /* Override Nuxt UI primary color with earth tones */
-  --ui-primary: var(--color-earth-500);
+  --ui-primary: var(--color-earth-400);
   --ui-secondary: var(--color-olive-500);
+  --ui-neutral: var(--color-forest-300);
 
   /* Custom background - forest green theme */
   --ui-bg: var(--color-forest-500);
@@ -71,6 +75,7 @@
 .dark .light {
   --ui-primary: var(--color-olive-400);
   --ui-secondary: var(--color-olive-500);
+  --ui-neutral: var(--color-forest-300);
 
   --ui-bg: var(--color-forest-900);
   --ui-bg-muted: var(--color-forest-800);

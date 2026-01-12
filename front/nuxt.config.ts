@@ -55,8 +55,8 @@ export default defineNuxtConfig({
     version: 'v5',
   },
 
-  // @nuxt/ui must be first in modules
-  modules: ['@nuxt/ui', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxtjs/mdc', 'nuxt-aos', '@nuxtjs/strapi', '@nuxtjs/seo'],
+  // @nuxt/ui must be first in modules, @nuxt/content after @nuxt/ui
+  modules: ['@nuxt/ui', '@nuxt/content', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots', 'nuxt-aos', '@nuxtjs/strapi', '@nuxtjs/seo'],
 
   // Nuxt UI configuration
   ui: {
