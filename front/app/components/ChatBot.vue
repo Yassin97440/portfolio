@@ -14,12 +14,10 @@
     <UModal 
       v-model:open="isOpen" 
       title="Chat"
-      :ui="{
-        content: 'bg-background border border-secondary/20 w-[400px] max-w-[95vw]',
-        header: 'bg-background text-text border-b border-secondary/20',
-        body: 'bg-background text-text p-0',
-        footer: 'bg-background border-t border-secondary/20'
-      }"
+      description="Vous pouvez poser des questions sur mes compétences, mes services ou mes expériences passées."
+      class="chat-modal"
+      :overlay="false"
+      :ui="{ body: 'h-[700px]' }"
     >
       <!-- Slot par défaut vide car on contrôle l'ouverture via le bouton flottant -->
       <template #default />
@@ -33,10 +31,10 @@
               <UIcon name="i-lucide-info" class="text-2xl text-action" />
             </div>
             <p class="mb-2 text-text">Bonjour ! Je suis l'assistant IA de Yassin.</p>
-            <p class="mb-4 text-text">Je peux vous aider à découvrir son parcours, ses compétences ou ses projets. N'hésitez pas à me poser des questions !</p>
+            <p class="mb-4 text-text">Je peux vous aider à découvrir son parcours, ses compétences ou les services qu'il propose. N'hésitez pas à me poser des questions !</p>
 
             <!-- Suggestions de questions rapides -->
-            <div class="quick-questions flex flex-wrap gap-2 justify-center mt-3">
+            <div class=" flex flex-wrap gap-2 justify-center mt-3">
               <UButton 
                 v-for="question in quickQuestions" 
                 :key="question"
@@ -44,6 +42,8 @@
                 color="neutral"
                 size="xs"
                 @click="askQuickQuestion(question)"
+                class="quick-questions"
+                :ui="{ base: 'bg-olive-400 text-white hover:bg-olive-600' }"
               >
                 {{ question }}
               </UButton>
@@ -101,8 +101,8 @@ const messagesContainer = ref<HTMLElement | null>(null)
 
 // Questions rapides suggérées
 const quickQuestions = [
-  "Quel est son parcours ?",
-  "Quelles sont ses compétences ?",
+  "Quelles sont les services proposés par Yassin ?",
+  "Quelles sont les compétences de Yassin ?",
   "Parle-moi de ses projets"
 ]
 
@@ -135,20 +135,13 @@ watch(() => chatStore.messages, scrollToBottom, { deep: true })
   background-color: var(--action) !important;
 }
 
+.chat-modal {
+  background-color: var(--background) ;
+}
+
 .chat-messages {
   height: 300px;
 }
 
-.quick-questions :deep(.p-button) {
-  font-size: 0.75rem;
-  background-color: transparent;
-  border-color: var(--secondary);
-  color: var(--text);
-  transition: all 0.2s;
-}
 
-.quick-questions :deep(.p-button:hover) {
-  background-color: var(--secondary);
-  color: var(--background);
-}
 </style>

@@ -48,7 +48,7 @@
   --ui-secondary: var(--color-olive-500);
 
   /* Custom background - forest green theme */
-  --ui-bg: var(--color-forest-600);
+  --ui-bg: var(--color-forest-500);
   --ui-bg-muted: var(--color-forest-600);
   --ui-bg-elevated: var(--color-forest-700);
   --ui-bg-accented: var(--color-earth-500);
@@ -68,7 +68,7 @@
   --ui-radius: 0.5rem;
 }
 
-.dark {
+.dark .light {
   --ui-primary: var(--color-olive-400);
   --ui-secondary: var(--color-olive-500);
 
