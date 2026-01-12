@@ -30,7 +30,7 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  ssr: false,
+  ssr: true,
 
   // CSS with Nuxt UI imports
   css: ['~/assets/css/main.css'],
@@ -62,8 +62,9 @@ export default defineNuxtConfig({
   ui: {
     theme: {
       colors: ['primary', 'secondary', 'success', 'info', 'warning', 'error'],
-      transitions: true
-    }
+      transitions: true,
+    },
+    colorMode: false,
   },
 
   devServer: {
