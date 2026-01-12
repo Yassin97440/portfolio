@@ -44,7 +44,6 @@ const techStack = [
 }
 
 .hero-card {
-    background-color: var(--background);
     border-radius: 0.5rem;
 }
 

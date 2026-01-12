@@ -6,7 +6,7 @@
     :icon="getIcon(technology)"
     color="neutral"
     variant="solid"
-    class="bg-action text-text m-1"
+    class="technology-chip text-text m-0.5"
   />
 </template>
 
@@ -35,3 +35,10 @@ const getIcon = (technology: any) => {
   return 'i-lucide-circle'
 }
 </script>
+
+<style scoped>
+.technology-chip {
+  background-color: var(--action);
+  font-size: 1rem;
+}
+</style>

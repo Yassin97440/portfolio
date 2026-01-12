@@ -3,6 +3,7 @@
     <UHeader 
       title="Yassin Abdulla" 
       to="/"
+      class="bg-background"
     >
       <!-- Navigation desktop -->
       <UNavigationMenu 

@@ -1,6 +1,6 @@
 <template>
   <div class="p-3 md:p-14 lg:p-28">
-    <UCard class="bg-background text-text" :ui="{ root: 'bg-background' }">
+    <UCard class="contact-card text-text">
       <template #header>
         <h2 class="text-3xl font-bold">Contactez-moi</h2>
       </template>
@@ -110,3 +110,9 @@ useSeoMeta({
   ogDescription: 'Contactez-moi pour discuter de vos projets ou pour toute demande de collaboration.',
 })
 </script>
+
+<style scoped>
+.contact-card {
+  background-color: var(--background);
+}
+</style>

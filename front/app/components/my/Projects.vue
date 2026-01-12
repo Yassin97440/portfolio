@@ -55,9 +55,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useRouter } from "vue-router";
-import { useMyStrapiContentStore } from '~/stores/strapiContent';
 
-const store = useMyStrapiContentStore();
+const store = useStrapiContentStore();
 const strapi = useStrapi();
 const router = useRouter();
 

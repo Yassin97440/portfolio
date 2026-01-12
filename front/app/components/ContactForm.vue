@@ -108,7 +108,7 @@
         :disabled="submitting"
         :loading="submitting"
         block
-        class="bg-action hover:bg-action/80 text-white py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+        class="bg-olive-500 hover:bg-olive-600 text-white py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
       >
         <template #leading>
           <UIcon v-if="submitting" name="i-lucide-loader-2" class="animate-spin" />

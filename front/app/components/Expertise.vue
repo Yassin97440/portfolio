@@ -1,11 +1,10 @@
 <template>
     <section id="services" class="expertise-section">
-        <Card class="expertise-card">
-            <template #title>
+        <UCard class="expertise-card">
+            <template #header>
                 <h2 class="section-title">Mes expertises</h2>
-                <h3 class="seo-subtitle">Développeur fullstack freelance, expertise Java, Spring Boot, Nuxt 3</h3>
+                <h3 class="seo-subtitle">Gestion de projet, Développement web, Développement desktop, Architecture logicielle, Structuration SI</h3>
             </template>
-            <template #content>
                 <BaseSubCard>
                     <div class="expertise-grid">
                         <div v-for="expertise in expertises" :key="expertise.id" class="expertise-item">
@@ -22,8 +21,7 @@
                         </div>
                     </div>
                 </BaseSubCard>
-            </template>
-        </Card>
+        </UCard>
     </section>
 </template>
 

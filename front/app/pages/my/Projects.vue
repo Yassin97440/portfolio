@@ -1,6 +1,6 @@
 <template>
   <div class="px-5 py-7 md:p-14 lg:px-28">
-    <UCard class="bg-background rounded-lg mb-5" :ui="{ root: 'bg-background rounded-lg' }">
+    <UCard class="projects-card rounded-lg mb-5" :ui="{ root: 'rounded-lg' }">
       <template #header>
         <h2 class="text-2xl text-text">Mes Projets</h2>
       </template>
@@ -84,4 +84,8 @@ const openUrl = (url) => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.projects-card {
+  background-color: var(--background);
+}
+</style>
