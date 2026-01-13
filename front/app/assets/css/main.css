@@ -47,7 +47,7 @@
 
 :root {
   /* Override Nuxt UI primary color with earth tones */
-  --ui-primary: var(--color-earth-400);
+  --ui-primary: var(--color-earth-500);
   --ui-secondary: var(--color-olive-500);
   --ui-neutral: var(--color-forest-300);
 
