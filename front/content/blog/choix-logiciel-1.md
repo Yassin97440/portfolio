@@ -7,7 +7,6 @@ tags: ["freelance",  "Stratégie digitale", "logiciel", "ERP"]
 author:
   name: "Yassin Abdulla"
 ---
-# Quand un bon choix logiciel devient un problème
 
 ## Chronique : Quand le système d’information devient un frein – Épisode 1
 
