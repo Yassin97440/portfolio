@@ -66,6 +66,7 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 const navItems = computed<NavigationMenuItem[]>(() => [
   { label: "Mes services", icon: "i-lucide-briefcase", to: "/services" },
+  { label: "Blog", icon: "i-lucide-book", to: "/blog" },
   { label: 'Mes projets', icon: 'i-lucide-code', to: '/my/projects' },
   { label: "Lab", icon: "i-lucide-cpu", to: "/lab" },
   { label: "Me contacter", icon: "i-lucide-mail", to: "/my/Contact" },
