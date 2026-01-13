@@ -104,10 +104,10 @@ useHead({
                 <UBadge
                   v-for="tag in post.tags"
                   :key="tag"
-                  
+                  color="primary"
                   variant="subtle"
                   size="md"
-                  :ui="{ base: 'bg-earth-500' }"
+                  :ui="{ base: 'bg-earth-500 text-olive-100' }"
                 >
                   {{ tag }}
                 </UBadge>
