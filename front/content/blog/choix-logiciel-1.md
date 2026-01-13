@@ -1,6 +1,6 @@
 ---
 title: "Quand un bon choix logiciel devient un problème"
-description: "Chronique d’un premier client freelance – Épisode 1"
+description: "Quand le système d’information devient un frein – Épisode 1"
 date: "2026-01-13"
 image: ""
 tags: ["freelance",  "Stratégie digitale", "logiciel", "ERP"]
@@ -9,7 +9,7 @@ author:
 ---
 # Quand un bon choix logiciel devient un problème
 
-## Chronique d’un premier client freelance – Épisode 1
+## Chronique : Quand le système d’information devient un frein – Épisode 1
 
 ### Introduction
 
