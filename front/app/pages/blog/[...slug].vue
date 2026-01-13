@@ -71,8 +71,8 @@ const formattedDate = computed(() => {
         </div>
       </template>
 
-      <template #bottom>
-        <div v-if="post.tags?.length" class="flex flex-wrap gap-2 mt-4">
+      <template #links>
+        <div v-if="post.tags && post.tags.length > 0" class="flex flex-wrap gap-2 mt-4">
           <UBadge
             v-for="tag in post.tags"
             :key="tag"
@@ -103,7 +103,7 @@ const formattedDate = computed(() => {
           <!-- Main content -->
           <div class="lg:col-span-8">
             <div class="prose prose-lg max-w-none">
-              <ContentRenderer v-if="post.body" :value="post" />
+              <ContentRenderer v-if="post.body" :value="post" class="content-renderer"/>
             </div>
 
             <!-- Back to blog link -->
@@ -126,6 +126,7 @@ const formattedDate = computed(() => {
               :links="post.body.toc.links"
               title="Sommaire"
               highlight
+              :ui="{ content: 'bg-olive-600 rounded-lg' }"
             />
           </aside>
         </div>
@@ -137,13 +138,17 @@ const formattedDate = computed(() => {
 <style scoped>
 /* Custom prose styling to match the site theme */
 .prose {
-  --tw-prose-body: var(--ui-text);
+  --tw-prose-body: white;
   --tw-prose-headings: var(--ui-text-highlighted);
   --tw-prose-links: var(--ui-primary);
   --tw-prose-bold: var(--ui-text-highlighted);
   --tw-prose-quotes: var(--ui-text-muted);
   --tw-prose-code: var(--ui-text-highlighted);
   --tw-prose-hr: var(--ui-border);
+}
+
+.content-renderer {
+  color: white;
 }
 </style>
 
