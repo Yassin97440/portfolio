@@ -38,6 +38,14 @@ useSeoMeta({
   articleAuthor: () => [post.value?.author?.name || 'Yassin Abdulla'],
 })
 
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://yassin.abdulla.fr/blog/' + slugPath.value
+    }
+  ]
+})
 // Format date for display
 const formattedDate = computed(() => {
   if (!post.value?.date) return ''
