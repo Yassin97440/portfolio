@@ -29,6 +29,8 @@ jobs:
           echo STRAPI_TOKEN=${{ secrets.STRAPI_TOKEN }} >> .env
           echo STRAPI_URL=${{ secrets.STRAPI_URL }} >> .env
           echo RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} >> .env
+          echo NUXT_PUBLIC_UMAMI_WEBSITE_ID=${{ secrets.NUXT_PUBLIC_UMAMI_WEBSITE_ID }} >> .env
+          echo NUXT_PUBLIC_UMAMI_HOST=${{ secrets.NUXT_PUBLIC_UMAMI_HOST }} >> .env
           cat .env
 
       - name: Build the Docker image
