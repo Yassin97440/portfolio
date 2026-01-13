@@ -42,6 +42,9 @@ export default defineNuxtConfig({
 
     public: {
       strapiUrl: process.env.STRAPI_URL,
+      // Umami Analytics
+      umamiWebsiteId: process.env.NUXT_PUBLIC_UMAMI_WEBSITE_ID,
+      umamiHost: process.env.NUXT_PUBLIC_UMAMI_HOST || 'https://cloud.umami.is',
     }
   },
 
