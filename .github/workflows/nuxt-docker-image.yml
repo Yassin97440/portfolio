@@ -22,16 +22,16 @@ jobs:
 
       - name: "Create env file"
         run: |
-          touch .env
-          echo NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION }} >> .env
-          echo MISTRAL_API_KEY=${{ secrets.MISTRAL_API_KEY }} >> .env
-          echo CAT_DOG_API=${{ secrets.CAT_DOG_API }} >> .env
-          echo STRAPI_TOKEN=${{ secrets.STRAPI_TOKEN }} >> .env
-          echo STRAPI_URL=${{ secrets.STRAPI_URL }} >> .env
-          echo RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} >> .env
-          echo NUXT_PUBLIC_UMAMI_WEBSITE_ID=${{ secrets.NUXT_PUBLIC_UMAMI_WEBSITE_ID }} >> .env
-          echo NUXT_PUBLIC_UMAMI_HOST=${{ secrets.NUXT_PUBLIC_UMAMI_HOST }} >> .env
-          cat .env
+          touch front/.env
+          echo NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION=${{ secrets.NUXT_PUBLIC_GOOGLE_SITE_VERIFICATION }} >> front/.env
+          echo MISTRAL_API_KEY=${{ secrets.MISTRAL_API_KEY }} >> front/.env
+          echo CAT_DOG_API=${{ secrets.CAT_DOG_API }} >> front/.env
+          echo STRAPI_TOKEN=${{ secrets.STRAPI_TOKEN }} >> front/.env
+          echo STRAPI_URL=${{ secrets.STRAPI_URL }} >> front/.env
+          echo RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} >> front/.env
+          echo NUXT_PUBLIC_UMAMI_WEBSITE_ID=${{ secrets.NUXT_PUBLIC_UMAMI_WEBSITE_ID }} >> front/.env
+          echo NUXT_PUBLIC_UMAMI_HOST=${{ secrets.NUXT_PUBLIC_UMAMI_HOST }} >> front/.env
+          cat front/.env
 
       - name: Build the Docker image
         run: |
