@@ -7,7 +7,6 @@ const route = useRoute()
 const { data: posts } = await useAsyncData<BlogPost[]>('blog-posts', () =>
   queryCollection('blog').order('date', 'DESC').all()
 )
-console.log("🚀 ~ posts:", posts)
 
 // Get unique tags from all posts
 const allTags = computed(() => {
@@ -36,9 +35,18 @@ watch(selectedTag, (tag) => {
 // SEO
 useSeoMeta({
   title: 'Blog | Yassin Abdulla',
-  description: 'Articles sur le développement logiciel et web, les architectures logicielles et le freelance. Tutoriels, retours d\'expérience et conseils pratiques.',
+  description: 'Articles sur le développement logiciel et web, les architectures logicielles et mes retours d\'expérience en freelance. Tutoriels, retours d\'expérience et conseils pratiques.',
   ogTitle: 'Blog | Yassin Abdulla',
-  ogDescription: 'Articles sur le développement logiciel et web, les architectures logicielles et le freelance.',
+  ogDescription: 'Articles sur le développement logiciel et web, les architectures logicielles et mes retours d\'expérience en freelance. Tutoriels, retours d\'expérience et conseils pratiques.',
+})
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://yassin.abdulla.fr/blog'
+    }
+  ]
 })
 </script>
 
