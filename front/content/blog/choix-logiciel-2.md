@@ -1,4 +1,4 @@
-***Le vrai coût des mauvais choix SI
+*Le vrai coût des mauvais choix SI
 
 **Chronique – Les choix digitaux qui coûtent cher | Épisode 2**
 
