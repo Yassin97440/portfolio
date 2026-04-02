@@ -71,3 +71,7 @@ jobs:
               --network https-net \
               --name strapi-portfolio \
               strapi-portfolio:${{ github.run_number }}
+            echo "--- Nettoyage des anciennes images ---"
+            docker images strapi-portfolio --format '{{.Repository}}:{{.Tag}}' | grep -v ':${{ github.run_number }}$' | xargs -r docker rmi || true
+            docker image prune -f || true
+            rm -f strapi-portfolio.tar.gz

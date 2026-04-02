@@ -64,3 +64,7 @@ jobs:
             docker stop portfolio || true
             docker rm portfolio || true
             docker run -d -p 3010:3000 --network https-net --name portfolio portfolio:${{ github.run_number }}
+            echo "--- Nettoyage des anciennes images ---"
+            docker images portfolio --format '{{.Repository}}:{{.Tag}}' | grep -v ':${{ github.run_number }}$' | xargs -r docker rmi || true
+            docker image prune -f || true
+            rm -f portfolio.tar.gz
