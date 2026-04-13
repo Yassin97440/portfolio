@@ -34,10 +34,10 @@ watch(selectedTag, (tag) => {
 
 // SEO
 useSeoMeta({
-  title: 'Blog | Yassin Abdulla',
-  description: 'Articles sur le développement logiciel et web, les architectures logicielles et mes retours d\'expérience en freelance. Tutoriels, retours d\'expérience et conseils pratiques.',
-  ogTitle: 'Blog | Yassin Abdulla',
-  ogDescription: 'Articles sur le développement logiciel et web, les architectures logicielles et mes retours d\'expérience en freelance. Tutoriels, retours d\'expérience et conseils pratiques.',
+  title: 'Blog Développement & Digitalisation | Conseils TPE/PME La Réunion — Yassin Abdulla',
+  description: 'Conseils pratiques pour digitaliser votre entreprise à La Réunion. Articles sur le développement web, l\'IA, l\'automatisation et la transformation digitale des TPE/PME.',
+  ogTitle: 'Blog | Développement Web & Digitalisation TPE/PME',
+  ogDescription: 'Conseils pratiques pour digitaliser votre entreprise. Développement web, IA, automatisation — par un freelance basé à La Réunion.',
 })
 
 useHead({
@@ -54,7 +54,7 @@ useHead({
   <UPage>
     <UPageHero
       title="Blog"
-      description="Découvrez mes articles sur le développement logiciel et web, les architectures logicielles et mes retours d'expérience en freelance."
+      description="Conseils pratiques pour digitaliser votre TPE/PME à La Réunion. Développement web, IA, automatisation et transformation digitale — des articles pensés pour les entrepreneurs réunionnais."
     />
 
     <UPageBody>

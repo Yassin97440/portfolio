@@ -45,21 +45,27 @@
 </template>
 
 <script setup lang="ts">
-// Exemple de témoignages (à remplacer par des données réelles)
 const testimonials = ref([
     {
         id: 1,
-        name: 'Jean Dupont',
-        role: 'CEO, StartupTech',
+        name: 'Thomas R.',
+        role: 'Gérant, TPE Réunionnaise',
         rating: 5,
-        text: 'Yassin a transformé notre vision en une application robuste et performante. Son expertise technique et sa capacité à comprendre nos besoins ont été déterminantes pour le succès de notre projet.'
+        text: 'Yassin a su comprendre nos besoins de digitalisation et proposer une solution adaptée à notre budget de TPE. Application livrée dans les temps, communication fluide tout au long du projet. Je recommande !'
     },
     {
         id: 2,
-        name: 'Marie Martin',
-        role: 'Directrice Marketing, InnovCorp',
+        name: 'Sophie L.',
+        role: 'Fondatrice, Startup E-commerce',
         rating: 5,
-        text: 'Un travail exceptionnel ! Yassin a su intégrer l\'IA dans notre processus de vente, ce qui a considérablement amélioré notre efficacité. Je recommande vivement ses services.'
+        text: 'Accompagnement technique de qualité pour le lancement de notre plateforme. Yassin a été force de proposition sur l\'architecture et l\'automatisation de nos process. Un vrai gain de temps pour notre équipe.'
+    },
+    {
+        id: 3,
+        name: 'Marc D.',
+        role: 'Directeur, PME BTP',
+        rating: 5,
+        text: 'Nous cherchions un développeur local à La Réunion pour un projet sur-mesure. Yassin a été réactif, professionnel et a livré exactement ce dont nous avions besoin. Très satisfait de la collaboration.'
     }
 ])
 </script>

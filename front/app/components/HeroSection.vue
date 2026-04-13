@@ -1,12 +1,13 @@
 <template>
     <section class="hero-section">
         <UCard class="hero-card" :ui="{ root: 'bg-background rounded-lg' }">
-            <BaseSubCard title="Ingénieur logiciel — je conçois vos solutions sur mesure">
+            <BaseSubCard title="Votre projet digital bloqué ? Je le concrétise.">
                 <div class="hero-content">
                     <div class="hero-text">
                         <p class="hero-subtitle">
-                            Architecture, développement logiciel/WEB, digitalisation, automatisation : je transforme
-                            vos idées en produits performants et maintenables.
+                            <strong>Développeur freelance à La Réunion (974)</strong>, je conçois et livre vos solutions 
+                            web et logiciels sur-mesure — de l'idée au déploiement. Spécialisé en <strong>IA et automatisation</strong>, 
+                            j'aide les TPE, PME et startups réunionnaises à gagner en efficacité.
                         </p>
                         <div class="tech-stack">
                             <div class="tech-item" v-for="tech in techStack" :key="tech.name">
@@ -16,10 +17,10 @@
                         </div>
                         <div class="hero-actions">
                             <NuxtLink to="/my/Contact" class="btn-primary">
-                                Me contacter
+                                Discutons de votre projet
                             </NuxtLink>
                             <NuxtLink to="/services" class="btn-secondary">
-                                Mes services
+                                Voir mes services
                             </NuxtLink>
                         </div>
                     </div>
@@ -31,10 +32,10 @@
 
 <script setup lang="ts">
 const techStack = [
-    { name: 'Web', icon: 'i-lucide-globe' },
-    { name: 'Logiciel', icon: 'i-lucide-code' },
-    { name: 'Automatisation', icon: 'i-lucide-zap' },
-    { name: 'Stratégie digitalisation', icon: 'i-lucide-trending-up' }
+    { name: 'Applications Web', icon: 'i-lucide-globe' },
+    { name: 'Logiciels sur-mesure', icon: 'i-lucide-code' },
+    { name: 'IA & Automatisation', icon: 'i-lucide-zap' },
+    { name: 'Conseil digitalisation', icon: 'i-lucide-trending-up' }
 ]
 </script>
 
