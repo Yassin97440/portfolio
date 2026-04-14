@@ -15,10 +15,11 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Yassin Abdulla | Développeur logiciel - Web',
-  description: 'Freelance développeur logiciel et web Full Stack. Expert en Backend, bases de données et architectures logicielles. Accompagnement technique en digitalisation pour startups, indépendants, TPE, PME. Sur Ile de La Réunion (974).',
-  ogTitle: 'Yassin Abdulla | Développeur logiciel - Web',
-  ogDescription: 'Freelance développeur logiciel et web Full Stack. Expert en Backend, bases de données et architectures logicielles. Accompagnement technique en digitalisation pour startups, indépendants, TPE, PME. Sur Ile de La Réunion (974).',
+  title: 'Développeur Freelance La Réunion (974) | Solutions Web & Logiciel sur-mesure — Yassin Abdulla',
+  description: 'Développeur freelance à La Réunion (974) : applications web, logiciels sur-mesure, IA & automatisation. J\'accompagne TPE, PME et startups réunionnaises dans leur digitalisation. Devis gratuit sous 24h.',
+  ogTitle: 'Développeur Freelance La Réunion | Web, Logiciel & IA',
+  ogDescription: 'Freelance développeur web 974 : solutions sur-mesure pour TPE/PME. Architecture logicielle, automatisation et IA. Basé à La Réunion, j\'accompagne votre digitalisation de A à Z.',
+  keywords: 'développeur freelance La Réunion, développeur web 974, freelance logiciel Réunion, développeur fullstack La Réunion, digitalisation TPE PME Réunion, automatisation IA Réunion'
 })
 </script>
 

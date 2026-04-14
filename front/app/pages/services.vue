@@ -19,10 +19,10 @@ useHead({
   ]
 })
 useSeoMeta({
-    title: 'Services - Yassin Abdulla | Freelance Développeur Fullstack',
-    description: 'Freelance développeur logiciel Montpellier / La Réunion (974) : création d\'applications web, architecture logicielle, IA/automatisation, accompagnement CTO. Devis gratuit.',
-    ogTitle: 'Services Développement Web & IA - Freelance Montpellier/ La Réunion (974)',
-    ogDescription: 'Développeur freelance spécialisé en solutions web sur-mesure, architecture logicielle. Accompagnement technique pour startups, indépendants et PME.',
+    title: 'Services Développement Web & IA | Freelance La Réunion (974) — Yassin Abdulla',
+    description: 'Développeur freelance à La Réunion (974) : création d\'applications web sur-mesure, architecture logicielle, IA & automatisation, accompagnement CTO. Devis gratuit sous 24h.',
+    ogTitle: 'Services Développement Web & IA | Freelance La Réunion (974)',
+    ogDescription: 'Développeur freelance spécialisé en solutions web sur-mesure, architecture logicielle et IA. Accompagnement technique pour startups, indépendants et PME à La Réunion.',
 })
 </script>
 

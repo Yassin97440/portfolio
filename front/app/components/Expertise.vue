@@ -29,38 +29,31 @@
 const expertises = [
     {
         id: 1,
+        icon: 'pi pi-bolt',
+        title: 'IA & Automatisation',
+        description: 'Intégration d\'intelligence artificielle et automatisation de vos processus métiers. Chatbots, assistants IA, workflows automatisés — gagnez du temps et de l\'efficacité. Ex: j\'ai automatisé ma propre création de contenu SEO avec n8n et l\'IA.',
+        tags: ['Agents IA', 'Chatbots', 'n8n', 'Automatisation', 'RAG']
+    },
+    {
+        id: 2,
         icon: 'pi pi-code',
         title: 'Développement web fullstack',
         description: 'Création d\'applications web complètes avec les dernières technologies. De l\'application web classique à la solution sur-mesure. En partant de l\'analyse de besoin jusqu\'au déploiement et la formation des équipes.',
         tags: ['NuxtJS', 'Spring Boot', 'PostgreSQL', 'MySQL', 'NodeJS']
     },
     {
-        id: 2,
+        id: 3,
         icon: 'pi pi-sitemap',
         title: 'Architecture logicielle',
-        description: 'Conception de systèmes robustes et évolutifs.',
+        description: 'Conception de systèmes robustes et évolutifs. Audit de l\'existant et recommandations pour scaler votre application.',
         tags: ['SQL/NoSQL', 'DDD', 'Microservices', 'Monolithes']
     },
-    // {
-    //     id: 3,
-    //     icon: 'pi pi-bolt',
-    //     title: 'IA & Automatisation intelligente',
-    //     description: 'Intégration d\'intelligence artificielle dans vos processus.',
-    //     tags: ['RAG', 'Agents IA', 'LangChain', 'OpenCV']
-    // },
-    // {
-    //     id: 4,
-    //     icon: 'pi pi-wifi',
-    //     title: 'Développement embarqué & IoT',
-    //     description: 'Solutions connectées et systèmes embarqués.',
-    //     tags: ['ESP32', 'Raspberry Pi', 'Arduino']
-    // },
     {
-        id: 5,
+        id: 4,
         icon: 'pi pi-users',
-        title: 'Conseil technique',
-        description: 'Accompagnement stratégique et expertise technique. Analyse et conseil dans les choix stratégiques en liens avec le digital et la nuémrisation de votre entreprise.',
-        tags: ['MVP', 'Audit code', 'Stratégie technique', 'Digitalisation', 'Nuémrisation']
+        title: 'Conseil & Accompagnement',
+        description: 'Accompagnement stratégique pour TPE/PME réunionnaises. Analyse et conseil dans vos choix technologiques pour réussir votre transformation digitale.',
+        tags: ['MVP', 'Audit code', 'CTO freelance', 'Digitalisation', 'Numérisation']
     }
 ]
 </script>

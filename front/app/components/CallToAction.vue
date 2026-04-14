@@ -4,17 +4,17 @@
             <BaseSubCard>
                 <div class="cta-content">
                     <div class="cta-text">
-                        <h2 class="cta-title">Travaillons ensemble</h2>
+                        <h2 class="cta-title">Prêt à lancer votre projet ?</h2>
                         <p class="cta-description">
-                            Un projet, une idée, une problématique ou un besoin ?
-                            Contactez-moi, ou découvrez mes services en détail.
+                            Application web, logiciel métier, automatisation... Discutons de votre besoin.
+                            <strong>Réponse garantie sous 24h.</strong>
                         </p>
                         <div class="cta-actions">
                             <NuxtLink to="/my/Contact" class="cta-button primary">
-                                Me contacter
+                                Obtenir un devis gratuit
                             </NuxtLink>
                             <NuxtLink to="/services" class="cta-button secondary">
-                                Mes services
+                                Découvrir mes services
                             </NuxtLink>
                         </div>
                     </div>
