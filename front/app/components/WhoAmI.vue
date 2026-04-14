@@ -2,7 +2,7 @@
     <section class="who-am-i-section">
         <UCard class="who-am-i-card" :ui="{ root: 'bg-background rounded-lg' }">
             <template #header>
-                <h2 class="section-title">Qui suis-je ?</h2>
+                <h2 class="section-title">Pourquoi travailler avec moi ?</h2>
             </template>
             <BaseSubCard>
                 <div class="who-am-i-content">
@@ -15,21 +15,32 @@
 
                     <div class="text-content">
                         <p class="intro-text">
-                            Je m'appelle <strong>Yassin</strong>, développeur fullstack, architecte logiciel et
-                            passionné d'intelligence artificielle.
+                            Je suis <strong>Yassin</strong> — je traduis vos enjeux business en solutions techniques concrètes.
                         </p>
-                        <p class="description-text">
-                            Après plusieurs années en tant que développeur, lead dev et chef de projet, j'aide
-                            aujourd'hui
-                            startups, PME et indépendants à concevoir des solutions robustes et évolutives — avec
-                            une attention particulière portée à la qualité, la performance et l'expérience
-                            utilisateur.
-                        </p>
-                        <p class="description-text"> Vous pouvez en savoir plus sur mon profil <NuxtLink to="/my/profil" class="text-action hover:underline">ici</NuxtLink></p>
-                        <div class="highlight-box">
-                            <UIcon name="i-lucide-lightbulb" class="highlight-icon" />
-                            <p>Passion pour l'innovation technique et l'excellence du code</p>
+                        
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <UIcon name="i-lucide-check-circle" class="benefit-icon" />
+                                <p><strong>Je parle votre langage</strong> : pas de jargon technique, je comprends vos problématiques métier avant de coder.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <UIcon name="i-lucide-check-circle" class="benefit-icon" />
+                                <p><strong>Un interlocuteur unique</strong> : de l'analyse de vos besoins à la mise en production, vous n'avez qu'un seul contact.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <UIcon name="i-lucide-check-circle" class="benefit-icon" />
+                                <p><strong>Solutions pérennes</strong> : code maintenable, documentation claire, vous restez maître de votre outil.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <UIcon name="i-lucide-check-circle" class="benefit-icon" />
+                                <p><strong>Basé à La Réunion</strong> : disponibilité locale, compréhension du tissu économique réunionnais.</p>
+                            </div>
                         </div>
+
+                        <p class="description-text">
+                            5+ années d'expérience en développement, lead dev et gestion de projet — je sais ce qui fonctionne et ce qu'il faut éviter.
+                            <NuxtLink to="/my/profil" class="text-action hover:underline">Voir mon parcours complet →</NuxtLink>
+                        </p>
                     </div>
                 </div>
             </BaseSubCard>
@@ -84,25 +95,43 @@
     opacity: 0.9;
 }
 
-.highlight-box {
+.benefits-list {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    background-color: rgba(var(--action-rgb, 0, 0, 0), 0.1);
-    border-left: 4px solid var(--action);
-    border-radius: 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.highlight-icon {
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.benefit-item:hover {
+    transform: translateX(4px);
+}
+
+.benefit-icon {
     color: var(--action);
     font-size: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
 }
 
-.highlight-box p {
+.benefit-item p {
     color: var(--text);
-    font-weight: 500;
     margin: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.benefit-item strong {
+    color: var(--action);
 }
 
 .profile-visual {
