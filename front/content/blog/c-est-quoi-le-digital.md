@@ -1,7 +1,7 @@
 ---
 title: "Le digital, c'est quoi exactement ? Une explication simple et concrète"
 description: "Vous entendez parler de digital et de numérique partout, mais personne ne prend le temps d'expliquer vraiment ce que ça veut dire. Voici une réponse claire, sans jargon."
-date: "2026-04-08"
+date: "2026-04-10"
 image: "/blog/c-est-quoi-le-digital.png"
 tags: ["digitalisation", "numérique", "transformation digitale", "TPE PME Réunion"]
 author:

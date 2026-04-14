@@ -1,7 +1,7 @@
 ---
 title: "Infrastructure SI : l'angle mort qui fait échouer vos projets de digitalisation"
 description: "Pourquoi l'infrastructure est le maillon oublié de tout projet SI en TPE/PME, et comment éviter de construire sur du sable."
-date: "2025-01-28"
+date: "2026-04-13"
 image: "/blog/infrastructure-si-angle-mort.png"
 tags: ["infrastructure SI", "système d'information", "digitalisation", "TPE PME", "La Réunion"]
 author:
