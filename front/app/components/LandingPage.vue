@@ -1,10 +1,11 @@
 <template>
     <div class="landing-page">
         <HeroSection />
+        <SocialProof />
         <WhoAmI />
         <Expertise />
         <WorkMethod />
-        <!-- <Testimonials /> -->
+        <Testimonials />
         <CallToAction />
     </div>
 </template>

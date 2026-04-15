@@ -1,8 +1,19 @@
 <template>
   <div class="px-5 py-7 md:p-14 lg:px-28">
+    <!-- Introduction Section -->
+    <UCard class="projects-intro-card rounded-lg mb-5" :ui="{ root: 'rounded-lg bg-background' }">
+      <div class="text-center py-4">
+        <h1 class="text-3xl font-bold text-text mb-4">Mes Réalisations</h1>
+        <p class="text-text opacity-90 max-w-2xl mx-auto">
+          Chaque projet raconte une histoire : un besoin client, une problématique technique, 
+          et une solution livrée. Découvrez comment j'accompagne mes clients de l'idée au déploiement.
+        </p>
+      </div>
+    </UCard>
+
     <UCard class="projects-card rounded-lg mb-5" :ui="{ root: 'rounded-lg' }">
       <template #header>
-        <h2 class="text-2xl text-text">Mes Projets</h2>
+        <h2 class="text-2xl text-text">Projets & Études de cas</h2>
       </template>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <BaseSubCard v-for="project in projects" :key="project.id"
@@ -67,6 +78,13 @@ useHead({
   ]
 })
 
+useSeoMeta({
+  title: 'Mes Projets | Développeur Freelance La Réunion — Yassin Abdulla',
+  description: 'Découvrez mes réalisations : applications web, logiciels sur-mesure, projets IA. Chaque projet est présenté avec son contexte, les problèmes résolus et les résultats obtenus.',
+  ogTitle: 'Portfolio Projets | Développeur Freelance La Réunion',
+  ogDescription: 'Applications web, logiciels métier, projets IA : découvrez mes réalisations et études de cas.',
+})
+
 onMounted(async () => {
   const response = await strapi.find(StrapiTypes.PROJECT, {populate: ['coverImage', 'technologies']})
   projects.value = response.data
@@ -85,6 +103,10 @@ const openUrl = (url) => {
 </script>
 
 <style scoped>
+.projects-intro-card {
+  background-color: var(--background);
+}
+
 .projects-card {
   background-color: var(--background);
 }

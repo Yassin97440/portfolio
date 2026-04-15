@@ -104,10 +104,10 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Contact - Yassin Abdulla | Développeur logiciel - Web',
-  description: 'Contactez-moi pour discuter de vos projets ou pour toute demande de collaboration.',
-  ogTitle: 'Contact - Yassin Abdulla | Développeur logiciel - Web',
-  ogDescription: 'Contactez-moi pour discuter de vos projets ou pour toute demande de collaboration.',
+  title: 'Contact | Développeur Freelance La Réunion (974) — Yassin Abdulla',
+  description: 'Discutons de votre projet ! Développeur freelance basé à La Réunion (974). Réponse garantie sous 24h, devis gratuit. Application web, logiciel, IA & automatisation.',
+  ogTitle: 'Contactez-moi | Développeur Freelance La Réunion',
+  ogDescription: 'Besoin d\'un développeur à La Réunion ? Discutons de votre projet. Devis gratuit, réponse sous 24h.',
 })
 </script>
 

@@ -1,25 +1,36 @@
 <template>
     <section class="hero-section">
         <UCard class="hero-card" :ui="{ root: 'bg-background rounded-lg' }">
-            <BaseSubCard title="Ingénieur logiciel — je conçois vos solutions sur mesure">
+            <BaseSubCard title="Vos défis business, mes solutions digitales">
                 <div class="hero-content">
                     <div class="hero-text">
                         <p class="hero-subtitle">
-                            Architecture, développement logiciel/WEB, digitalisation, automatisation : je transforme
-                            vos idées en produits performants et maintenables.
+                            <strong>Vous perdez du temps sur des tâches répétitives ?</strong> Vos processus métier manquent de fluidité ? 
+                            Vous avez des données mais aucune visibilité claire sur votre activité ? 
+                            Votre digitalisation est en retard ou désorganisée ?
                         </p>
-                        <div class="tech-stack">
-                            <div class="tech-item" v-for="tech in techStack" :key="tech.name">
-                                <UIcon :name="tech.icon" class="text-action text-xl" />
-                                <span>{{ tech.name }}</span>
+                        
+                        <div class="value-propositions">
+                            <div class="value-item" v-for="value in valuePropositions" :key="value.title">
+                                <UIcon :name="value.icon" class="value-icon" />
+                                <div class="value-content">
+                                    <h3 class="value-title">{{ value.title }}</h3>
+                                    <p class="value-description">{{ value.description }}</p>
+                                </div>
                             </div>
                         </div>
+
+                        <p class="hero-cta-text">
+                            <strong>Développeur freelance à La Réunion (974)</strong>, j'accompagne TPE, PME et startups 
+                            dans leur transformation digitale — de la stratégie à la mise en production.
+                        </p>
+
                         <div class="hero-actions">
                             <NuxtLink to="/my/Contact" class="btn-primary">
-                                Me contacter
+                                Discutons de votre projet →
                             </NuxtLink>
                             <NuxtLink to="/services" class="btn-secondary">
-                                Mes services
+                                Découvrir mes services
                             </NuxtLink>
                         </div>
                     </div>
@@ -30,11 +41,27 @@
 </template>
 
 <script setup lang="ts">
-const techStack = [
-    { name: 'Web', icon: 'i-lucide-globe' },
-    { name: 'Logiciel', icon: 'i-lucide-code' },
-    { name: 'Automatisation', icon: 'i-lucide-zap' },
-    { name: 'Stratégie digitalisation', icon: 'i-lucide-trending-up' }
+const valuePropositions = [
+    { 
+        title: 'Gain de temps', 
+        icon: 'i-lucide-clock',
+        description: 'Automatisation des tâches répétitives, workflows optimisés, moins de saisie manuelle.'
+    },
+    { 
+        title: 'Processus métier optimisés', 
+        icon: 'i-lucide-settings',
+        description: 'Logiciels sur-mesure adaptés à VOTRE façon de travailler, pas l\'inverse.'
+    },
+    { 
+        title: 'Données accessibles', 
+        icon: 'i-lucide-bar-chart-3',
+        description: 'Tableaux de bord clairs, indicateurs pertinents, prise de recul sur votre business.'
+    },
+    { 
+        title: 'Stratégie digitale', 
+        icon: 'i-lucide-compass',
+        description: 'Mise en place, réorganisation et accompagnement de votre transformation numérique.'
+    }
 ]
 </script>
 
@@ -111,30 +138,61 @@ const techStack = [
     color: white;
 }
 
-.tech-stack {
+.value-propositions {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1.25rem;
+    margin: 2rem 0;
 }
 
-.tech-item {
+.value-item {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.25rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
     background-color: var(--primary);
-    border-radius: 0.5rem;
-    transition: transform 0.3s ease;
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 3px solid var(--action);
 }
 
-.tech-item:hover {
+.value-item:hover {
     transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.tech-item span {
+.value-icon {
+    color: var(--action);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.value-content {
+    flex: 1;
+}
+
+.value-title {
     color: var(--text);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.value-description {
+    color: var(--text);
+    opacity: 0.85;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.hero-cta-text {
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 @media (min-width: 768px) {
@@ -173,8 +231,20 @@ const techStack = [
         width: 100%;
     }
 
-    .tech-stack {
+    .value-propositions {
         grid-template-columns: 1fr;
+    }
+
+    .value-item {
+        padding: 0.875rem;
+    }
+
+    .value-title {
+        font-size: 0.95rem;
+    }
+
+    .value-description {
+        font-size: 0.8rem;
     }
 }
 
