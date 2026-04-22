@@ -1,12 +1,15 @@
 ---
-
-## title: "Ce que fait vraiment une entreprise de logiciels pour votre business à La Réunion"
+title: "Ce que fait vraiment une entreprise de logiciels pour votre business à La Réunion"
 description: "Vous cherchez une entreprise de logiciels à La Réunion ? Découvrez ce qu'elle peut concrètement apporter à votre TPE/PME et comment choisir le bon partenaire."
 date: "2026-04-08"
 image: "/blog/entreprise-de-logiciels-reunion.png"
 tags: ["logiciels", "digitalisation", "La Réunion", "TPE PME", "développement web"]
 author:
   name: "Yassin Abdulla"
+related:
+  - /blog/choix-logiciel-1
+  - /blog/investir-digitalisation-entreprise
+  - /blog/workflow-automatise-contenu-seo-linkedin
 seo:
   meta_title: "Entreprise de logiciels à La Réunion : ce qu'elle peut faire pour vous"
   meta_description: "Vous êtes dirigeant de TPE/PME à La Réunion et vous cherchez une entreprise de logiciels ? Voici ce qu'elle apporte vraiment, sans jargon ni promesses en l'air."
@@ -17,6 +20,7 @@ editorial:
   eeat: ["exemples TPE/PME locales 974", "problèmes concrets de terrain", "ton praticien pas consultant", "ancrage géographique La Réunion"]
   vigilance: "Requête récupérée depuis la GSC avec impressions mais 0 clics : intention de recherche mixte (informationnelle + commerciale). L'article doit capturer les deux profils : celui qui découvre ce qu'est une entreprise de logiciels et celui qui cherche un prestataire local."
   linkedin_adaptation: "Reformuler en post court : '3 choses qu'une entreprise de logiciels peut faire pour votre PME à La Réunion (que vous ne saviez probablement pas)' + appel à commentaire."
+---
 
 ## Pourquoi cette question revient souvent chez les dirigeants réunionnais
 

@@ -18,7 +18,12 @@ export default defineContentConfig({
           author: z.object({
             name: z.string(),
             avatar: z.string().optional()
-          }).optional()
+          }).optional(),
+          series: z.object({
+            name: z.string(),
+            episode: z.number()
+          }).optional(),
+          related: z.array(z.string()).optional()
         })
       })
     )

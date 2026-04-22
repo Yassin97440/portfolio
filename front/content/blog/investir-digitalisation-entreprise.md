@@ -6,6 +6,10 @@ image: "/blog/investir-digitalisation-entreprise.png"
 tags: ["digitalisation", "stratégie digitale", "TPE PME", "investissement", "974"]
 author:
   name: "Yassin Abdulla"
+related:
+  - /blog/c-est-quoi-le-digital
+  - /blog/audit-digital-bi-scenarios
+  - /blog/choix-logiciel-1
 seo:
   meta_title: "Investir dans la digitalisation de son entreprise : guide stratégique 974"
   meta_description: "La digitalisation de votre entreprise à La Réunion est un investissement rentable, pas une dépense. Découvrez comment l'aborder avec méthode et bon accompagnement."

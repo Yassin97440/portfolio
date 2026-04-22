@@ -6,6 +6,10 @@ image: "/blog/digital-c'est-quoi.png"
 tags: ["digitalisation", "numérique", "transformation digitale", "TPE PME Réunion"]
 author:
   name: "Yassin Abdulla"
+related:
+  - /blog/investir-digitalisation-entreprise
+  - /blog/entreprise-logiciels-reunion
+  - /blog/infrastructure-si-angle-mort
 seo:
   meta_title: "C'est quoi le digital ? Définition simple et claire"
   meta_description: "Digital, numérique, transformation digitale… ces mots reviennent partout. Découvrez ce qu'ils signifient vraiment, avec des exemples concrets pour les particuliers et les entreprises."

@@ -6,6 +6,12 @@ image: "/blog/img-choix-strat-ep-1.png"
 tags: ["freelance",  "Stratégie digitale", "logiciel", "ERP"]
 author:
   name: "Yassin Abdulla"
+series:
+  name: "Choix digitaux stratégiques"
+  episode: 1
+related:
+  - /blog/investir-digitalisation-entreprise
+  - /blog/entreprise-logiciels-reunion
 ---
 
 ## Chronique : Quand le système d’information devient un frein – Épisode 1

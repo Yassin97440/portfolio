@@ -6,6 +6,10 @@ image: "/blog/workflow-automatise-contenu-seo-linkedin.png"
 tags: ["automatisation", "workflow", "IA", "contenu", "SEO", "LinkedIn"]
 author:
   name: "Yassin Abdulla"
+related:
+  - /blog/entreprise-logiciels-reunion
+  - /blog/investir-digitalisation-entreprise
+  - /blog/audit-digital-bi-scenarios
 seo:
   meta_title: "Workflow automatisé : créer du contenu SEO et LinkedIn avec l'IA"
   meta_description: "Plus de temps pour publier ? Découvrez comment j'ai construit un workflow automatisé avec l'IA pour produire du contenu SEO et LinkedIn, même en période chargée."

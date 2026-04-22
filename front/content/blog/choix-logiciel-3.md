@@ -6,6 +6,12 @@ image: "/blog/img-choix-strat-ep-3.svg"
 tags: ["freelance", "Stratégie digitale", "logiciel"]
 author:
   name: "Yassin Abdulla"
+series:
+  name: "Choix digitaux stratégiques"
+  episode: 3
+related:
+  - /blog/audit-digital-bi-scenarios
+  - /blog/investir-digitalisation-entreprise
 ---
 
 ### Épisode 3 : Pas une erreur. Une organisation entière.

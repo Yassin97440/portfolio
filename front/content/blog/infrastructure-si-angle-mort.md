@@ -6,6 +6,12 @@ image: "/blog/infrastructure-si-angle-mort.png"
 tags: ["infrastructure SI", "système d'information", "digitalisation", "TPE PME", "La Réunion"]
 author:
   name: "Yassin Abdulla"
+series:
+  name: "Choix digitaux stratégiques"
+  episode: 4
+related:
+  - /blog/entreprise-logiciels-reunion
+  - /blog/c-est-quoi-le-digital
 seo:
   meta_title: "Infrastructure SI : pourquoi elle fait échouer vos projets digitaux"
   meta_description: "L'infrastructure est l'angle mort de tout projet de digitalisation en TPE/PME. Découvrez pourquoi l'ignorer coûte cher, et comment poser des bases solides dès le départ."

@@ -13,7 +13,7 @@ const slugPath = computed(() => {
 })
 
 // Fetch the blog post
-const { data: post } = await useAsyncData<BlogPost>(`blog-${slugPath.value}`, () =>
+const { data: post } = await useAsyncData(`blog-${slugPath.value}`, () =>
   queryCollection('blog').path(slugPath.value).first()
 )
 
@@ -25,6 +25,56 @@ if (!post.value) {
     fatal: true
   })
 }
+
+// Fetch all posts to build series navigation and related articles
+const { data: allPosts } = await useAsyncData('blog-all-meta', () =>
+  queryCollection('blog').all()
+)
+
+// Episodes of the same series (including current), sorted by episode number
+const seriesEpisodes = computed(() => {
+  const seriesName = post.value?.series?.name
+  if (!seriesName || !allPosts.value) return [] as BlogPost[]
+  return allPosts.value.filter(
+    (p): p is typeof p & { series: { name: string, episode: number } } =>
+      p.series?.name === seriesName
+  ) as unknown as BlogPost[]
+})
+
+// Related posts: explicit `related` list first, then fallback by tag overlap
+const relatedPosts = computed(() => {
+  if (!post.value || !allPosts.value) return [] as BlogPost[]
+
+  const currentPath = post.value.path
+  const seriesName = post.value.series?.name
+  const explicitPaths: string[] = post.value.related ?? []
+
+  const byPath = new Map(allPosts.value.map(p => [p.path, p]))
+
+  const explicit = explicitPaths
+    .map(p => byPath.get(p))
+    .filter((p): p is NonNullable<typeof p> => !!p && p.path !== currentPath)
+
+  const picked = new Set(explicit.map(p => p.path))
+  const currentTags = new Set<string>(post.value.tags ?? [])
+
+  // Fallback: articles sharing at least one tag, excluding current and series episodes
+  const fallback = allPosts.value
+    .filter(p =>
+      p.path !== currentPath
+      && !picked.has(p.path)
+      && (!seriesName || p.series?.name !== seriesName)
+      && (p.tags ?? []).some((t: string) => currentTags.has(t))
+    )
+    .map(p => ({
+      post: p,
+      score: (p.tags ?? []).filter((t: string) => currentTags.has(t)).length
+    }))
+    .sort((a, b) => b.score - a.score)
+    .map(x => x.post)
+
+  return [...explicit, ...fallback].slice(0, 3) as unknown as BlogPost[]
+})
 
 // Dynamic SEO meta tags
 useSeoMeta({
@@ -106,11 +156,20 @@ const formattedDate = computed(() => {
               <ContentRenderer v-if="post.body" :value="post" class="content-renderer"/>
             </div>
 
+            <!-- Series navigation (previous / next episode) -->
+            <BlogSeriesNav
+              v-if="post.series && seriesEpisodes.length > 1"
+              :current="post"
+              :episodes="seriesEpisodes"
+            />
+
+            <!-- Related articles -->
+            <BlogRelatedPosts :posts="relatedPosts" />
+
             <!-- Back to blog link -->
             <div class="mt-12 pt-8 border-t border-default">
               <UButton
                 to="/blog"
-                
                 variant="ghost"
                 icon="i-heroicons-arrow-left"
                 :ui="{ base: 'text-olive-300' }"

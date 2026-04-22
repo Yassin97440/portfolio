@@ -6,6 +6,12 @@ image: "/blog/img-choix-strat-ep-2.png"
 tags: ["freelance", "Stratégie digitale", "logiciel", "Les couts digital"]
 author:
   name: "Yassin Abdulla"
+series:
+  name: "Choix digitaux stratégiques"
+  episode: 2
+related:
+  - /blog/investir-digitalisation-entreprise
+  - /blog/c-est-quoi-le-digital
 ---
 
 **Chronique – Les choix digitaux qui coûtent cher | Épisode 2**

@@ -6,6 +6,12 @@ image: "/blog/audit-digital-bi-scenarios.png"
 tags: ["audit digital", "business intelligence", "stratégie digitale", "TPE PME", "La Réunion"]
 author:
   name: "Yassin Abdulla"
+series:
+  name: "Choix digitaux stratégiques"
+  episode: 5
+related:
+  - /blog/investir-digitalisation-entreprise
+  - /blog/workflow-automatise-contenu-seo-linkedin
 seo:
   meta_title: "Audit digital et BI : valider vos scénarios de digitalisation | 974"
   meta_description: "Découvrez comment l'audit digital et la Business Intelligence permettent de tester vos hypothèses de transformation numérique sans risque. Guide pratique pour dirigeants."
