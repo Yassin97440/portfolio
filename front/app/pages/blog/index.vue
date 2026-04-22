@@ -9,14 +9,29 @@ const { data: posts } = await useAsyncData<BlogPost[]>('blog-posts', () =>
 )
 
 // Get unique tags from all posts
-const allTags = computed(() => {
+const allTags = computed<string[]>(() => {
   if (!posts.value) return []
-  const tags = posts.value.flatMap((post: any) => post.tags || [])
-  return [...new Set(tags)]
+  const tags = posts.value.flatMap((post: any) => post.tags || []) as string[]
+  return [...new Set(tags)].sort((a, b) => a.localeCompare(b, 'fr'))
 })
+
+// Items for the select menu (with an "All" option)
+const ALL_TAGS_VALUE = '__all__'
+const tagItems = computed(() => [
+  { label: 'Tous les thèmes', value: ALL_TAGS_VALUE, icon: 'i-heroicons-squares-2x2' },
+  ...allTags.value.map(tag => ({ label: tag, value: tag, icon: 'i-heroicons-hashtag' }))
+])
 
 // Selected tag for filtering
 const selectedTag = ref<string | null>(route.query.tag as string || null)
+
+// v-model for USelectMenu (string value, thanks to value-key="value")
+const selectedTagValue = computed({
+  get: () => selectedTag.value ?? ALL_TAGS_VALUE,
+  set: (value: string | undefined) => {
+    selectedTag.value = !value || value === ALL_TAGS_VALUE ? null : value
+  }
+})
 
 // Filtered posts based on selected tag
 const filteredPosts = computed(() => {
@@ -60,27 +75,34 @@ useHead({
     <UPageBody>
       <UContainer>
         <!-- Tags filter -->
-        <div v-if="allTags.length > 0" class="mb-8 flex flex-wrap gap-2">
-          <UBadge
-            :color="selectedTag === null ? 'secondary' : 'neutral'"
-            variant="subtle"
-            size="lg"
-            class="cursor-pointer"
+        <div v-if="allTags.length > 0" class="mb-8 flex flex-wrap items-center gap-3">
+          <label for="blog-tag-filter" class="text-sm font-medium text-olive-100">
+            Filtrer par thème :
+          </label>
+          <USelectMenu
+            id="blog-tag-filter"
+            v-model="selectedTagValue"
+            :items="tagItems"
+            :search-input="{ placeholder: 'Rechercher un thème...', icon: 'i-heroicons-magnifying-glass' }"
+            value-key="value"
+            placeholder="Choisir un thème"
+            icon="i-heroicons-tag"
+            size="md"
+            class="min-w-[260px]"
+          />
+          <UButton
+            v-if="selectedTag"
+            variant="ghost"
+            color="neutral"
+            size="sm"
+            icon="i-heroicons-x-mark"
             @click="selectedTag = null"
           >
-            Tous
-          </UBadge>
-          <UBadge
-            v-for="tag in allTags"
-            :key="tag"
-            :color="selectedTag === tag ? 'secondary' : 'neutral'"
-            variant="subtle"
-            size="lg"
-            class="cursor-pointer"
-            @click="selectedTag = tag"
-          >
-            {{ tag }}
-          </UBadge>
+            Réinitialiser
+          </UButton>
+          <span class="ml-auto text-sm text-olive-200">
+            {{ filteredPosts.length }} article{{ filteredPosts.length > 1 ? 's' : '' }}
+          </span>
         </div>
 
         <!-- Blog posts grid -->
