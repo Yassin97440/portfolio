@@ -2,7 +2,7 @@
     <section class="services-list-section">
         <UCard class="services-list-card" :ui="{ root: 'bg-background rounded-lg' }">
             <template #header>
-                <h2 class="section-title">Mes services</h2>
+                <h2 class="section-title">En un coup d'œil</h2>
             </template>
             <BaseSubCard>
                 <div class="services-grid">
@@ -23,27 +23,22 @@ const services = [
     {
         id: 1,
         icon: 'i-lucide-search',
-        title: 'Audit et conseil'
+        title: 'Audit & conseil digital'
     },
     {
         id: 2,
         icon: 'i-lucide-settings',
-        title: 'Analyse et optimisation des processus métiers'
+        title: 'Optimisation de vos processus'
     },
     {
         id: 6,
         icon: 'i-lucide-users',
-        title: 'Accompagnement direction/référent technique'
-    },
-    {
-        id: 3,
-        icon: 'i-lucide-git-branch',
-        title: 'Architecture logicielle'
+        title: 'Accompagnement de dirigeant'
     },
     {
         id: 4,
         icon: 'i-lucide-code',
-        title: 'Développement web fullstack'
+        title: 'Sites internet & logiciels sur-mesure'
     },
     {
         id: 5,
@@ -51,9 +46,14 @@ const services = [
         title: 'Solutions sur-mesure'
     },
     {
+        id: 3,
+        icon: 'i-lucide-git-branch',
+        title: 'Remise à plat de vos outils'
+    },
+    {
         id: 7,
         icon: 'i-lucide-zap',
-        title: 'IA / Automatisation intelligente'
+        title: 'IA & automatisation des tâches'
     }
 ]
 </script>

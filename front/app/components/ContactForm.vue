@@ -1,126 +1,108 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="space-y-6">
-    <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="100">
-      <!-- Name -->
-      <label for="name" class="block text-sm font-medium mb-1 text-text">Nom complet <span class="text-red-500">*</span></label>
+  <div v-if="formStatus.success" class="success-box" data-aos="fade-up">
+    <div class="success-icon">
+      <UIcon name="i-lucide-check" class="h-6 w-6 text-white" />
+    </div>
+    <h3 class="success-title">Message bien reçu, merci !</h3>
+    <p class="success-text">
+      Je vous réponds personnellement sous 24 h ouvrées
+      (souvent bien plus vite depuis La Réunion).
+      En attendant, si votre projet est urgent,
+      <a :href="whatsappHref" target="_blank" rel="noopener" class="success-link">
+        un mot sur WhatsApp
+      </a>
+      et je vous rappelle dans la journée.
+    </p>
+    <UButton variant="soft" color="neutral" @click="resetAll">
+      Envoyer un autre message
+    </UButton>
+  </div>
+
+  <form v-else @submit.prevent="handleSubmit" class="space-y-5">
+    <!-- 1. Prénom / Nom -->
+    <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+      <label for="name" class="block text-sm font-medium mb-1 text-text">
+        Votre prénom et nom <span class="text-red-500">*</span>
+      </label>
       <UInput
         id="name"
         v-model="formData.name"
         :color="errors.name ? 'error' : undefined"
-        class="w-full transition-all duration-200"
-        :class="{'shadow-action/20 scale-101': fieldFocus.name}"
-        placeholder="Votre nom et prénom"
-        @focus="fieldFocus.name = true"
-        @blur="fieldFocus.name = false"
+        class="w-full"
+        placeholder="Ex : Marie Payet"
       />
-      <small v-if="errors.name" class="text-red-500 block mt-1 animate-pulse">{{ errors.name }}</small>
+      <small v-if="errors.name" class="text-red-500 block mt-1">{{ errors.name }}</small>
     </div>
 
-    <!-- Email -->
-    <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="150">
-      <label for="email" class="block text-sm font-medium mb-1 text-text">Email <span class="text-red-500">*</span></label>
+    <!-- 2. Email ou téléphone -->
+    <div class="form-group" data-aos="fade-up" data-aos-delay="150">
+      <label for="contact" class="block text-sm font-medium mb-1 text-text">
+        Comment je vous réponds ? <span class="text-red-500">*</span>
+      </label>
       <UInput
-        id="email"
-        v-model="formData.email"
-        type="email"
-        :color="errors.email ? 'error' : undefined"
-        class="w-full transition-all duration-200"
-        :class="{'shadow-action/20 scale-101': fieldFocus.email}"
-        placeholder="votre.email@exemple.com"
-        @focus="fieldFocus.email = true"
-        @blur="fieldFocus.email = false"
+        id="contact"
+        v-model="formData.contact"
+        :color="errors.contact ? 'error' : undefined"
+        class="w-full"
+        placeholder="Votre email ou numéro WhatsApp"
       />
-      <small v-if="errors.email" class="text-red-500 block mt-1 animate-pulse">{{ errors.email }}</small>
+      <small class="block mt-1 opacity-70 text-xs">Email ou numéro mobile — comme vous préférez.</small>
+      <small v-if="errors.contact" class="text-red-500 block mt-1">{{ errors.contact }}</small>
     </div>
 
-    <!-- Subject -->
-    <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="200">
-      <label for="subject" class="block text-sm font-medium mb-1 text-text">Sujet <span class="text-red-500">*</span></label>
-      <USelect
-        id="subject"
-        v-model="formData.subject"
-        :items="subjectOptions"
-        value-key="value"
-        label-key="label"
-        placeholder="Sélectionnez un sujet"
-        class="w-full transition-all duration-200"
-        :class="{'shadow-action/20 scale-101': fieldFocus.subject}"
-        :color="errors.subject ? 'error' : undefined"
-        @focus="fieldFocus.subject = true"
-        @blur="fieldFocus.subject = false"
+    <!-- 3. Activité -->
+    <div class="form-group" data-aos="fade-up" data-aos-delay="200">
+      <label for="activity" class="block text-sm font-medium mb-1 text-text">
+        Votre activité
+      </label>
+      <UInput
+        id="activity"
+        v-model="formData.activity"
+        class="w-full"
+        placeholder="Ex : Salon de coiffure à Saint-Denis, BTP, restaurant…"
       />
-      <small v-if="errors.subject" class="text-red-500 block mt-1 animate-pulse">{{ errors.subject }}</small>
     </div>
 
-    <!-- Message -->
-    <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="250">
-      <label for="message" class="block text-sm font-medium mb-1 text-text">Message <span class="text-red-500">*</span></label>
+    <!-- 4. Projet / besoin -->
+    <div class="form-group" data-aos="fade-up" data-aos-delay="250">
+      <label for="message" class="block text-sm font-medium mb-1 text-text">
+        Que puis-je faire pour vous ? <span class="text-red-500">*</span>
+      </label>
       <UTextarea
         id="message"
         v-model="formData.message"
         :rows="5"
         :color="errors.message ? 'error' : undefined"
-        class="w-full transition-all duration-200"
-        :class="{'shadow-action/20 scale-101': fieldFocus.message}"
-        placeholder="Décrivez votre projet ou votre besoin en détail..."
-        @focus="fieldFocus.message = true"
-        @blur="fieldFocus.message = false"
+        class="w-full"
+        placeholder="Dites-moi simplement ce qui vous fait perdre du temps, ou l'idée qui vous trotte dans la tête. Pas besoin de parler technique."
       />
-      <small v-if="errors.message" class="text-red-500 block mt-1 animate-pulse">{{ errors.message }}</small>
+      <small v-if="errors.message" class="text-red-500 block mt-1">{{ errors.message }}</small>
     </div>
 
-    <!-- Budget -->
-    <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="300">
-      <label class="block text-sm font-medium mb-1 text-text">Budget estimé (facultatif)</label>
-      <div class="p-3 bg-primary/50 rounded-lg">
-        <URadioGroup 
-          v-model="formData.budget" 
-          :items="budgetOptions"
-          value-key="value"
-          label-key="label"
-          orientation="horizontal"
-          variant="list"
-          color="primary"
-        />
-      </div>
-    </div>
-
-    <!-- Found Through -->
-    <div class="form-group hover:shadow-sm" data-aos="fade-up" data-aos-delay="350">
-      <label class="block text-sm font-medium mb-1 text-text">Comment m'avez-vous trouvé? (facultatif)</label>
-      <USelect
-        v-model="formData.foundThrough"
-        :items="foundThroughOptions"
-        value-key="value"
-        label-key="label"
-        placeholder="Sélectionnez une option"
-        class="w-full transition-all duration-200"
-        :class="{'shadow-action/20 scale-101': fieldFocus.foundThrough}"
-        @focus="fieldFocus.foundThrough = true"
-        @blur="fieldFocus.foundThrough = false"
-      />
-    </div>
-
-    <!-- Submit -->
-    <div data-aos="fade-up" data-aos-delay="400">
-      <UButton 
-        type="submit" 
+    <div data-aos="fade-up" data-aos-delay="300">
+      <UButton
+        type="submit"
         :disabled="submitting"
         :loading="submitting"
         block
-        class="bg-olive-500 hover:bg-olive-600 text-white py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+        size="lg"
+        class="bg-action hover:bg-action/90 text-white py-3 rounded-lg"
       >
         <template #leading>
           <UIcon v-if="submitting" name="i-lucide-loader-2" class="animate-spin" />
+          <UIcon v-else name="i-lucide-send" />
         </template>
-        {{ submitting ? 'Envoi en cours...' : 'Envoyer le message' }}
+        {{ submitting ? 'Envoi en cours…' : 'Envoyer mon message' }}
       </UButton>
+
+      <p class="mt-3 text-xs opacity-70 text-center">
+        Vos informations ne servent qu'à vous répondre. Réponse sous 24 h ouvrées.
+      </p>
     </div>
 
     <transition name="fade">
-      <div v-if="formStatus.showMessage" 
-           class="mt-4 text-center p-3 rounded-lg" 
-           :class="[formStatus.success ? 'text-green-500 bg-green-50' : 'text-red-500 bg-red-50']">
+      <div v-if="formStatus.showMessage && !formStatus.success"
+           class="mt-4 text-center p-3 rounded-lg text-red-500 bg-red-50">
         {{ formStatus.message }}
       </div>
     </transition>
@@ -130,17 +112,14 @@
 <script setup lang="ts">
 interface FormData {
   name: string;
-  email: string;
-  subject: string;
+  contact: string;
+  activity: string;
   message: string;
-  budget: string;
-  foundThrough: string;
 }
 
 interface FormError {
   name?: string;
-  email?: string;
-  subject?: string;
+  contact?: string;
   message?: string;
 }
 
@@ -150,61 +129,17 @@ interface FormStatus {
   message: string;
 }
 
-interface FieldFocus {
-  name: boolean;
-  email: boolean;
-  subject: boolean;
-  message: boolean;
-  foundThrough: boolean;
-}
-
-interface Option {
-  label: string;
-  value: string;
-}
+const { whatsappLink, whatsappMessages } = useContactChannels()
+const whatsappHref = whatsappLink({ message: whatsappMessages.homepage })
 
 const formData = reactive<FormData>({
   name: '',
-  email: '',
-  subject: '',
-  message: '',
-  budget: '',
-  foundThrough: ''
+  contact: '',
+  activity: '',
+  message: ''
 });
 
 const errors = reactive<FormError>({});
-
-const fieldFocus = reactive<FieldFocus>({
-  name: false,
-  email: false,
-  subject: false,
-  message: false,
-  foundThrough: false
-});
-
-const subjectOptions: Option[] = [
-  { label: 'Proposition de projet', value: 'project' },
-  { label: 'Opportunité freelance', value: 'freelance' },
-  { label: 'Collaboration', value: 'collaboration' },
-  { label: 'Question technique', value: 'technical' },
-  { label: 'Autre', value: 'other' }
-];
-
-const budgetOptions: Option[] = [
-  { label: '< 1000€', value: 'low' },
-  { label: '1000€ - 5000€', value: 'medium' },
-  { label: '5000€ - 10000€', value: 'high' },
-  { label: '> 10000€', value: 'enterprise' }
-];
-
-const foundThroughOptions: Option[] = [
-  { label: 'LinkedIn', value: 'linkedin' },
-  { label: 'GitHub', value: 'github' },
-  { label: 'Référencement (Google)', value: 'search' },
-  { label: 'Recommandation', value: 'recommendation' },
-  { label: 'Autre', value: 'other' }
-];
-
 const submitting = ref(false);
 const formStatus = reactive<FormStatus>({
   showMessage: false,
@@ -212,35 +147,32 @@ const formStatus = reactive<FormStatus>({
   message: ''
 });
 
-// Validation simple côté client
 const validateForm = (): boolean => {
-  // Réinitialisation des erreurs
   Object.keys(errors).forEach(key => {
     delete errors[key as keyof FormError];
   });
 
   let isValid = true;
 
-  if (!formData.name || formData.name.length < 3) {
-    errors.name = 'Le nom doit contenir au moins 3 caractères';
+  if (!formData.name || formData.name.length < 2) {
+    errors.name = 'Merci de renseigner votre prénom et nom';
     isValid = false;
   }
 
-  if (!formData.email) {
-    errors.email = 'L\'email est requis';
+  const isEmail = /^\S+@\S+\.\S+$/.test(formData.contact);
+  // numéro simple : 6+ chiffres, spaces / + / . acceptés
+  const isPhone = /^[+\d\s().-]{6,}$/.test(formData.contact);
+
+  if (!formData.contact) {
+    errors.contact = 'Un email ou un numéro pour vous répondre';
     isValid = false;
-  } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-    errors.email = 'Veuillez entrer une adresse email valide';
+  } else if (!isEmail && !isPhone) {
+    errors.contact = 'Format non reconnu — email ou numéro mobile ?';
     isValid = false;
   }
 
-  if (!formData.subject) {
-    errors.subject = 'Veuillez sélectionner un sujet';
-    isValid = false;
-  }
-
-  if (!formData.message || formData.message.length < 20) {
-    errors.message = 'Le message doit contenir au moins 20 caractères';
+  if (!formData.message || formData.message.length < 10) {
+    errors.message = 'Quelques mots sur votre besoin, même bref, suffisent';
     isValid = false;
   }
 
@@ -249,48 +181,55 @@ const validateForm = (): boolean => {
 
 const resetForm = () => {
   formData.name = '';
-  formData.email = '';
-  formData.subject = '';
+  formData.contact = '';
+  formData.activity = '';
   formData.message = '';
-  formData.budget = '';
-  formData.foundThrough = '';
 };
+
+const resetAll = () => {
+  resetForm()
+  formStatus.showMessage = false
+  formStatus.success = false
+  formStatus.message = ''
+}
 
 const handleSubmit = async () => {
   formStatus.showMessage = false;
-  
+
   if (!validateForm()) return;
-  
+
   submitting.value = true;
-  
+
   try {
-     // Utilisation d'EmailJS pour envoyer un email
-     const templateParams = {
+    const isEmail = /^\S+@\S+\.\S+$/.test(formData.contact)
+    const templateParams = {
       from_name: formData.name,
-      from_email: formData.email,
-      subject: subjectOptions.find(option => option.value === formData.subject)?.label || formData.subject,
-      message: formData.message,
-      budget: budgetOptions.find(option => option.value === formData.budget)?.label || 'Non spécifié',
-      found_through: foundThroughOptions.find(option => option.value === formData.foundThrough)?.label || 'Non spécifié'
+      from_email: isEmail ? formData.contact : 'non-renseigne@placeholder.local',
+      subject: formData.activity
+        ? `Contact freelance — ${formData.activity}`
+        : 'Contact freelance',
+      message:
+        `Activité : ${formData.activity || 'Non précisée'}\n` +
+        `Canal préféré : ${isEmail ? 'Email' : 'Téléphone / WhatsApp : ' + formData.contact}\n\n` +
+        `---\n${formData.message}`,
+      budget: 'Non spécifié',
+      found_through: 'Formulaire site'
     };
 
     const response = await $fetch('/api/sendContactMail', {
       method: 'POST',
       body: templateParams
     });
-    
-    if (response.status === 200) {
-    formStatus.showMessage = true;
-    formStatus.success = true;
-    formStatus.message = 'Votre message a été envoyé avec succès. Je vous répondrai dans les meilleurs délais.';
+
+    if ((response as { status: number }).status === 200) {
+      formStatus.showMessage = true;
+      formStatus.success = true;
+      resetForm();
     }
-    
-    // Réinitialisation du formulaire
-    resetForm();
   } catch (error) {
     formStatus.showMessage = true;
     formStatus.success = false;
-    formStatus.message = 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.';
+    formStatus.message = "Aïe, l'envoi n'est pas passé. Réessayez ou écrivez-moi sur WhatsApp ?";
   } finally {
     submitting.value = false;
   }
@@ -298,17 +237,50 @@ const handleSubmit = async () => {
 </script>
 
 <style scoped>
-
 .form-group {
   border-radius: 0.5rem;
-  padding: 0.5rem;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
+  padding: 0.25rem 0;
 }
 
-.scale-101 {
-  transform: scale(1.01);
+.success-box {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background-color: rgba(var(--action-rgb, 230, 180, 80), 0.08);
+  border: 1px solid rgba(var(--action-rgb, 230, 180, 80), 0.3);
+  border-radius: 0.75rem;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.success-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.success-text {
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.success-link {
+  color: var(--action);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .fade-enter-active,

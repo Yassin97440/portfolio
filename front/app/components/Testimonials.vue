@@ -45,27 +45,29 @@
 </template>
 
 <script setup lang="ts">
+// ⚠️ Ces témoignages servent de base rédactionnelle — à valider / remplacer
+// avec de vrais retours clients avant publication.
 const testimonials = ref([
     {
         id: 1,
-        name: 'Thomas R.',
-        role: 'Gérant, TPE Réunionnaise',
+        name: 'Jean-Marc Payet',
+        role: 'Gérant, Boutique de prêt-à-porter — Saint-Pierre (974)',
         rating: 5,
-        text: 'Yassin a su comprendre nos besoins de digitalisation et proposer une solution adaptée à notre budget de TPE. Application livrée dans les temps, communication fluide tout au long du projet. Je recommande !'
+        text: "Avant Yassin, je passais mes dimanches à recompter les stocks sur papier. Il m'a monté un outil simple sur mon téléphone : je scanne un produit, c'est à jour partout. J'ai gagné 6 à 8 heures par semaine et je ne fais plus d'erreurs de caisse. En plus il a pris le temps de tout m'expliquer, comme un membre de la famille."
     },
     {
         id: 2,
-        name: 'Sophie L.',
-        role: 'Fondatrice, Startup E-commerce',
+        name: 'Patrick Hoarau',
+        role: 'Artisan plaquiste, PTH Aménagement — Saint-Paul (974)',
         rating: 5,
-        text: 'Accompagnement technique de qualité pour le lancement de notre plateforme. Yassin a été force de proposition sur l\'architecture et l\'automatisation de nos process. Un vrai gain de temps pour notre équipe.'
+        text: "Nous cherchions à arrêter les devis sur Word et les plannings sur feuille volante. Yassin a compris le métier tout de suite, il est venu sur un chantier pour voir comment on travaillait. Résultat : un outil qui tient dans la poche, devis envoyés en 5 minutes au lieu de 30, et plus de chantiers oubliés. Relation humaine, prix honnête, je le recommande les yeux fermés."
     },
     {
         id: 3,
-        name: 'Marc D.',
-        role: 'Directeur, PME BTP',
+        name: 'Sandrine Técher',
+        role: 'Gérante, Salon de coiffure Éclat — Saint-Denis (974)',
         rating: 5,
-        text: 'Nous cherchions un développeur local à La Réunion pour un projet sur-mesure. Yassin a été réactif, professionnel et a livré exactement ce dont nous avions besoin. Très satisfait de la collaboration.'
+        text: "J'ai trois coiffeuses et je gérais les rendez-vous par téléphone toute la journée. Yassin m'a mis en place une prise de rendez-vous en ligne connectée à mon agenda, plus un petit rappel automatique par SMS. En 2 mois, j'ai récupéré 30 % de créneaux qui partaient en \"no-show\" et mes clientes adorent. On a fait ça sans que je comprenne un mot de technique, et c'est ça le plus fort."
     }
 ])
 </script>

@@ -23,16 +23,16 @@
 
 <script setup lang="ts">
 const stats = [
-    { value: '5+', label: 'Années d\'expérience' },
+    { value: '5+', label: 'Années à développer des logiciels' },
     { value: '15+', label: 'Projets livrés' },
-    { value: '100%', label: 'Clients satisfaits' },
-    { value: '974', label: 'Basé à La Réunion' }
+    { value: '24h', label: 'Réponse garantie' },
+    { value: '974', label: 'Freelance péi, basé à La Réunion' }
 ]
 
 const badges = [
-    { icon: 'i-lucide-shield-check', text: 'Devis gratuit sous 24h' },
-    { icon: 'i-lucide-clock', text: 'Réactif & disponible' },
-    { icon: 'i-lucide-map-pin', text: 'Freelance local à La Réunion' }
+    { icon: 'i-lucide-shield-check', text: 'Devis gratuit & sans engagement' },
+    { icon: 'i-lucide-message-circle', text: 'Joignable sur WhatsApp' },
+    { icon: 'i-lucide-map-pin', text: 'Déplacement possible sur l\'île' }
 ]
 </script>
 

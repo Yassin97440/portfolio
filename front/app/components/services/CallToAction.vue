@@ -4,10 +4,10 @@
             <BaseSubCard>
                 <div class="cta-content">
                     <div class="cta-main">
-                        <h2 class="cta-title">Un besoin spécifique ? Parlons-en.</h2>
+                        <h2 class="cta-title">Vous ne savez pas par où commencer ?</h2>
                         <p class="cta-subtitle">
-                            Je suis réactif et transparent. Échangeons sur votre projet pour définir ensemble la
-                            meilleure approche technique.
+                            C'est normal, et c'est même souvent le cas de mes clients avant qu'on se parle.
+                            Un premier échange gratuit de 20 minutes suffit à y voir plus clair.
                         </p>
 
                         <div class="cta-features">
@@ -20,15 +20,19 @@
                                 <span>Devis gratuit</span>
                             </div>
                             <div class="cta-feature">
-                                <UIcon name="i-lucide-message-circle" class="feature-icon" />
-                                <span>Échange transparent</span>
+                                <UIcon name="i-lucide-map-pin" class="feature-icon" />
+                                <span>Freelance péi, La Réunion</span>
                             </div>
                         </div>
 
                         <div class="cta-actions">
+                            <a :href="whatsappHref" target="_blank" rel="noopener" class="cta-button whatsapp">
+                                <UIcon name="i-simple-icons-whatsapp" />
+                                Un mot sur WhatsApp
+                            </a>
                             <NuxtLink to="/my/Contact" class="cta-button primary">
                                 <UIcon name="i-lucide-send" />
-                                Demander un devis
+                                Écrire un message
                             </NuxtLink>
                         </div>
                     </div>
@@ -56,6 +60,8 @@
 </template>
 
 <script setup lang="ts">
+const { whatsappLink, whatsappMessages } = useContactChannels()
+const whatsappHref = whatsappLink({ message: whatsappMessages.devis })
 </script>
 
 <style scoped>
@@ -147,6 +153,18 @@
 .cta-button.primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.whatsapp {
+    background-color: #25D366;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-color: #1ebe5b;
 }
 
 .cta-button.secondary {

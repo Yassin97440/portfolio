@@ -3,7 +3,7 @@
         <ServicesIntro />
         <ServicesList />
         <ServicesOffered />
-        <!-- <ServicesPackages /> -->
+        <ServicesPackages />
         <ServicesFAQ />
         <ServicesCallToAction />
     </div>

@@ -3,25 +3,25 @@
         <UCard class="services-intro-card" :ui="{ root: 'bg-background rounded-lg' }">
             <BaseSubCard>
                 <div class="intro-content">
-                    <h1 class="intro-title">Mes Services Freelance</h1>
+                    <h1 class="intro-title">Des outils digitaux qui font vraiment avancer votre entreprise</h1>
                     <p class="intro-description">
-                        En tant que <strong>freelance développeur logiciel</strong>, je propose des prestations sur
-                        mesure autour de l'accompagnement digital, du développement web et logiciel, de
-                        l'architecture logicielle, de l'automatisation, de l'intelligence artificielle et de la
-                        gestion de système d'informations.
+                        Quatre façons concrètes de vous faire gagner du temps et de l'argent :
+                        je crée <strong>vos sites et logiciels sur-mesure</strong>, j'<strong>automatise</strong> ce qui vous mange vos journées,
+                        je vous <strong>conseille</strong> sur votre stratégie digitale et je <strong>remets à plat</strong> les outils existants.
+                        Tout ça avec un langage clair, un prix fixé à l'avance, et un seul interlocuteur : moi.
                     </p>
                     <div class="intro-highlights">
                         <div class="highlight-item">
                             <UIcon name="i-lucide-check-circle" class="highlight-icon" />
-                            <span>Solutions sur-mesure</span>
+                            <span>Prix fixé avant de démarrer</span>
                         </div>
                         <div class="highlight-item">
                             <UIcon name="i-lucide-check-circle" class="highlight-icon" />
-                            <span>Expertise technique avancée</span>
+                            <span>Interlocuteur unique, basé à La Réunion</span>
                         </div>
                         <div class="highlight-item">
                             <UIcon name="i-lucide-check-circle" class="highlight-icon" />
-                            <span>Accompagnement personnalisé</span>
+                            <span>Premier échange gratuit &amp; sans engagement</span>
                         </div>
                     </div>
                 </div>

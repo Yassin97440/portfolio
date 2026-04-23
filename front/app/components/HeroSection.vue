@@ -1,36 +1,35 @@
 <template>
     <section class="hero-section">
         <UCard class="hero-card" :ui="{ root: 'bg-background rounded-lg' }">
-            <BaseSubCard title="Vos défis business, mes solutions digitales">
+            <BaseSubCard>
                 <div class="hero-content">
                     <div class="hero-text">
+                        <h1 class="hero-title">
+                            Votre entreprise à La Réunion mérite mieux qu'Excel et WhatsApp.
+                        </h1>
                         <p class="hero-subtitle">
-                            <strong>Vous perdez du temps sur des tâches répétitives ?</strong> Vos processus métier manquent de fluidité ? 
-                            Vous avez des données mais aucune visibilité claire sur votre activité ? 
-                            Votre digitalisation est en retard ou désorganisée ?
+                            Je suis Yassin, développeur freelance basé à La Réunion. Je crée les outils
+                            digitaux qui font gagner du temps aux dirigeants de TPE/PME — sans jargon,
+                            sans stress, à votre rythme.
                         </p>
-                        
+
                         <div class="value-propositions">
                             <div class="value-item" v-for="value in valuePropositions" :key="value.title">
                                 <UIcon :name="value.icon" class="value-icon" />
                                 <div class="value-content">
-                                    <h3 class="value-title">{{ value.title }}</h3>
+                                    <h2 class="value-title">{{ value.title }}</h2>
                                     <p class="value-description">{{ value.description }}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <p class="hero-cta-text">
-                            <strong>Développeur freelance à La Réunion (974)</strong>, j'accompagne TPE, PME et startups 
-                            dans leur transformation digitale — de la stratégie à la mise en production.
-                        </p>
-
                         <div class="hero-actions">
-                            <NuxtLink to="/my/Contact" class="btn-primary">
-                                Discutons de votre projet →
-                            </NuxtLink>
-                            <NuxtLink to="/services" class="btn-secondary">
-                                Découvrir mes services
+                            <a :href="whatsappHref" target="_blank" rel="noopener" class="btn-primary">
+                                <UIcon name="i-simple-icons-whatsapp" class="btn-icon" />
+                                Discuter sur WhatsApp
+                            </a>
+                            <NuxtLink to="/my/Contact" class="btn-secondary">
+                                Demander un devis gratuit
                             </NuxtLink>
                         </div>
                     </div>
@@ -41,26 +40,29 @@
 </template>
 
 <script setup lang="ts">
+const { whatsappLink, whatsappMessages } = useContactChannels()
+const whatsappHref = whatsappLink({ message: whatsappMessages.homepage })
+
 const valuePropositions = [
-    { 
-        title: 'Gain de temps', 
+    {
+        title: 'Plus d\'heures perdues à ressaisir',
         icon: 'i-lucide-clock',
-        description: 'Automatisation des tâches répétitives, workflows optimisés, moins de saisie manuelle.'
+        description: 'Vos tâches répétitives tournent toutes seules pendant que vous vous concentrez sur vos clients.'
     },
-    { 
-        title: 'Processus métier optimisés', 
+    {
+        title: 'Un outil qui colle à votre métier',
         icon: 'i-lucide-settings',
-        description: 'Logiciels sur-mesure adaptés à VOTRE façon de travailler, pas l\'inverse.'
+        description: 'On conçoit ensemble un logiciel qui suit VOTRE façon de travailler, pas l\'inverse.'
     },
-    { 
-        title: 'Données accessibles', 
+    {
+        title: 'Vos chiffres enfin clairs',
         icon: 'i-lucide-bar-chart-3',
-        description: 'Tableaux de bord clairs, indicateurs pertinents, prise de recul sur votre business.'
+        description: 'Un tableau de bord simple pour savoir en un coup d\'œil où en est votre activité.'
     },
-    { 
-        title: 'Stratégie digitale', 
+    {
+        title: 'Vous reprenez une longueur d\'avance',
         icon: 'i-lucide-compass',
-        description: 'Mise en place, réorganisation et accompagnement de votre transformation numérique.'
+        description: 'Pendant que vos concurrents réfléchissent, vous avancez avec un plan digital clair et rentable.'
     }
 ]
 </script>
@@ -75,22 +77,20 @@ const valuePropositions = [
 }
 
 .hero-content {
-
     gap: 0.75rem;
     align-items: start;
-    /* min-height: 500px; */
 }
 
 .hero-title {
-    font-size: 0.875rem;
-    font-weight: 400;
+    font-size: 1.75rem;
+    font-weight: 700;
     color: var(--text);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text);
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -114,10 +114,11 @@ const valuePropositions = [
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
 }
 
 .btn-primary {
-    background-color: var(--action);
+    background-color: #25D366;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -125,17 +126,21 @@ const valuePropositions = [
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-color: #1ebe5b;
+}
+
+.btn-icon {
+    font-size: 1.25rem;
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: var(--action);
-    border: 2px solid var(--action);
+    background-color: var(--action);
+    color: white;
 }
 
 .btn-secondary:hover {
-    background-color: var(--action);
-    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .value-propositions {
@@ -187,38 +192,25 @@ const valuePropositions = [
     margin: 0;
 }
 
-.hero-cta-text {
-    font-size: 1rem;
-    color: var(--text);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
 @media (min-width: 768px) {
-    .hero-content {
-        grid-template-columns: 2fr 1fr;
-    }
-
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (min-width: 1024px) {
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
     }
 }
 
-/* Améliorations Responsive */
 @media (max-width: 640px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .hero-actions {
@@ -249,10 +241,6 @@ const valuePropositions = [
 }
 
 @media (min-width: 641px) and (max-width: 1023px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
     .hero-content {
         gap: 1.5rem;
     }

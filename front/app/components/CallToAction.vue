@@ -4,19 +4,27 @@
             <BaseSubCard>
                 <div class="cta-content">
                     <div class="cta-text">
-                        <h2 class="cta-title">Prêt à lancer votre projet ?</h2>
+                        <h2 class="cta-title">On en parle autour d'un café ?</h2>
                         <p class="cta-description">
-                            Application web, logiciel métier, automatisation... Discutons de votre besoin.
-                            <strong>Réponse garantie sous 24h.</strong>
+                            Le premier échange est gratuit, sans engagement et sans jargon.
+                            Racontez-moi ce qui vous fait perdre du temps dans votre activité —
+                            on voit ensemble si je peux vous aider.
+                            <strong>Réponse sous 24h ouvrées.</strong>
                         </p>
                         <div class="cta-actions">
+                            <a :href="whatsappHref" target="_blank" rel="noopener" class="cta-button whatsapp">
+                                <UIcon name="i-simple-icons-whatsapp" class="cta-icon" />
+                                Discuter sur WhatsApp
+                            </a>
                             <NuxtLink to="/my/Contact" class="cta-button primary">
-                                Obtenir un devis gratuit
-                            </NuxtLink>
-                            <NuxtLink to="/services" class="cta-button secondary">
-                                Découvrir mes services
+                                <UIcon name="i-lucide-mail" class="cta-icon" />
+                                Écrire un message
                             </NuxtLink>
                         </div>
+                        <p class="cta-micro">
+                            <UIcon name="i-lucide-shield-check" class="micro-icon" />
+                            Devis gratuit &nbsp;·&nbsp; Prix fixé d'avance &nbsp;·&nbsp; Interlocuteur unique
+                        </p>
                     </div>
                     <div class="cta-visual">
                         <div class="cta-decoration">
@@ -30,6 +38,8 @@
 </template>
 
 <script setup lang="ts">
+const { whatsappLink, whatsappMessages } = useContactChannels()
+const whatsappHref = whatsappLink({ message: whatsappMessages.homepage })
 </script>
 
 <style scoped>
@@ -80,6 +90,23 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+}
+
+.cta-icon {
+    font-size: 1.25rem;
+}
+
+.cta-button.whatsapp {
+    background-color: #25D366;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-color: #1ebe5b;
 }
 
 .cta-button.primary {
@@ -93,15 +120,19 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.cta-button.secondary {
-    background-color: transparent;
-    color: var(--action);
-    border: 2px solid var(--action);
+.cta-micro {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
-.cta-button.secondary:hover {
-    background-color: var(--action);
-    color: white;
+.micro-icon {
+    color: var(--action);
+    font-size: 1.1rem;
 }
 
 .cta-visual {
@@ -132,7 +163,6 @@
     opacity: 0.3;
 }
 
-/* Responsive */
 @media (max-width: 640px) {
     .cta-title {
         font-size: 1.75rem;

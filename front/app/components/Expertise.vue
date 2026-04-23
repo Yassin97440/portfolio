@@ -2,8 +2,8 @@
     <section id="services" class="expertise-section">
         <UCard class="expertise-card">
             <template #header>
-                <h2 class="section-title">Mes expertises</h2>
-                <h3 class="seo-subtitle">Gestion de projet, Développement web, Développement desktop, Architecture logicielle, Structuration SI</h3>
+                <h2 class="section-title">Ce que je peux faire pour vous</h2>
+                <h3 class="seo-subtitle">Sites & logiciels sur-mesure, IA & automatisation, conseil digital, audit et structuration de vos outils</h3>
             </template>
                 <BaseSubCard>
                     <div class="expertise-grid">
@@ -30,30 +30,30 @@ const expertises = [
     {
         id: 1,
         icon: 'pi pi-bolt',
-        title: 'IA & Automatisation',
-        description: 'Intégration d\'intelligence artificielle et automatisation de vos processus métiers. Chatbots, assistants IA, workflows automatisés — gagnez du temps et de l\'efficacité. Ex: j\'ai automatisé ma propre création de contenu SEO avec n8n et l\'IA.',
-        tags: ['Agents IA', 'Chatbots', 'n8n', 'Automatisation', 'RAG']
+        title: 'IA & tâches automatiques',
+        description: "Chatbot qui répond à vos clients la nuit, devis générés tout seuls, factures relancées automatiquement… Je mets de l'intelligence artificielle là où vous passez vos heures, pour que votre équipe se concentre sur ce qui compte vraiment.",
+        tags: ['Chatbot client', 'Relances automatiques', 'Gain de temps', 'Assistants IA']
     },
     {
         id: 2,
         icon: 'pi pi-code',
-        title: 'Développement web fullstack',
-        description: 'Création d\'applications web complètes avec les dernières technologies. De l\'application web classique à la solution sur-mesure. En partant de l\'analyse de besoin jusqu\'au déploiement et la formation des équipes.',
-        tags: ['NuxtJS', 'Spring Boot', 'PostgreSQL', 'MySQL', 'NodeJS']
+        title: 'Sites internet & logiciels sur-mesure',
+        description: "Site vitrine qui rapporte des clients, boutique en ligne, application métier, outil interne pour votre équipe. Je vous accompagne de l'idée à la mise en ligne — et je forme vos équipes pour qu'elles soient autonomes.",
+        tags: ['Site vitrine', 'E-commerce', 'Logiciel métier', 'Application mobile']
     },
     {
         id: 3,
         icon: 'pi pi-sitemap',
-        title: 'Architecture logicielle',
-        description: 'Conception de systèmes robustes et évolutifs. Audit de l\'existant et recommandations pour scaler votre application.',
-        tags: ['SQL/NoSQL', 'DDD', 'Microservices', 'Monolithes']
+        title: 'Remise au propre de vos outils',
+        description: "Vous jonglez entre Excel, WhatsApp, un logiciel qui bugue et trois tableurs ? J'analyse ce qui existe, je vous dis ce qui tient la route, ce qu'il faut refaire, et je structure l'ensemble pour que ça tienne dans le temps.",
+        tags: ['Audit outils', 'Remise à plat', 'Structuration', 'Migration']
     },
     {
         id: 4,
         icon: 'pi pi-users',
-        title: 'Conseil & Accompagnement',
-        description: 'Accompagnement stratégique pour TPE/PME réunionnaises. Analyse et conseil dans vos choix technologiques pour réussir votre transformation digitale.',
-        tags: ['MVP', 'Audit code', 'CTO freelance', 'Digitalisation', 'Numérisation']
+        title: 'Conseil & accompagnement digital',
+        description: "Vous savez qu'il faut bouger côté digital mais vous ne savez pas par où commencer ? On fait le point ensemble, je vous propose un plan simple, priorisé et chiffré — vous avancez sereinement, à votre rythme.",
+        tags: ['Audit digital', 'Plan d\'action', 'Accompagnement', 'Formation']
     }
 ]
 </script>

@@ -15,30 +15,34 @@
 
                     <div class="text-content">
                         <p class="intro-text">
-                            Je suis <strong>Yassin</strong> — je traduis vos enjeux business en solutions techniques concrètes.
+                            Moi c'est <strong>Yassin</strong>, péi de La Réunion.
                         </p>
-                        
+
+                        <p class="description-text">
+                            Après plus de 5 ans à créer des logiciels pour des entreprises,
+                            j'ai choisi de mettre mon expertise au service des dirigeants de chez nous.
+                            Vous me parlez <strong>en clair</strong>, je m'occupe de la technique.
+                            On se voit autour d'un café si vous voulez, on avance à votre rythme,
+                            et vous restez maître de votre outil du début à la fin.
+                            Un seul interlocuteur, pas d'intermédiaire, des prix adaptés à une TPE/PME.
+                        </p>
+
                         <div class="benefits-list">
                             <div class="benefit-item">
-                                <UIcon name="i-lucide-check-circle" class="benefit-icon" />
-                                <p><strong>Je parle votre langage</strong> : pas de jargon technique, je comprends vos problématiques métier avant de coder.</p>
+                                <UIcon name="i-lucide-map-pin" class="benefit-icon" />
+                                <p><strong>Basé à La Réunion</strong> — je connais le tissu local et je me déplace.</p>
                             </div>
                             <div class="benefit-item">
-                                <UIcon name="i-lucide-check-circle" class="benefit-icon" />
-                                <p><strong>Un interlocuteur unique</strong> : de l'analyse de vos besoins à la mise en production, vous n'avez qu'un seul contact.</p>
+                                <UIcon name="i-lucide-message-circle" class="benefit-icon" />
+                                <p><strong>Un seul interlocuteur</strong> de la première discussion à la mise en route.</p>
                             </div>
                             <div class="benefit-item">
-                                <UIcon name="i-lucide-check-circle" class="benefit-icon" />
-                                <p><strong>Solutions pérennes</strong> : code maintenable, documentation claire, vous restez maître de votre outil.</p>
-                            </div>
-                            <div class="benefit-item">
-                                <UIcon name="i-lucide-check-circle" class="benefit-icon" />
-                                <p><strong>Basé à La Réunion</strong> : disponibilité locale, compréhension du tissu économique réunionnais.</p>
+                                <UIcon name="i-lucide-shield-check" class="benefit-icon" />
+                                <p><strong>Zéro mauvaise surprise</strong> : devis clair, budget fixé, vous validez avant qu'on avance.</p>
                             </div>
                         </div>
 
                         <p class="description-text">
-                            5+ années d'expérience en développement, lead dev et gestion de projet — je sais ce qui fonctionne et ce qu'il faut éviter.
                             <NuxtLink to="/my/profil" class="text-action hover:underline">Voir mon parcours complet →</NuxtLink>
                         </p>
                     </div>

@@ -34,28 +34,32 @@
 <script setup lang="ts">
 const faqItems = [
     {
-        label: 'Travailles-tu avec des startups ?',
-        content: 'Absolument ! J\'accompagne des startups dans leur développement technique, la mise en place de leur SI, la conception du MVP au passage à l\'échelle. Mon approche agile et ma compréhension des enjeux startup me permettent de proposer des solutions adaptées à vos contraintes de budget et de délais.'
+        label: "Je n'y connais rien en informatique, est-ce un problème ?",
+        content: "Absolument pas, au contraire ! La plupart de mes clients ne sont pas techniques — c'est mon métier de traduire vos besoins. Vous me parlez de votre activité dans votre langage, je m'occupe de la partie technique. Vous ne verrez jamais une ligne de code si vous ne le souhaitez pas."
     },
     {
-        label: 'Proposes-tu des forfaits ou que du TJM ?',
-        content: 'Je propose les deux approches selon vos besoins :<br>• <strong>Forfaits</strong> pour les projets avec un périmètre bien défini et "spontanés" (MVP, intégration IA, audit...)<br>• <strong>TJM (Taux Journalier Moyen)</strong> pour l\'accompagnement technique, le développement itératif ou les missions longues<br>• <strong>Abonnements mensuels</strong> pour l\'accompagnement CTO ou le support technique récurrent'
+        label: "Combien ça coûte, un site ou un logiciel ?",
+        content: "Ça dépend vraiment du besoin, mais voici quelques repères concrets :<br>• <strong>Pack Essentiel Digital</strong> (une action ciblée) : à partir de <strong>900 €</strong><br>• <strong>Audit complet de vos outils</strong> : à partir de <strong>1 500 €</strong><br>• <strong>Première version d'un logiciel métier (MVP)</strong> : à partir de <strong>4 000 €</strong><br><br>Le prix est toujours fixé et validé avant qu'on démarre. Pas de mauvaise surprise en fin de mois."
     },
     {
-        label: 'Quelle est la techno la plus adaptée à mon besoin ?',
-        content: 'Cela dépend de votre contexte ! Lors de notre premier échange, j\'analyse vos besoins, contraintes techniques, budget et délais pour vous recommander la stack technologique la plus adaptée. Mon expertise couvre Nuxt 3, Spring Boot, Node.js, bases de données SQL/NoSQL, et bien d\'autres technologies.'
+        label: "Combien de temps ça prend ?",
+        content: "Quelques repères selon le type de projet :<br>• <strong>Un site internet vitrine</strong> : 1 à 2 semaines<br>• <strong>Une boutique en ligne ou un outil métier simple</strong> : 1 à 2 mois<br>• <strong>Un logiciel sur-mesure complet</strong> : 3 à 6 mois<br>• <strong>L'automatisation d'une tâche</strong> : 2 à 4 semaines<br>• <strong>Un audit de vos outils</strong> : 2 à 7 jours<br><br>Je m'engage sur un délai réaliste dès le devis."
     },
     {
-        label: 'Peux-tu travailler avec une équipe existante ?',
-        content: 'Bien sûr ! J\'ai l\'habitude de m\'intégrer dans des équipes techniques existantes. Je peux intervenir en tant que :<br>• <strong>Lead développeur</strong> pour encadrer l\'équipe<br>• <strong>Expert technique</strong> sur un domaine spécifique<br>• <strong>Mentor</strong> pour monter en compétences vos développeurs<br>• <strong>Architecte</strong> pour structurer vos projets'
+        label: "Et si je n'ai besoin que d'un conseil ponctuel ?",
+        content: "C'est possible. Vous pouvez me réserver quelques heures pour un conseil précis, un second avis sur un devis que vous avez reçu d'un autre prestataire, ou pour choisir un logiciel. Je facture à la demi-journée à partir de 250 €."
     },
     {
-        label: 'Combien de temps prend un projet type ?',
-        content: 'Les délais varient selon la complexité de vos besoins. En moyenne :<br>• <strong>Site vitrine</strong> : 1-2 semaines<br>• <strong>Application web simple</strong> : 1-2 mois<br>• <strong>SaaS complet</strong> : 3-6 mois<br>• <strong>Intégration IA</strong> : 2-4 semaines<br>• <strong>Audit technique</strong> : 1-2 jours<br>Je m\'engage sur des délais réalistes après analyse de vos besoins.'
+        label: "Je travaille déjà avec un prestataire, vous pouvez reprendre le chantier ?",
+        content: "Oui. Je commence par comprendre ce qui a été fait, j'identifie ce qui fonctionne et ce qui pose problème, et je vous propose la meilleure suite : terminer avec le prestataire actuel, reprendre le projet ou repartir d'une base plus propre. C'est vous qui décidez en fin de compte."
     },
     {
-        label: 'Travailles-tu en remote ou sur site ?',
-        content: 'Je tiens toujours à être au moins une fois sur site pour un échange plus fluides et une meilleure compréhension de vos besoins. Je propose les deux modalités :<br>• <strong>100% remote</strong> : la plupart de mes missions<br>• <strong>Hybride</strong> : quelques jours sur site si nécessaire<br>• <strong>Sur site</strong> : possible pour Montpellier et La Réunion (974)<br>Je m\'adapte à vos préférences et contraintes organisationnelles.'
+        label: "Vous vous déplacez à La Réunion ?",
+        content: "Bien sûr ! Je suis basé à La Réunion (974), je tiens à rencontrer mes clients au moins une fois en vrai — autour d'un café ou sur votre lieu d'activité selon ce qui vous arrange. Ensuite la plupart des échanges peuvent se faire par visio ou WhatsApp pour aller vite."
+    },
+    {
+        label: "Est-ce que je resterai propriétaire de mon outil ?",
+        content: "Oui, à 100 %. Vous possédez le code, les données, les accès, tout. Je vous fournis une documentation claire. Vous pouvez continuer avec moi, avec un autre prestataire, ou reprendre la main en interne — la liberté est totale."
     }
 ]
 </script>
