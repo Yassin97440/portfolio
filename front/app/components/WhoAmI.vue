@@ -15,7 +15,7 @@
 
                     <div class="text-content">
                         <p class="intro-text">
-                            Moi c'est <strong>Yassin</strong>, péi de La Réunion.
+                            Moi c'est <strong>Yassin</strong>, freelance péi de La Réunion.
                         </p>
 
                         <p class="description-text">

@@ -14,93 +14,91 @@ related:
   - /blog/investir-digitalisation-entreprise
 ---
 
-### Épisode 3 : Pas une erreur. Une organisation entière.
+## Chronique : Pas une erreur. Une organisation entière. – Épisode 3
 
-Il y a un moment, dans beaucoup de projets, où on croit encore que le problème est de taille humaine.
+### Introduction
+
+Il y a un moment, dans beaucoup de projets, où l'on croit encore que le problème est à taille humaine.
 
 Un délai qu'on peut rattraper. Un bug qu'on peut corriger. Un processus mal optimisé qu'on peut ajuster un peu mieux qu'avant. On bricole. On adapte. On fait avec ce qu'on a. Et pendant un temps, ça suffit.
 
-Puis il y a le jour où ça ne suffit plus.
+Puis arrive le jour où ça ne suffit plus.
 
-Pas parce que quelque chose a cassé. Mais parce qu'on réalise que ce qui cassait, c'était déjà là depuis le début.
-
----
-
-### Rappel de où on en était
-
-Cinq ans après le choix de leur ERP, cette entreprise de ventes aux détails se retrouvait dans une situation qui durait depuis longtemps sans que personne ne pose vraiment la question. L'ERP ne répondait plus. Pas violemment. Pas d'un coup. Il répondait juste… moins bien. Chaque jour un peu moins.
-
-L’ERP n’a pas changé, ni évolué dans un autre sens. **C’est l’entreprise et ses processus qui ont évolué** sans que leur SI (système d’informations) suivent.
-
-Et moi, j'ai développé un SaaS pour boucher le trou le plus visible. Le plus urgent. Le plus coûteux en temps. Une solution pensée pour gagner des minutes sur la partie critique du processus. Une solution qui avait du sens. Qui fonctionnait.
-
-Mais une solution qui ne changeait pas le fond du problème.
+Pas parce que quelque chose s'est cassé. Mais parce qu'on réalise que ce qui risquait de casser était là depuis le début.
 
 ---
 
-### **Puis il y a eu l’audit et les échanges**
+### Rappel de la situation
 
-Entre le moment où la direction m’a expliqué leurs problématiques à l’instant, et le moment où j’ai constaté la profondeur du problème, il y a eu pas mal d’échanges. J’ai pu avoir la chronologie de leur système d’informations depuis le choix de leur ERP, et depuis les grands changements dans leurs processus. 
+Cinq ans après le choix de son ERP, cette entreprise de vente au détail se retrouvait dans une situation inconfortable qui durait depuis trop longtemps, sans que personne ne remette vraiment l'outil en question. L'ERP ne répondait plus aux attentes. Pas violemment. Pas d'un coup. Il répondait juste… moins bien. Chaque jour un peu moins.
 
-Aux premiers échanges, il fallait juste un SaaS qui devait optimiser/automatiser certains processus que l’ERP ne pouvait pas faire, et sur ce qui demandaient le plus de temps.
+L’ERP n’a pas changé, ni évolué dans la mauvaise direction. **C’est l’entreprise et ses processus qui ont évolué**, sans que leur système d’information (SI) ne suive.
 
-Ils me parlaient également d’autres problèmes comme des incohérences entre les données terrains et les données dans l’ERP, utilisées par la directions pour prendre des décisions.
+De mon côté, j'ai développé un SaaS pour combler la faille la plus visible. La plus urgente. La plus coûteuse en temps. Une solution pensée pour faire gagner de précieuses minutes sur la partie critique du processus. Une solution qui avait du sens et qui fonctionnait.
 
-Mais finalement, après tout ces échanges je me rend compte de quelque chose de plus gros.
-
----
-
-### **Ce qui a rajouté une couche, c'est le moment où la direction a vu que les chiffres mentaient**
-
-Pas les chiffres qu'ils avaient. Les chiffres qu'ils croyaient avoir.
-
-Dans cette entreprise, les données qui guidaient les décisions ne venaient pas d'un tableau de bord en temps réel. Elles venait d’un tableau de bord construit manuellement sur plusieurs jours. Après plusieurs extractions de données via l’ERP, et des croisements de données.
-
-Et en parallèles, il y avait les données qui provenaient du terrain également. De ce que les équipes remontaient à la main, à leur rythme, dans des fichiers, dans des conversations. Et puis ces informations prenaient du temps, avant de devenir exploitables par la direction.
-
-Le problème, c’est que les différentes façons de remontées d’informations et leurs délais étaient pointés du doigt et remis en question. Mais sans savoir quoi faire, et comment faire.
-
-Et tant que tout le monde utilisait la même source, même imparfaite, ça donnait l'illusion de cohérence.
+Mais c'était une solution qui ne réglait pas le problème de fond.
 
 ---
 
-### **De mon côté, je le vois avec plus de recul**
+### L’audit et les prises de conscience
 
-C'est pas dans une réunion que ça m'a frappé. C'est dans un moment plus calme, plus isolé. Pendant le développement d’une des premières versions du SaaS.
+Entre le moment où la direction m’a exposé ses problématiques immédiates et celui où j’ai mesuré la profondeur du problème, il y a eu de nombreux échanges. J’ai pu retracer l'historique de leur système d’information depuis l'intégration de l'ERP et analyser les grands changements survenus dans leurs processus.
 
-*Est-ce que ce que je fais, ça résout le problème ? Ou ça gère les symptômes ?*
+Lors de nos premiers échanges, la demande se limitait à la création d'un SaaS pour automatiser certains processus chronophages que l’ERP ne gérait pas. Ils évoquaient également, au passage, quelques incohérences entre les données remontées du terrain et celles présentes dans l’ERP, pourtant utilisées par la direction pour prendre des décisions.
 
-Le SaaS que j'ai construit, il gère les symptômes. Bien. Efficacement. Il économise du temps sur des processus qui en consommaient trop. Et c'est réel, ça compte, personne ne peut nier ça.
-
-Mais le problème, il n'est pas juste là. Il est structurel. Il est dans la façon dont cette entreprise a organisé ses données, ses flux, ses décisions depuis cinq ans. Et mon outil, aussi bon soit-il, ne peut pas corriger ça tout seul.
-
-Ce n'est pas un échec. C'est une prise de conscience.
+Mais au fil des discussions, je me suis rendu compte de l'ampleur de la situation.
 
 ---
 
-### **Et c'est là que ça devient intéressant. Et compliqué.**
+### Quand la direction a vu que les chiffres mentaient
 
-Parce que quand on réalise que le problème est structurel, on réalise aussi que les solutions sont structurelles. Et elles prennent du temps. Elles prennent de l'énergie. Elles demandent des décisions que personne ne veut prendre en premier.
+Le choc est venu lorsque la direction a compris que les chiffres sur lesquels elle se basait n'étaient pas fiables. Pas les chiffres qu'ils avaient sous les yeux, mais les chiffres *qu'ils croyaient avoir*.
 
-En plus du temps perdus, la direction sait maintenant que les chiffres sur lesquels elle appuie ses décisions ne sont pas fiables dans le temps. Mais changer ça, c'est changer une partie de leur organisation.
+Dans cette entreprise, les données qui guidaient les décisions ne provenaient pas d'un tableau de bord en temps réel. Elles étaient issues d’un tableau de bord reconstruit manuellement, sur plusieurs jours, à grand renfort d'extractions depuis l’ERP et de croisements périlleux sur Excel.
 
-Et moi, je sais que mon SaaS va devoir évoluer — pas juste techniquement. Fondamentalement. Parce qu'un outil qui gère un processus isolé, dans un système qui ne tient pas, ça a ses limites. Et on approche de ces limites.
+En parallèle, d'autres données provenaient directement du terrain. Les équipes les faisaient remonter à la main, à leur rythme, via des fichiers ou de simples conversations. Ces informations mettaient un temps fou à devenir exploitables pour la direction.
 
-Deux prises de conscience en même temps. Deux directions possibles. Et aucune réponse simple.
+Les multiples canaux de remontée d'informations et leurs délais de traitement étaient pointés du doigt. Tout le monde remettait le processus en question, mais sans savoir par quel bout le prendre.
+
+Pourtant, tant que tout le monde s'appuyait sur la même source de données, même imparfaite, cela donnait une illusion de cohérence.
 
 ---
 
-### **Ce qui n'est pas encore décidé, c'est comment on bouge à partir de là.**
+### Le problème avec du recul
 
-Avec la direction, on a rapidement identifié deux axes. Je leur ai proposé un stratégie en deux temps : un court terme et un long terme.
-Court terme : on continue avec le SaaS. On optimise ce qui peut être optimisé maintenant. On limite la casse sur les processus les plus critiques. On gagne du temps — pas pour résoudre, mais pour souffler.
-Long terme : on change d'ERP. C'est la seule vraie solution structurelle. Celle qui adresse le fond, pas la surface.
+Ce n'est pas lors d'une réunion que l'évidence m'a frappé. C'est dans un moment plus calme, plus isolé, pendant le développement d’une des premières versions du SaaS.
 
-Deux axes clairs. Mais aucune indication sur comment on les exécute. Et surtout, comment on fait les deux en même temps, dans une entreprise qui ne peut pas s'arrêter de tourner.
+*Est-ce que ce que je fais résout le problème ? Ou est-ce que ça ne fait que masquer les symptômes ?*
 
-La pression ne s'arrête pas pendant qu'on réfléchit. Les magasins continuent. Les processus continuent de consommer du temps. Et l'ERP, lui, continue de répondre moins bien.
+Le SaaS que j'ai construit traite les symptômes. Bien. Efficacement. Il fait gagner un temps précieux sur des tâches qui en consommaient trop. C'est un gain réel, mesurable, que personne ne peut nier.
 
-On sait où on doit aller. On ne sait pas encore comment y arriver.
-Et ce qui allait rendre ce choix encore plus compliqué : on ne l'avait même pas encore regardé en face.
+Mais le vrai problème est ailleurs. Il est structurel. Il réside dans la façon dont cette entreprise a organisé ses données, ses flux et ses prises de décision depuis cinq ans. Et mon outil, aussi performant soit-il, ne peut pas corriger ça tout seul.
+
+Ce n'est pas un constat d'échec. C'est une prise de conscience nécessaire.
+
+---
+
+### Deux directions possibles. Aucune réponse simple.
+
+Lorsqu'on réalise qu'un problème est structurel, on comprend vite que les solutions doivent l'être tout autant. Elles prennent du temps, demandent de l'énergie et exigent des décisions difficiles que personne n'a envie de prendre en premier.
+
+Au-delà du temps perdu, la direction sait désormais que les chiffres sur lesquels elle s'appuie ne sont pas fiables dans la durée. Mais changer cela implique de revoir en profondeur une grande partie de l'organisation de l'entreprise.
+
+De mon côté, je sais que mon SaaS va devoir évoluer — et pas seulement d'un point de vue technique. Car un outil qui gère un processus isolé au sein d'un écosystème défaillant finira toujours par atteindre ses limites. Et nous en étions proches.
+
+---
+
+### Comment avancer à partir de là ?
+
+Avec la direction, nous avons rapidement défini deux axes d'action dans le cadre d'une stratégie en deux temps :
+
+- **À court terme :** on continue avec le SaaS. On optimise ce qui peut l'être immédiatement pour limiter la casse sur les processus les plus critiques. On gagne du temps — non pas pour résoudre le problème de fond, mais pour donner aux équipes l'occasion de souffler.
+- **À long terme :** on change d'ERP. C'est la seule véritable solution structurelle. Celle qui traite le mal à la racine.
+
+Deux axes clairs. Mais aucune indication sur la méthode pour les exécuter. Surtout, comment mener ces deux chantiers de front dans une entreprise dont l'activité ne s'arrête jamais ?
+
+La pression, elle, ne faiblit pas pendant qu'on réfléchit. Les magasins continuent de tourner. Les processus continuent de consommer du temps. Et l'ERP, de son côté, continue de montrer ses failles.
+
+On sait où on doit aller. On ne sait pas encore comment y arriver. Et ce qui allait rendre ce choix encore plus complexe, c'est que nous n'avions pas encore pris toute la mesure des obstacles qui nous attendaient.
 
 *À suivre.*
