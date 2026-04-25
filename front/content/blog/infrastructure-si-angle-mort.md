@@ -3,7 +3,7 @@ title: "Infrastructure SI : l'angle mort qui fait échouer vos projets de digita
 description: "Pourquoi l'infrastructure est le maillon oublié de tout projet SI en TPE/PME, et comment éviter de construire sur du sable - Choix digitaux stratégiques Episode 4"
 date: "2026-04-13"
 image: "/blog/infrastructure-si-angle-mort.png"
-tags: ["infrastructure SI", "système d'information", "digitalisation", "TPE PME", "La Réunion"]
+tags: ["Retour terrain", "Système d'information"]
 author:
   name: "Yassin Abdulla"
 series:

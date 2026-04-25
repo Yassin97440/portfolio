@@ -3,7 +3,7 @@ title: "Comment j'ai automatisé ma création de contenu SEO et LinkedIn avec l'
 description: "Entre le Ramadan et les projets clients, je n'ai plus eu le temps de publier. Voici comment j'ai construit un workflow automatisé pour créer du contenu SEO et LinkedIn sans y passer mes nuits."
 date: "2026-04-01"
 image: "/blog/workflow-automatise-contenu-seo-linkedin.png"
-tags: ["automatisation", "workflow", "IA", "contenu", "SEO", "LinkedIn"]
+tags: ["Retour terrain", "IA & Automatisation"]
 author:
   name: "Yassin Abdulla"
 related:

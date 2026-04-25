@@ -3,7 +3,7 @@ title: "Digitaliser son entreprise : un investissement, pas une dépense"
 description: "Investir dans la digitalisation de votre TPE/PME à La Réunion n'est pas gaspiller de l'argent. C'est un choix stratégique qui demande réflexion, bon sens et bon accompagnement."
 date: "2026-04-05"
 image: "/blog/investir-digitalisation-entreprise.png"
-tags: ["digitalisation", "stratégie digitale", "TPE PME", "investissement", "974"]
+tags: ["Pédagogique", "Stratégie digitale"]
 author:
   name: "Yassin Abdulla"
 related:
