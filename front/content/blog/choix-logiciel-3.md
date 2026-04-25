@@ -3,7 +3,7 @@ title: "Pas une erreur. Une organisation entière."
 description: "Quand le système d’information devient un frein – Épisode 3"
 date: "2026-02-03"
 image: "/blog/img-choix-strat-ep-3.svg"
-tags: ["freelance", "Stratégie digitale", "logiciel"]
+tags: ["Retour terrain", "Système d'information"]
 author:
   name: "Yassin Abdulla"
 series:

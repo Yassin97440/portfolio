@@ -3,7 +3,7 @@ title: "Audit digital et Business Intelligence : tester vos scénarios avant d'i
 description: "Comment un audit digital couplé à la BI permet aux dirigeants de TPE/PME de valider leurs hypothèses de digitalisation avant de dépenser le moindre euro. - Choix digitaux stratégiques Episode 5"
 date: "2026-04-21"
 image: "/blog/audit-digital-bi-scenarios.png"
-tags: ["audit digital", "business intelligence", "stratégie digitale", "TPE PME", "La Réunion"]
+tags: ["Méthode", "Stratégie digitale"]
 author:
   name: "Yassin Abdulla"
 series:
