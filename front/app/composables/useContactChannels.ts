@@ -2,7 +2,7 @@
 // ⚠️ À compléter avec le vrai numéro WhatsApp réunionnais (format international, sans + ni espaces).
 // Exemple : '262692123456' pour +262 692 12 34 56
 
-const WHATSAPP_NUMBER = '262692000000' // TODO Yassin : remplacer par ton vrai numéro
+const WHATSAPP_NUMBER = '262692402002'
 const EMAIL = 'yassin.abdulla.pro@protonmail.com'
 
 export interface WhatsAppOptions {
