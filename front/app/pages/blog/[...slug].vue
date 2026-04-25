@@ -92,7 +92,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://yassin.abdulla.fr/blog/' + slugPath.value
+      href: 'https://yassin.abdulla.fr' + slugPath.value
     }
   ]
 })
