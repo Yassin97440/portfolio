@@ -3,7 +3,7 @@ title: "Le vrai coût des mauvais choix SI"
 description: "Quand le système d’information devient un frein – Épisode 2"
 date: "2026-01-22"
 image: "/blog/img-choix-strat-ep-2.png"
-tags: ["freelance", "Stratégie digitale", "logiciel", "Les couts digital"]
+tags: ["Retour terrain", "Système d'information"]
 author:
   name: "Yassin Abdulla"
 series:

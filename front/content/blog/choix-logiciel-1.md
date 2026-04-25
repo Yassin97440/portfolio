@@ -3,7 +3,7 @@ title: "Quand un bon choix logiciel devient un problème"
 description: "Quand le système d’information devient un frein – Épisode 1"
 date: "2026-01-13"
 image: "/blog/img-choix-strat-ep-1.png"
-tags: ["freelance",  "Stratégie digitale", "logiciel", "ERP"]
+tags: ["Retour terrain", "Système d'information"]
 author:
   name: "Yassin Abdulla"
 series:

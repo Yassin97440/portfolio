@@ -3,7 +3,7 @@ title: "Ce que fait vraiment une entreprise de logiciels pour votre business à 
 description: "Vous cherchez une entreprise de logiciels à La Réunion ? Découvrez ce qu'elle peut concrètement apporter à votre TPE/PME et comment choisir le bon partenaire."
 date: "2026-04-08"
 image: "/blog/entreprise-de-logiciels-reunion.png"
-tags: ["logiciels", "digitalisation", "La Réunion", "TPE PME", "développement web"]
+tags: ["Pédagogique", "Système d'information"]
 author:
   name: "Yassin Abdulla"
 related:
