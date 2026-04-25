@@ -3,7 +3,7 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-    <ChatBot />
+    <!-- <ChatBot /> -->
   </UApp>
 </template>
 
