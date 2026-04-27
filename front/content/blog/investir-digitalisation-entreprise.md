@@ -93,4 +93,4 @@ Commencez par un audit de votre présence en ligne actuelle et de vos processus 
 
 ---
 
-*Vous avez un projet de digitalisation pour votre entreprise à La Réunion et vous cherchez un regard extérieur ? [Discutons-en ensemble](/contact) pour définir l'approche la plus pertinente pour votre situation.*
+*Vous avez un projet de digitalisation pour votre entreprise à La Réunion et vous cherchez un regard extérieur ? [Discutons-en ensemble](/my/contact) pour définir l'approche la plus pertinente pour votre situation.*

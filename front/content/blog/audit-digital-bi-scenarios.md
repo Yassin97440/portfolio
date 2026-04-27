@@ -85,4 +85,4 @@ Les premières actions correctives produisent généralement des effets mesurabl
 
 ---
 
-*Vous hésitez sur votre prochain investissement digital ? Un échange de trente minutes suffit souvent à identifier si vos hypothèses tiennent la route. [Contactez-moi](/contact) pour en discuter.*
+*Vous hésitez sur votre prochain investissement digital ? Un échange de trente minutes suffit souvent à identifier si vos hypothèses tiennent la route. [Contactez-moi](/my/contact) pour en discuter.*

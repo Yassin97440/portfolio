@@ -92,4 +92,4 @@ Non. Les usages numériques se sont généralisés à toutes les tranches d'âge
 
 ---
 
-*Vous souhaitez faire le point sur la présence digitale de votre entreprise et découvrir par où commencer concrètement ? [Contactez-moi](/contact), nous en discuterons simplement, sans jargon et sans engagement.*
+*Vous souhaitez faire le point sur la présence digitale de votre entreprise et découvrir par où commencer concrètement ? [Contactez-moi](/my/contact), nous en discuterons simplement, sans jargon et sans engagement.*
