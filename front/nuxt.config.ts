@@ -1,5 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import fs from 'fs';
+
+const isDev = process.env.NODE_ENV !== 'production';
+const sslKeyPath = './localhost-key.pem';
+const sslCertPath = './localhost.pem';
+
+const getDevServerConfig = () => {
+  if (!isDev) return undefined;
+  
+  const keyExists = fs.existsSync(sslKeyPath);
+  const certExists = fs.existsSync(sslCertPath);
+  
+  if (!keyExists || !certExists) {
+    console.warn('SSL certificates not found, HTTPS disabled for dev server');
+    return undefined;
+  }
+  
+  return {
+    https: {
+      key: fs.readFileSync(sslKeyPath, 'utf-8'),
+      cert: fs.readFileSync(sslCertPath, 'utf-8')
+    },
+    port: 3000
+  };
+};
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -70,13 +95,7 @@ export default defineNuxtConfig({
     colorMode: false,
   },
 
-  devServer: {
-    https: {
-      key: fs.readFileSync('./localhost-key.pem', 'utf-8'),
-      cert: fs.readFileSync('./localhost.pem', 'utf-8')
-    },
-    port: 3000
-  },
+  devServer: getDevServerConfig(),
 
   compatibilityDate: '2025-01-03',
 
